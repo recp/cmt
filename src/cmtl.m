@@ -59,6 +59,9 @@ mtFuncByName(MtLibrary *lib, const char *name) {
   mlib  = (__bridge id<MTLLibrary>)lib;
   mfunc = [mlib newFunctionWithName: mtNSString(name)];
 
+  if (mfunc == nil)
+    return NULL;
+
   return (void *)CFBridgingRetain(mfunc);
 }
 
