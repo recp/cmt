@@ -6,13 +6,13 @@
 #ifndef cmtl_types_h
 #define cmtl_types_h
 
-typedef void MkDevice;
-typedef void MkRenderPipelineDescriptor;
-typedef void MkRenderPipelineState;
-typedef void MkCommandQueue;
-typedef void MkLibrary;
-typedef void MkFunction;
-typedef void MkRenderCommandEncoder;
-typedef void MkViewport;
+typedef void MtDevice;
+typedef void MtRenderPipelineDescriptor;
+typedef void MtRenderPipelineState;
+typedef void MtCommandQueue;
+typedef void MtLibrary;
+typedef void MtFunction;
+typedef void MtRenderCommandEncoder;
+typedef void MtViewport;
 
 #endif /* cmtl_types_h */

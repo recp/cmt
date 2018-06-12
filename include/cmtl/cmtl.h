@@ -12,17 +12,17 @@ extern "C" {
 #include "types.h"
 #include "pixelformat.h"
 
-MkDevice*
-mtlDeviceCreat(void);
+MtDevice*
+mtDeviceCreat(void);
 
-MkCommandQueue*
-mtlCmdQueue(MkDevice *device);
+MtCommandQueue*
+mtCmdQueue(MtDevice *device);
 
-MkCommandQueue*
-mtlCmdQueue(MkRenderPipelineState *device);
+MtCommandQueue*
+mtCmdQueue(MtRenderPipelineState *device);
 
-MkRenderPipelineDescriptor*
-mtlPipelineDescCreat(MkPixelFormat pixelFormat);
+MtRenderPipelineDescriptor*
+mtPipelineDescCreat(MtPixelFormat pixelFormat);
 
 #ifdef __cplusplus
 }

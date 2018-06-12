@@ -8,15 +8,15 @@
 #import <Foundation/Foundation.h>
 #import <Metal/Metal.h>
 
-MkDevice*
-mtlDeviceCreat() {
+MtDevice*
+mtDeviceCreat() {
   id<MTLDevice> mdevice;
   mdevice = MTLCreateSystemDefaultDevice();
   return (void *)CFBridgingRetain(mdevice);
 }
 
-MkCommandQueue*
-mtlCmdQueue(MkDevice *device) {
+MtCommandQueue*
+mtCmdQueue(MtDevice *device) {
   id<MTLDevice>       mdevice;
   id<MTLCommandQueue> mcmdQueue;
 
@@ -26,8 +26,8 @@ mtlCmdQueue(MkDevice *device) {
   return (void *)CFBridgingRetain(mcmdQueue);
 }
 
-MkRenderPipelineDescriptor*
-mtlPipelineDescCreat(MkPixelFormat pixelFormat) {
+MtRenderPipelineDescriptor*
+mtPipelineDescCreat(MtPixelFormat pixelFormat) {
   MTLRenderPipelineDescriptor *mpipDesc;
   mpipDesc = [MTLRenderPipelineDescriptor new];
   mpipDesc.colorAttachments[0].pixelFormat = (MTLPixelFormat)pixelFormat;
