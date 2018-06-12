@@ -6,32 +6,34 @@ C Wrapper for Apple's METAL framework. This library is C bindings of Metal API (
 
 Also since this is C bindings for Metal API, it also can help other languages to use Metal with this library. 
 
-Currently this library does not alloc memory for its types.
+Currently this library does not alloc memory for its types. It retains ObjC objects and work on them. This also makes the library very very thin layer on ObjC. 
 
-Consider to support me on Patreon so I can spend more time on this
+This is NOT generic rendering library. If you need to that, check this one: [Graphics Kernel](https://github.com/recp/gk), it is also written in C and provides common rendering techniques. It will be cross platform. Since [Graphics Kernel](https://github.com/recp/gk) needs to run on macOS, this library will be macOS backend for that purpose.
+
+Consider to support me on Patreon so I can spend more time on this and related stuffs.
 
 Here sample usage:
 
 ```C
 
-  MtDevice                   *device;
-  MtCommandQueue             *cmdQueue;
-  MtRenderPipelineDescriptor *pipDesc;
-  MtLibrary                  *lib;
-  MtFunction                 *vertFunc, *fragFunc;
-  MtRenderPipelineState      *pip;
+MtDevice                   *device;
+MtCommandQueue             *cmdQueue;
+MtRenderPipelineDescriptor *pipDesc;
+MtLibrary                  *lib;
+MtFunction                 *vertFunc, *fragFunc;
+MtRenderPipelineState      *pip;
 
-  device   = mtDeviceCreat();
-  lib      = mtDefaultLib(device);
-  cmdQueue = mtCmdQueue(device);
-  pipDesc  = mtPipelineDescCreat(MtPixelFormatBGRA8Unorm);
+device   = mtDeviceCreat();
+lib      = mtDefaultLib(device);
+cmdQueue = mtCmdQueue(device);
+pipDesc  = mtPipelineDescCreat(MtPixelFormatBGRA8Unorm);
 
-  vertFunc = mtFuncByName(lib, "vert");
-  fragFunc = mtFuncByName(lib, "frag");
+vertFunc = mtFuncByName(lib, "vert");
+fragFunc = mtFuncByName(lib, "frag");
 
-  mtPipelineSetFunc(pipDesc, vertFunc, MT_FUNC_VERT);
-  mtPipelineSetFunc(pipDesc, fragFunc, MT_FUNC_FRAG);
+mtPipelineSetFunc(pipDesc, vertFunc, MT_FUNC_VERT);
+mtPipelineSetFunc(pipDesc, fragFunc, MT_FUNC_FRAG);
 
-  pip = mtPiplineStateCreat(device, pipDesc);
+pip = mtPiplineStateCreat(device, pipDesc);
   
 ```
