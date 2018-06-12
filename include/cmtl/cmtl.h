@@ -24,6 +24,20 @@ mtCmdQueue(MtRenderPipelineState *device);
 MtRenderPipelineDescriptor*
 mtPipelineDescCreat(MtPixelFormat pixelFormat);
 
+void
+mtPipelineSetFunc(MtRenderPipelineDescriptor *pipDesc,
+                  MtFunction                 *func,
+                  MtFuncType                  functype);
+
+MtLibrary*
+mtDefaultLib(MtDevice *device);
+
+MtFunction*
+mtFuncByName(MtLibrary *lib, const char *name);
+
+MtRenderPipelineState*
+mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDescriptor *pipDesc);
+
 #ifdef __cplusplus
 }
 #endif

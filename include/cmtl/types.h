@@ -15,4 +15,9 @@ typedef void MtFunction;
 typedef void MtRenderCommandEncoder;
 typedef void MtViewport;
 
+typedef enum MtFuncType {
+  MT_FUNC_VERT = 1,
+  MT_FUNC_FRAG = 2
+} MtFuncType;
+
 #endif /* cmtl_types_h */
