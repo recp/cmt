@@ -14,6 +14,8 @@ typedef void MtLibrary;
 typedef void MtFunction;
 typedef void MtRenderCommandEncoder;
 typedef void MtViewport;
+typedef void MtRenderPassDescriptor;
+typedef void MtTexture;
 
 typedef enum MtFuncType {
   MT_FUNC_VERT = 1,

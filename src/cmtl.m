@@ -100,3 +100,34 @@ mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDescriptor *pipDesc) {
 
   return (void *)CFBridgingRetain(mpipState);
 }
+
+MtRenderPassDescriptor*
+mtPassCreat() {
+  MTLRenderPassDescriptor *mrenderPassDesc;
+  mrenderPassDesc = [MTLRenderPassDescriptor new];
+  return (void *)CFBridgingRetain(mrenderPassDesc);
+}
+
+void
+mtPassSetTexture(MtRenderPassDescriptor *pass,
+                 int                     colorAttch,
+                 MtTexture              *tex) {
+  MTLRenderPassDescriptor *mpass;
+  id<MTLTexture>           mtex;
+
+  mpass = (__bridge MTLRenderPassDescriptor*)pass;
+  mtex  = (__bridge id<MTLTexture>)tex;
+
+  mpass.colorAttachments[colorAttch].texture = mtex;
+}
+
+void
+mtPassSetLoadAction(MtRenderPassDescriptor *pass,
+                    int                     colorAttch,
+                    MtLoadAction            action) {
+  MTLRenderPassDescriptor *mpass;
+
+  mpass = (__bridge MTLRenderPassDescriptor*)pass;
+
+  mpass.colorAttachments[colorAttch].loadAction = (MTLLoadAction)action;
+}

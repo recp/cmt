@@ -11,6 +11,7 @@ extern "C" {
 
 #include "types.h"
 #include "pixelformat.h"
+#include "enums.h"
 
 MtDevice*
 mtDeviceCreat(void);
@@ -37,6 +38,19 @@ mtFuncByName(MtLibrary *lib, const char *name);
 
 MtRenderPipelineState*
 mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDescriptor *pipDesc);
+
+MtRenderPassDescriptor*
+mtRenderPassDescCreat(void);
+
+void
+mtPassSetTexture(MtRenderPassDescriptor *pass,
+                 int                     colorAttch,
+                 MtTexture              *tex);
+
+void
+mtPassSetLoadAction(MtRenderPassDescriptor *pass,
+                    int                     colorAttch,
+                    MtLoadAction            action);
 
 #ifdef __cplusplus
 }
