@@ -37,3 +37,7 @@ mtPipelineSetFunc(pipDesc, fragFunc, MT_FUNC_FRAG);
 pip = mtPiplineStateCreat(device, pipDesc);
   
 ```
+
+### Trademarks
+
+Apple name/logo and Metal are trademarks of Apple Inc. This software only provides C bindings for Metal, it is not alternative to Metal.
