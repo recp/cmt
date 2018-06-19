@@ -20,15 +20,15 @@ MtCommandQueue*
 mtCmdQueue(MtDevice *device);
 
 MtCommandQueue*
-mtCommandQueue(MtRenderPipelineState *device);
+mtCommandQueue(MtRenderPipState *device);
 
-MtRenderPipelineDesc*
+MtRenderPipDesc*
 mtPipelineDescCreat(MtPixelFormat pixelFormat);
 
 void
-mtPipelineSetFunc(MtRenderPipelineDesc *pipDesc,
-                  MtFunction                 *func,
-                  MtFuncType                  functype);
+mtPipelineSetFunc(MtRenderPipDesc *pipDesc,
+                  MtFunction      *func,
+                  MtFuncType       functype);
 
 MtLibrary*
 mtDefaultLib(MtDevice *device);
@@ -36,21 +36,21 @@ mtDefaultLib(MtDevice *device);
 MtFunction*
 mtFuncByName(MtLibrary *lib, const char *name);
 
-MtRenderPipelineState*
-mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDesc *pipDesc);
+MtRenderPipState*
+mtPiplineStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc);
 
 MtRenderPassDesc*
 mtRenderPassDescCreat(void);
 
 void
 mtPassSetTexture(MtRenderPassDesc *pass,
-                 int                     colorAttch,
-                 MtTexture              *tex);
+                 int               colorAttch,
+                 MtTexture        *tex);
 
 void
 mtPassSetLoadAction(MtRenderPassDesc *pass,
-                    int                     colorAttch,
-                    MtLoadAction            action);
+                    int               colorAttch,
+                    MtLoadAction      action);
 
 MtCommandBuffer*
 mtCommandBuffer(MtCommandQueue *cmdq);

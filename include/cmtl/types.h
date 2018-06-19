@@ -7,8 +7,8 @@
 #define cmtl_types_h
 
 typedef void MtDevice;
-typedef void MtRenderPipelineDesc;
-typedef void MtRenderPipelineState;
+typedef void MtRenderPipDesc;
+typedef void MtRenderPipState;
 typedef void MtCommandQueue;
 typedef void MtLibrary;
 typedef void MtFunction;
