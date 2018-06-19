@@ -13,6 +13,7 @@ extern "C" {
 #include "pixelformat.h"
 #include "enums.h"
 
+#include "device.h"
 #include "command-buff.h"
 #include "command-queue.h"
 #include "command-enc.h"

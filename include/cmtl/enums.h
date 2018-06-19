@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef mt_enums_h
-#define mt_enums_h
+#ifndef cmtl_enums_h
+#define cmtl_enums_h
 
 typedef enum MtLoadAction {
   MtLoadActionDontCare = 0,
@@ -21,4 +21,4 @@ typedef enum MtStoreAction {
   MtStoreActionCustomSampleDepthStore     = 5,
 } MtStoreAction;
 
-#endif /* mt_enums_h */
+#endif /* cmtl_enums_h */

@@ -13,11 +13,7 @@ extern "C" {
 #include "enums.h"
 
 MtCommandQueue*
-mtCmdQueue(MtDevice *device);
-
-MtCommandQueue*
-mtCommandQueue(MtRenderPipState *device);
-
+mtCommandQueue(MtDevice *device);
 
 #ifdef __cplusplus
 }

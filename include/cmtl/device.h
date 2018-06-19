@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_commandbuff_h
-#define cmtl_commandbuff_h
+#ifndef cmtl_device_h
+#define cmtl_device_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -18,4 +18,4 @@ mtDeviceCreat(void);
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmtl_commandbuff_h */
+#endif /* cmtl_device_h */
