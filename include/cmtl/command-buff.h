@@ -16,10 +16,10 @@ MtCommandBuffer*
 mtCommandBuff(MtCommandQueue *cmdq);
 
 void
-mtCommandBuffPresentDrawable(MtCommandBuffer *cmdb, MtDrawable *drawable);
+mtPresent(MtCommandBuffer *cmdb, MtDrawable *drawable);
 
 void
-mtCommandBuffCommit(MtCommandBuffer *cmdb);
+mtCommit(MtCommandBuffer *cmdb);
 
 #ifdef __cplusplus
 }

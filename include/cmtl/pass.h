@@ -16,14 +16,14 @@ MtRenderPassDesc*
 mtPassCreat(void);
 
 void
-mtPassSetTexture(MtRenderPassDesc *pass,
-                 int               colorAttch,
-                 MtTexture        *tex);
+mtPassTexture(MtRenderPassDesc *pass,
+              int               colorAttch,
+              MtTexture        *tex);
 
 void
-mtPassSetLoadAction(MtRenderPassDesc *pass,
-                    int               colorAttch,
-                    MtLoadAction      action);
+mtPassLoadAction(MtRenderPassDesc *pass,
+                 int               colorAttch,
+                 MtLoadAction      action);
 #ifdef __cplusplus
 }
 #endif

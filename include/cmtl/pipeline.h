@@ -14,15 +14,15 @@ extern "C" {
 #include "pixelformat.h"
 
 MtRenderPipDesc*
-mtPipelineDescCreat(MtPixelFormat pixelFormat);
+mtPipDescCreat(MtPixelFormat pixelFormat);
 
 void
-mtPipelineSetFunc(MtRenderPipDesc *pipDesc,
-                  MtFunction      *func,
-                  MtFuncType       functype);
+mtPipFunc(MtRenderPipDesc *pipDesc,
+          MtFunction      *func,
+          MtFuncType       functype);
 
 MtRenderPipState*
-mtPiplineStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc);
+mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc);
 
 #ifdef __cplusplus
 }

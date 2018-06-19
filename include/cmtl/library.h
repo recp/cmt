@@ -13,7 +13,7 @@ extern "C" {
 #include "enums.h"
 
 MtLibrary*
-mtDefaultLib(MtDevice *device);
+mtDefaultLibrary(MtDevice *device);
 
 MtFunction*
 mtFuncByName(MtLibrary *lib, const char *name);
