@@ -22,7 +22,7 @@ mtDeviceCreat() {
 }
 
 MtCommandQueue*
-mtCmdQueue(MtDevice *device) {
+mtCommandQueue(MtDevice *device) {
   id<MTLDevice>       mdevice;
   id<MTLCommandQueue> mcmdQueue;
 
@@ -32,7 +32,7 @@ mtCmdQueue(MtDevice *device) {
   return (void *)CFBridgingRetain(mcmdQueue);
 }
 
-MtRenderPipelineDescriptor*
+MtRenderPipelineDesc*
 mtPipelineDescCreat(MtPixelFormat pixelFormat) {
   MTLRenderPipelineDescriptor *mpipDesc;
   mpipDesc = [MTLRenderPipelineDescriptor new];
@@ -66,7 +66,7 @@ mtFuncByName(MtLibrary *lib, const char *name) {
 }
 
 void
-mtPipelineSetFunc(MtRenderPipelineDescriptor *pipDesc,
+mtPipelineSetFunc(MtRenderPipelineDesc *pipDesc,
                   MtFunction                 *func,
                   MtFuncType                  functype) {
   MTLRenderPipelineDescriptor *mpip;
@@ -87,7 +87,7 @@ mtPipelineSetFunc(MtRenderPipelineDescriptor *pipDesc,
 }
 
 MtRenderPipelineState*
-mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDescriptor *pipDesc) {
+mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDesc *pipDesc) {
   NSError                     *error;
   MTLRenderPipelineDescriptor *mpip;
   id <MTLRenderPipelineState>  mpipState;
@@ -101,7 +101,7 @@ mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDescriptor *pipDesc) {
   return (void *)CFBridgingRetain(mpipState);
 }
 
-MtRenderPassDescriptor*
+MtRenderPassDesc*
 mtPassCreat() {
   MTLRenderPassDescriptor *mrenderPassDesc;
   mrenderPassDesc = [MTLRenderPassDescriptor new];
@@ -109,7 +109,7 @@ mtPassCreat() {
 }
 
 void
-mtPassSetTexture(MtRenderPassDescriptor *pass,
+mtPassSetTexture(MtRenderPassDesc *pass,
                  int                     colorAttch,
                  MtTexture              *tex) {
   MTLRenderPassDescriptor *mpass;
@@ -122,7 +122,7 @@ mtPassSetTexture(MtRenderPassDescriptor *pass,
 }
 
 void
-mtPassSetLoadAction(MtRenderPassDescriptor *pass,
+mtPassSetLoadAction(MtRenderPassDesc *pass,
                     int                     colorAttch,
                     MtLoadAction            action) {
   MTLRenderPassDescriptor *mpass;
@@ -130,4 +130,28 @@ mtPassSetLoadAction(MtRenderPassDescriptor *pass,
   mpass = (__bridge MTLRenderPassDescriptor*)pass;
 
   mpass.colorAttachments[colorAttch].loadAction = (MTLLoadAction)action;
+}
+
+MtCommandBuffer*
+mtCommandBuffer(MtCommandQueue *cmdq) {
+  id<MTLCommandQueue>  mcmdQueue;
+  id<MTLCommandBuffer> mcmdBuff;
+
+  mcmdQueue = (__bridge id<MTLCommandQueue>)cmdq;
+  mcmdBuff  = [mcmdQueue commandBuffer];
+
+  return (void *)CFBridgingRetain(mcmdBuff);
+}
+
+MtRenderCommandEncoder*
+mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *passDesc) {
+  MTLRenderPassDescriptor    *mpass;
+  id<MTLRenderCommandEncoder> mrenderEncoder;
+  id<MTLCommandBuffer>        mcmdBuff;
+
+  mcmdBuff       = (__bridge id<MTLCommandBuffer>)cmdb;
+  mpass          = (__bridge MTLRenderPassDescriptor*)passDesc;
+  mrenderEncoder = [mcmdBuff renderCommandEncoderWithDescriptor: mpass];
+
+  return (void *)CFBridgingRetain(mrenderEncoder);
 }

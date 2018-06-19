@@ -20,13 +20,13 @@ MtCommandQueue*
 mtCmdQueue(MtDevice *device);
 
 MtCommandQueue*
-mtCmdQueue(MtRenderPipelineState *device);
+mtCommandQueue(MtRenderPipelineState *device);
 
-MtRenderPipelineDescriptor*
+MtRenderPipelineDesc*
 mtPipelineDescCreat(MtPixelFormat pixelFormat);
 
 void
-mtPipelineSetFunc(MtRenderPipelineDescriptor *pipDesc,
+mtPipelineSetFunc(MtRenderPipelineDesc *pipDesc,
                   MtFunction                 *func,
                   MtFuncType                  functype);
 
@@ -37,20 +37,26 @@ MtFunction*
 mtFuncByName(MtLibrary *lib, const char *name);
 
 MtRenderPipelineState*
-mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDescriptor *pipDesc);
+mtPiplineStateCreat(MtDevice *device, MtRenderPipelineDesc *pipDesc);
 
-MtRenderPassDescriptor*
+MtRenderPassDesc*
 mtRenderPassDescCreat(void);
 
 void
-mtPassSetTexture(MtRenderPassDescriptor *pass,
+mtPassSetTexture(MtRenderPassDesc *pass,
                  int                     colorAttch,
                  MtTexture              *tex);
 
 void
-mtPassSetLoadAction(MtRenderPassDescriptor *pass,
+mtPassSetLoadAction(MtRenderPassDesc *pass,
                     int                     colorAttch,
                     MtLoadAction            action);
+
+MtCommandBuffer*
+mtCommandBuffer(MtCommandQueue *cmdq);
+
+MtRenderCommandEncoder*
+mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *passDesc);
 
 #ifdef __cplusplus
 }
