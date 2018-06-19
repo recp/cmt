@@ -13,50 +13,12 @@ extern "C" {
 #include "pixelformat.h"
 #include "enums.h"
 
-MtDevice*
-mtDeviceCreat(void);
-
-MtCommandQueue*
-mtCmdQueue(MtDevice *device);
-
-MtCommandQueue*
-mtCommandQueue(MtRenderPipState *device);
-
-MtRenderPipDesc*
-mtPipelineDescCreat(MtPixelFormat pixelFormat);
-
-void
-mtPipelineSetFunc(MtRenderPipDesc *pipDesc,
-                  MtFunction      *func,
-                  MtFuncType       functype);
-
-MtLibrary*
-mtDefaultLib(MtDevice *device);
-
-MtFunction*
-mtFuncByName(MtLibrary *lib, const char *name);
-
-MtRenderPipState*
-mtPiplineStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc);
-
-MtRenderPassDesc*
-mtRenderPassDescCreat(void);
-
-void
-mtPassSetTexture(MtRenderPassDesc *pass,
-                 int               colorAttch,
-                 MtTexture        *tex);
-
-void
-mtPassSetLoadAction(MtRenderPassDesc *pass,
-                    int               colorAttch,
-                    MtLoadAction      action);
-
-MtCommandBuffer*
-mtCommandBuffer(MtCommandQueue *cmdq);
-
-MtRenderCommandEncoder*
-mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *passDesc);
+#include "command-buff.h"
+#include "command-queue.h"
+#include "command-enc.h"
+#include "pass.h"
+#include "library.h"
+#include "pipeline.h"
 
 #ifdef __cplusplus
 }

@@ -133,7 +133,7 @@ mtPassSetLoadAction(MtRenderPassDesc *pass,
 }
 
 MtCommandBuffer*
-mtCommandBuffer(MtCommandQueue *cmdq) {
+mtCommandBuff(MtCommandQueue *cmdq) {
   id<MTLCommandQueue>  mcmdQueue;
   id<MTLCommandBuffer> mcmdBuff;
 
@@ -141,6 +141,26 @@ mtCommandBuffer(MtCommandQueue *cmdq) {
   mcmdBuff  = [mcmdQueue commandBuffer];
 
   return (void *)CFBridgingRetain(mcmdBuff);
+}
+
+void
+mtCommandBuffPresentDrawable(MtCommandBuffer *cmdb, MtDrawable *drawable) {
+  id<MTLCommandBuffer> mcmdBuff;
+  id<MTLDrawable>      mdrawable;
+
+  mcmdBuff  = (__bridge id<MTLCommandBuffer>)cmdb;
+  mdrawable = (__bridge id<MTLDrawable>)cmdb;
+
+  [mcmdBuff presentDrawable: mdrawable];
+}
+
+void
+mtCommandBuffCommit(MtCommandBuffer *cmdb) {
+  id<MTLCommandBuffer> mcmdBuff;
+
+  mcmdBuff = (__bridge id<MTLCommandBuffer>)cmdb;
+
+  [mcmdBuff commit];
 }
 
 MtRenderCommandEncoder*

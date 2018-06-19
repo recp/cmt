@@ -16,6 +16,7 @@ typedef void MtRenderCommandEncoder;
 typedef void MtRenderPassDesc;
 typedef void MtTexture;
 typedef void MtCommandBuffer;
+typedef void MtDrawable;
 
 typedef struct MtViewport {
   double originX, originY, width, height, znear, zfar;
