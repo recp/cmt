@@ -175,3 +175,60 @@ mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *passDesc) {
 
   return (void *)CFBridgingRetain(mrenderEncoder);
 }
+
+void
+mtRCESetViewport(MtRenderCommandEncoder *enc, MtViewport *viewport) {
+  id<MTLRenderCommandEncoder> mrenderEncoder;
+
+  mrenderEncoder = (__bridge id<MTLRenderCommandEncoder>)enc;
+
+  [mrenderEncoder setViewport: *(MTLViewport *)viewport];
+}
+
+void
+mtRCESetPipState(MtRenderCommandEncoder *enc, MtRenderPipState *pipState) {
+  id<MTLRenderCommandEncoder> mrenderEncoder;
+  id<MTLRenderPipelineState>  mpipState;
+
+  mrenderEncoder = (__bridge id<MTLRenderCommandEncoder>)enc;
+  mpipState      = (__bridge id<MTLRenderPipelineState>)pipState;
+
+  [mrenderEncoder setRenderPipelineState: mpipState];
+}
+
+void
+mtRCESetVertexBytes(MtRenderCommandEncoder *enc,
+                    void                   *bytes,
+                    size_t                  legth,
+                    uint32_t                atIndex) {
+  id<MTLRenderCommandEncoder> mrenderEncoder;
+
+  mrenderEncoder = (__bridge id<MTLRenderCommandEncoder>)enc;
+
+  [mrenderEncoder setVertexBytes: bytes
+                          length: legth
+                         atIndex: atIndex];
+}
+
+void
+mtRCEDrawPrimitives(MtRenderCommandEncoder *enc,
+                    MtPrimitiveType         primType,
+                    size_t                  vertStart,
+                    size_t                  vertCount) {
+  id<MTLRenderCommandEncoder> mrenderEncoder;
+
+  mrenderEncoder = (__bridge id<MTLRenderCommandEncoder>)enc;
+
+  [mrenderEncoder drawPrimitives: (MTLPrimitiveType)primType
+                     vertexStart: vertStart
+                     vertexCount: vertCount];
+}
+
+void
+mtRCEEndEncoding(MtRenderCommandEncoder *enc) {
+  id<MTLRenderCommandEncoder> mrenderEncoder;
+
+  mrenderEncoder = (__bridge id<MTLRenderCommandEncoder>)enc;
+
+  [mrenderEncoder endEncoding];
+}

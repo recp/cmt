@@ -21,4 +21,12 @@ typedef enum MtStoreAction {
   MtStoreActionCustomSampleDepthStore     = 5,
 } MtStoreAction;
 
+typedef enum MtPrimitiveType {
+  MtPrimitiveTypePoint         = 0,
+  MtPrimitiveTypeLine          = 1,
+  MtPrimitiveTypeLineStrip     = 2,
+  MtPrimitiveTypeTriangle      = 3,
+  MtPrimitiveTypeTriangleStrip = 4,
+} MtPrimitiveType;
+
 #endif /* cmtl_enums_h */
