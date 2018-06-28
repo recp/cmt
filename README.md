@@ -23,18 +23,18 @@ MtLibrary                  *lib;
 MtFunction                 *vertFunc, *fragFunc;
 MtRenderPipelineState      *pip;
 
-device   = mtDeviceCreat();
-lib      = mtDefaultLib(device);
-cmdQueue = mtCmdQueue(device);
-pipDesc  = mtPipelineDescCreat(MtPixelFormatBGRA8Unorm);
+device   = mtCreateDevice();
+lib      = mtDefaultLibrary(device);
+cmdQueue = mtCommandQueueCreate(device);
+pipDesc  = mtRenderDescCreate(MtPixelFormatBGRA8Unorm);
 
-vertFunc = mtFuncByName(lib, "vert");
-fragFunc = mtFuncByName(lib, "frag");
+vertFunc = mtCreateFunc(lib, "vertexShader");
+fragFunc = mtCreateFunc(lib, "fragmentShader");
 
-mtPipelineSetFunc(pipDesc, vertFunc, MT_FUNC_VERT);
-mtPipelineSetFunc(pipDesc, fragFunc, MT_FUNC_FRAG);
+mtSetFunc(pipDesc, vertFunc, MT_FUNC_VERT);
+mtSetFunc(pipDesc, fragFunc, MT_FUNC_FRAG);
 
-pip = mtPiplineStateCreat(device, pipDesc);
+pip = mtRenderStateCreate(device, pipDesc);
   
 ```
 
