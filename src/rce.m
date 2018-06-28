@@ -7,20 +7,23 @@
 
 MT_EXPORT
 MtRenderCommandEncoder*
-mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *passDesc) {
+mtRenderCommandEncoder(MtCommandBuffer  *cmdb,
+                       MtRenderPassDesc *passDesc) {
   return [(id<MTLCommandBuffer>)cmdb
           renderCommandEncoderWithDescriptor: passDesc];
 }
 
 MT_EXPORT
 void
-mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport) {
+mtViewport(MtRenderCommandEncoder *enc,
+           MtViewport             *viewport) {
   [(id<MTLRenderCommandEncoder>)enc setViewport: *(MTLViewport *)viewport];
 }
 
 MT_EXPORT
 void
-mtSetRenderState(MtRenderCommandEncoder *enc, MtRenderState *pipState) {
+mtSetRenderState(MtRenderCommandEncoder *enc,
+                 MtRenderState          *pipState) {
   [(id<MTLRenderCommandEncoder>)enc setRenderPipelineState: pipState];
 }
 

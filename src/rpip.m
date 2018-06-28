@@ -28,8 +28,8 @@ mtRenderStateCreate(MtDevice *device, MtRenderDesc *pipDesc) {
 MT_EXPORT
 void
 mtSetFunc(MtRenderDesc *pipDesc,
-          MtFunction      *func,
-          MtFuncType       functype) {
+          MtFunction   *func,
+          MtFuncType    functype) {
   MTLRenderPipelineDescriptor *mpip;
 
   mpip = pipDesc;

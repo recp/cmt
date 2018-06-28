@@ -23,7 +23,7 @@ extern "C" {
 #include "pipeline.h"
 
 MT_EXPORT
-void
+void*
 mtRetain(void *obj);
 
 MT_EXPORT

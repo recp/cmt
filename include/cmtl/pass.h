@@ -15,7 +15,7 @@ extern "C" {
 
 MT_EXPORT
 MtRenderPassDesc*
-mtPassCreat(void);
+mtPassCreate(void);
 
 MT_EXPORT
 void

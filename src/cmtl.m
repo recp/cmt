@@ -14,9 +14,9 @@ mtNSString(const char *str) {
 
 CF_RETURNS_RETAINED
 MT_EXPORT
-void
+void*
 mtRetain(void *obj) {
-  [(id)obj retain];
+  return [(id)obj retain];
 }
 
 MT_EXPORT

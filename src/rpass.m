@@ -8,7 +8,7 @@
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtRenderPassDesc*
-mtPassCreat() {
+mtPassCreate() {
   return [MTLRenderPassDescriptor new];
 }
 
