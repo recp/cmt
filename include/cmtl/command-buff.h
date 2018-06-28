@@ -15,7 +15,7 @@ extern "C" {
 
 MT_EXPORT
 MtCommandBuffer*
-mtCommandBuff(MtCommandQueue *cmdq);
+mtCommandBufferCreate(MtCommandQueue *cmdq);
 
 MT_EXPORT
 void

@@ -15,13 +15,6 @@ mtDefaultLibrary(MtDevice *device) {
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtFunction*
-mtFuncByName(MtLibrary *lib, const char *name) {
-  id<MTLFunction> mfunc;
-
-  mfunc = [(id<MTLLibrary>)lib newFunctionWithName: mtNSString(name)];
-
-  if (mfunc == nil)
-    return NULL;
-
-  return mfunc;
+mtCreateFunc(MtLibrary *lib, const char *name) {
+  return [(id<MTLLibrary>)lib newFunctionWithName: mtNSString(name)];
 }

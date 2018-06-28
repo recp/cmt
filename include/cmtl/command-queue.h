@@ -15,7 +15,7 @@ extern "C" {
 
 MT_EXPORT
 MtCommandQueue*
-mtCommandQueue(MtDevice *device);
+mtCommandQueueCreate(MtDevice *device);
 
 #ifdef __cplusplus
 }

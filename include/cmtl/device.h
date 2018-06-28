@@ -15,7 +15,7 @@ extern "C" {
 
 MT_EXPORT
 MtDevice*
-mtDeviceCreat(void);
+mtCreateDevice(void);
 
 #ifdef __cplusplus
 }

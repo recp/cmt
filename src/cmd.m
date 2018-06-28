@@ -8,13 +8,13 @@
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtCommandQueue*
-mtCommandQueueCreat(MtDevice *device) {
+mtCommandQueueCreate(MtDevice *device) {
   return [(id<MTLDevice>)device newCommandQueue];
 }
 
 MT_EXPORT
 MtCommandBuffer*
-mtCommandBuff(MtCommandQueue *cmdq) {
+mtCommandBufferCreate(MtCommandQueue *cmdq) {
   return [(id<MTLCommandQueue>)cmdq commandBuffer];
 }
 

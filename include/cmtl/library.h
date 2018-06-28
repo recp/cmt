@@ -19,7 +19,7 @@ mtDefaultLibrary(MtDevice *device);
 
 MT_EXPORT
 MtFunction*
-mtFuncByName(MtLibrary *lib, const char *name);
+mtCreateFunc(MtLibrary *lib, const char *name);
 
 #ifdef __cplusplus
 }

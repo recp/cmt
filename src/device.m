@@ -8,6 +8,6 @@
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtDevice*
-mtDeviceCreat() {
+mtCreateDevice() {
   return MTLCreateSystemDefaultDevice();
 }
