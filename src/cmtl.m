@@ -3,11 +3,9 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#import "../include/cmtl/cmtl.h"
+#import "common.h"
 
-#import <Foundation/Foundation.h>
-#import <Metal/Metal.h>
-
+MT_HIDE
 NSString*
 mtNSString(const char *str) {
   return [NSString stringWithCString: str

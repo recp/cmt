@@ -3,10 +3,7 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#import "../include/cmtl/cmtl.h"
-
-#import <Foundation/Foundation.h>
-#import <Metal/Metal.h>
+#import "common.h"
 
 CF_RETURNS_RETAINED
 MT_EXPORT
