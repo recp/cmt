@@ -26,13 +26,7 @@ mtDeviceCreat() {
 
 MtCommandQueue*
 mtCommandQueue(MtDevice *device) {
-  id<MTLDevice>       mdevice;
-  id<MTLCommandQueue> mcmdQueue;
-
-  mdevice   = device;
-  mcmdQueue = [mdevice newCommandQueue];
-
-  return mcmdQueue;
+  return [(id<MTLDevice>)device newCommandQueue];
 }
 
 MtRenderPipDesc*
@@ -45,22 +39,14 @@ mtPipDescCreat(MtPixelFormat pixelFormat) {
 
 MtLibrary*
 mtDefaultLibrary(MtDevice *device) {
-  id<MTLDevice>  mdevice;
-  id<MTLLibrary> mlib;
-
-  mdevice = device;
-  mlib    = [mdevice newDefaultLibrary];
-
-  return mlib;
+  return [(id<MTLDevice>)device newDefaultLibrary];
 }
 
 MtFunction*
 mtFuncByName(MtLibrary *lib, const char *name) {
   id<MTLFunction> mfunc;
-  id<MTLLibrary>  mlib;
 
-  mlib  = lib;
-  mfunc = [mlib newFunctionWithName: mtNSString(name)];
+  mfunc = [(id<MTLLibrary>)lib newFunctionWithName: mtNSString(name)];
 
   if (mfunc == nil)
     return NULL;
@@ -73,17 +59,15 @@ mtSetFunc(MtRenderPipDesc *pipDesc,
           MtFunction      *func,
           MtFuncType       functype) {
   MTLRenderPipelineDescriptor *mpip;
-  id<MTLFunction>              mfunc;
 
-  mpip  = pipDesc;
-  mfunc = func;
+  mpip = pipDesc;
 
   switch (functype) {
     case MT_FUNC_VERT:
-      mpip.vertexFunction   = mfunc;
+      mpip.vertexFunction   = func;
       break;
     case MT_FUNC_FRAG:
-      mpip.fragmentFunction = mfunc;
+      mpip.fragmentFunction = func;
       break;
     default: break;
   }
@@ -91,24 +75,15 @@ mtSetFunc(MtRenderPipDesc *pipDesc,
 
 MtRenderPipState*
 mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc) {
-  NSError                     *error;
-  MTLRenderPipelineDescriptor *mpip;
-  id <MTLRenderPipelineState>  mpipState;
-  id<MTLDevice>                mdevice;
-
-  mdevice   = device;
-  mpip      = pipDesc;
-  mpipState = [mdevice newRenderPipelineStateWithDescriptor: mpip
-                                                      error: &error];
-
-  return mpipState;
+  NSError *error;
+  return [(id<MTLDevice>)device
+          newRenderPipelineStateWithDescriptor: (MTLRenderPipelineDescriptor *)pipDesc
+                                         error: &error];
 }
 
 MtRenderPassDesc*
 mtPassCreat() {
-  MTLRenderPassDescriptor *mrenderPassDesc;
-  mrenderPassDesc = [MTLRenderPassDescriptor new];
-  return mrenderPassDesc;
+  return [MTLRenderPassDescriptor new];
 }
 
 void
@@ -116,12 +91,10 @@ mtPassTexture(MtRenderPassDesc *pass,
               int               colorAttch,
               MtTexture        *tex) {
   MTLRenderPassDescriptor *mpass;
-  id<MTLTexture>           mtex;
 
   mpass = pass;
-  mtex  = tex;
 
-  mpass.colorAttachments[colorAttch].texture = mtex;
+  mpass.colorAttachments[colorAttch].texture = tex;
 }
 
 void
@@ -137,66 +110,33 @@ mtPassLoadAction(MtRenderPassDesc *pass,
 
 MtCommandBuffer*
 mtCommandBuff(MtCommandQueue *cmdq) {
-  id<MTLCommandQueue>  mcmdQueue;
-  id<MTLCommandBuffer> mcmdBuff;
-
-  mcmdQueue = cmdq;
-  mcmdBuff  = [mcmdQueue commandBuffer];
-
-  return mcmdBuff;
+  return [(id<MTLCommandQueue>)cmdq commandBuffer];
 }
 
 void
 mtPresent(MtCommandBuffer *cmdb, MtDrawable *drawable) {
-  id<MTLCommandBuffer> mcmdBuff;
-  id<MTLDrawable>      mdrawable;
-
-  mcmdBuff  = cmdb;
-  mdrawable = drawable;
-
-  [mcmdBuff presentDrawable: mdrawable];
+  [(id<MTLCommandBuffer>)cmdb presentDrawable: drawable];
 }
 
 void
 mtCommit(MtCommandBuffer *cmdb) {
-  id<MTLCommandBuffer> mcmdBuff;
-
-  mcmdBuff = cmdb;
-
-  [mcmdBuff commit];
+  [(id<MTLCommandBuffer>)cmdb commit];
 }
 
 MtRenderCommandEncoder*
 mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *passDesc) {
-  MTLRenderPassDescriptor    *mpass;
-  id<MTLRenderCommandEncoder> mrenderEncoder;
-  id<MTLCommandBuffer>        mcmdBuff;
-
-  mcmdBuff       = cmdb;
-  mpass          = passDesc;
-  mrenderEncoder = [mcmdBuff renderCommandEncoderWithDescriptor: mpass];
-
-  return mrenderEncoder;
+  return [(id<MTLCommandBuffer>)cmdb
+          renderCommandEncoderWithDescriptor: passDesc];
 }
 
 void
 mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport) {
-  id<MTLRenderCommandEncoder> mrenderEncoder;
-
-  mrenderEncoder = enc;
-
-  [mrenderEncoder setViewport: *(MTLViewport *)viewport];
+  [(id<MTLRenderCommandEncoder>)enc setViewport: *(MTLViewport *)viewport];
 }
 
 void
 mtRCEPipState(MtRenderCommandEncoder *enc, MtRenderPipState *pipState) {
-  id<MTLRenderCommandEncoder> mrenderEncoder;
-  id<MTLRenderPipelineState>  mpipState;
-
-  mrenderEncoder = enc;
-  mpipState      = pipState;
-
-  [mrenderEncoder setRenderPipelineState: mpipState];
+  [(id<MTLRenderCommandEncoder>)enc setRenderPipelineState: pipState];
 }
 
 void
@@ -204,13 +144,9 @@ mtVertexBytes(MtRenderCommandEncoder *enc,
                  void                   *bytes,
                  size_t                  legth,
                  uint32_t                atIndex) {
-  id<MTLRenderCommandEncoder> mrenderEncoder;
-
-  mrenderEncoder = enc;
-
-  [mrenderEncoder setVertexBytes: bytes
-                          length: legth
-                         atIndex: atIndex];
+  [(id<MTLRenderCommandEncoder>)enc setVertexBytes: bytes
+                                            length: legth
+                                           atIndex: atIndex];
 }
 
 void
@@ -218,20 +154,12 @@ mtRCEDrawPrimitives(MtRenderCommandEncoder *enc,
                     MtPrimitiveType         primType,
                     size_t                  vertStart,
                     size_t                  vertCount) {
-  id<MTLRenderCommandEncoder> mrenderEncoder;
-
-  mrenderEncoder = enc;
-
-  [mrenderEncoder drawPrimitives: (MTLPrimitiveType)primType
-                     vertexStart: vertStart
-                     vertexCount: vertCount];
+  [(id<MTLRenderCommandEncoder>)enc drawPrimitives: (MTLPrimitiveType)primType
+                                       vertexStart: vertStart
+                                       vertexCount: vertCount];
 }
 
 void
 mtEndEncoding(MtRenderCommandEncoder *enc) {
-  id<MTLRenderCommandEncoder> mrenderEncoder;
-
-  mrenderEncoder = enc;
-
-  [mrenderEncoder endEncoding];
+  [(id<MTLRenderCommandEncoder>)enc endEncoding];
 }
