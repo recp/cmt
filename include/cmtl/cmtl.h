@@ -9,6 +9,7 @@
 extern "C" {
 #endif
 
+#include "common.h"
 #include "types.h"
 #include "pixelformat.h"
 #include "enums.h"
@@ -21,6 +22,7 @@ extern "C" {
 #include "library.h"
 #include "pipeline.h"
 
+CMTL_EXPORT
 void
 mtRelease(void *obj);
 

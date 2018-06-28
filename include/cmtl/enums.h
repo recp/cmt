@@ -6,6 +6,8 @@
 #ifndef cmtl_enums_h
 #define cmtl_enums_h
 
+#include "common.h"
+
 typedef enum MtLoadAction {
   MtLoadActionDontCare = 0,
   MtLoadActionLoad     = 1,

@@ -6,6 +6,8 @@
 #ifndef cmtl_types_h
 #define cmtl_types_h
 
+#include "common.h"
+
 typedef void MtDevice;
 typedef void MtRenderPipDesc;
 typedef void MtRenderPipState;

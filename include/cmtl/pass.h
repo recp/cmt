@@ -9,17 +9,21 @@
 extern "C" {
 #endif
 
+#include "common.h"
 #include "types.h"
 #include "enums.h"
 
+CMTL_EXPORT
 MtRenderPassDesc*
 mtPassCreat(void);
 
+CMTL_EXPORT
 void
 mtPassTexture(MtRenderPassDesc *pass,
               int               colorAttch,
               MtTexture        *tex);
 
+CMTL_EXPORT
 void
 mtPassLoadAction(MtRenderPassDesc *pass,
                  int               colorAttch,

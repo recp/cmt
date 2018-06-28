@@ -9,18 +9,22 @@
 extern "C" {
 #endif
 
+#include "common.h"
 #include "types.h"
 #include "enums.h"
 #include "pixelformat.h"
 
+CMTL_EXPORT
 MtRenderPipDesc*
 mtPipDescCreat(MtPixelFormat pixelFormat);
 
+CMTL_EXPORT
 void
 mtSetFunc(MtRenderPipDesc *pipDesc,
           MtFunction      *func,
           MtFuncType       functype);
 
+CMTL_EXPORT
 MtRenderPipState*
 mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc);
 

@@ -9,15 +9,19 @@
 extern "C" {
 #endif
 
+#include "common.h"
 #include "types.h"
 #include "enums.h"
 
+CMTL_EXPORT
 MtCommandBuffer*
 mtCommandBuff(MtCommandQueue *cmdq);
 
+CMTL_EXPORT
 void
 mtPresent(MtCommandBuffer *cmdb, MtDrawable *drawable);
 
+CMTL_EXPORT
 void
 mtCommit(MtCommandBuffer *cmdb);
 

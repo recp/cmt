@@ -9,9 +9,11 @@
 extern "C" {
 #endif
 
+#include "common.h"
 #include "types.h"
 #include "enums.h"
 
+CMTL_EXPORT
 MtDevice*
 mtDeviceCreat(void);
 

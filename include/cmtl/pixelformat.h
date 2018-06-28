@@ -6,6 +6,8 @@
 #ifndef cmtl_pixelformat_h
 #define cmtl_pixelformat_h
 
+#include "common.h"
+
 typedef enum MtPixelFormat {
   MtPixelFormatInvalid                = 0,
 

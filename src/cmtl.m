@@ -14,24 +14,28 @@ mtNSString(const char *str) {
                             encoding: NSUTF8StringEncoding];
 }
 
+CMTL_EXPORT
 void
 mtRelease(void * CF_RELEASES_ARGUMENT obj) {
   [(id)obj release];
 }
 
 CF_RETURNS_RETAINED
+CMTL_EXPORT
 MtDevice*
 mtDeviceCreat() {
   return MTLCreateSystemDefaultDevice();
 }
 
 CF_RETURNS_RETAINED
+CMTL_EXPORT
 MtCommandQueue*
 mtCommandQueueCreat(MtDevice *device) {
   return [(id<MTLDevice>)device newCommandQueue];
 }
 
 CF_RETURNS_RETAINED
+CMTL_EXPORT
 MtRenderPipDesc*
 mtPipDescCreat(MtPixelFormat pixelFormat) {
   MTLRenderPipelineDescriptor *mpipDesc;
@@ -41,12 +45,14 @@ mtPipDescCreat(MtPixelFormat pixelFormat) {
 }
 
 CF_RETURNS_RETAINED
+CMTL_EXPORT
 MtLibrary*
 mtDefaultLibrary(MtDevice *device) {
   return [(id<MTLDevice>)device newDefaultLibrary];
 }
 
 CF_RETURNS_RETAINED
+CMTL_EXPORT
 MtFunction*
 mtFuncByName(MtLibrary *lib, const char *name) {
   id<MTLFunction> mfunc;
@@ -59,6 +65,7 @@ mtFuncByName(MtLibrary *lib, const char *name) {
   return mfunc;
 }
 
+CMTL_EXPORT
 void
 mtSetFunc(MtRenderPipDesc *pipDesc,
           MtFunction      *func,
@@ -79,6 +86,7 @@ mtSetFunc(MtRenderPipDesc *pipDesc,
 }
 
 CF_RETURNS_RETAINED
+CMTL_EXPORT
 MtRenderPipState*
 mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc) {
   NSError *error;
@@ -88,11 +96,13 @@ mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc) {
 }
 
 CF_RETURNS_RETAINED
+CMTL_EXPORT
 MtRenderPassDesc*
 mtPassCreat() {
   return [MTLRenderPassDescriptor new];
 }
 
+CMTL_EXPORT
 void
 mtPassTexture(MtRenderPassDesc *pass,
               int               colorAttch,
@@ -104,6 +114,7 @@ mtPassTexture(MtRenderPassDesc *pass,
   mpass.colorAttachments[colorAttch].texture = tex;
 }
 
+CMTL_EXPORT
 void
 mtPassLoadAction(MtRenderPassDesc *pass,
                  int               colorAttch,
@@ -115,37 +126,44 @@ mtPassLoadAction(MtRenderPassDesc *pass,
   mpass.colorAttachments[colorAttch].loadAction = (MTLLoadAction)action;
 }
 
+CMTL_EXPORT
 MtCommandBuffer*
 mtCommandBuff(MtCommandQueue *cmdq) {
   return [(id<MTLCommandQueue>)cmdq commandBuffer];
 }
 
+CMTL_EXPORT
 void
 mtPresent(MtCommandBuffer *cmdb, MtDrawable *drawable) {
   [(id<MTLCommandBuffer>)cmdb presentDrawable: drawable];
 }
 
+CMTL_EXPORT
 void
 mtCommit(MtCommandBuffer *cmdb) {
   [(id<MTLCommandBuffer>)cmdb commit];
 }
 
+CMTL_EXPORT
 MtRenderCommandEncoder*
 mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *passDesc) {
   return [(id<MTLCommandBuffer>)cmdb
           renderCommandEncoderWithDescriptor: passDesc];
 }
 
+CMTL_EXPORT
 void
 mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport) {
   [(id<MTLRenderCommandEncoder>)enc setViewport: *(MTLViewport *)viewport];
 }
 
+CMTL_EXPORT
 void
 mtRCEPipState(MtRenderCommandEncoder *enc, MtRenderPipState *pipState) {
   [(id<MTLRenderCommandEncoder>)enc setRenderPipelineState: pipState];
 }
 
+CMTL_EXPORT
 void
 mtVertexBytes(MtRenderCommandEncoder *enc,
               void                   *bytes,
@@ -156,6 +174,7 @@ mtVertexBytes(MtRenderCommandEncoder *enc,
                                            atIndex: atIndex];
 }
 
+CMTL_EXPORT
 void
 mtRCEDrawPrimitives(MtRenderCommandEncoder *enc,
                     MtPrimitiveType         primType,
@@ -166,6 +185,7 @@ mtRCEDrawPrimitives(MtRenderCommandEncoder *enc,
                                        vertexCount: vertCount];
 }
 
+CMTL_EXPORT
 void
 mtEndEncoding(MtRenderCommandEncoder *enc) {
   [(id<MTLRenderCommandEncoder>)enc endEncoding];
