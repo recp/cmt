@@ -17,7 +17,7 @@ MtRenderPipDesc*
 mtPipDescCreat(MtPixelFormat pixelFormat);
 
 void
-mtPipFunc(MtRenderPipDesc *pipDesc,
+mtSetFunc(MtRenderPipDesc *pipDesc,
           MtFunction      *func,
           MtFuncType       functype);
 
