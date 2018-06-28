@@ -7,8 +7,8 @@
 
 CF_RETURNS_RETAINED
 MT_EXPORT
-MtRenderPipDesc*
-mtPipDescCreat(MtPixelFormat pixelFormat) {
+MtRenderDesc*
+mtRenderDescCreate(MtPixelFormat pixelFormat) {
   MTLRenderPipelineDescriptor *mpipDesc;
   mpipDesc = [MTLRenderPipelineDescriptor new];
   mpipDesc.colorAttachments[0].pixelFormat = (MTLPixelFormat)pixelFormat;
@@ -17,8 +17,8 @@ mtPipDescCreat(MtPixelFormat pixelFormat) {
 
 CF_RETURNS_RETAINED
 MT_EXPORT
-MtRenderPipState*
-mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc) {
+MtRenderState*
+mtRenderStateCreate(MtDevice *device, MtRenderDesc *pipDesc) {
   NSError *error;
   return [(id<MTLDevice>)device
           newRenderPipelineStateWithDescriptor: (MTLRenderPipelineDescriptor *)pipDesc
@@ -27,7 +27,7 @@ mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc) {
 
 MT_EXPORT
 void
-mtSetFunc(MtRenderPipDesc *pipDesc,
+mtSetFunc(MtRenderDesc *pipDesc,
           MtFunction      *func,
           MtFuncType       functype) {
   MTLRenderPipelineDescriptor *mpip;

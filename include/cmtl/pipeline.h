@@ -15,18 +15,18 @@ extern "C" {
 #include "pixelformat.h"
 
 MT_EXPORT
-MtRenderPipDesc*
-mtPipDescCreat(MtPixelFormat pixelFormat);
+MtRenderDesc*
+mtRenderDescCreate(MtPixelFormat pixelFormat);
 
 MT_EXPORT
 void
-mtSetFunc(MtRenderPipDesc *pipDesc,
+mtSetFunc(MtRenderDesc *pipDesc,
           MtFunction      *func,
           MtFuncType       functype);
 
 MT_EXPORT
-MtRenderPipState*
-mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc);
+MtRenderState*
+mtRenderStateCreate(MtDevice *device, MtRenderDesc *pipDesc);
 
 #ifdef __cplusplus
 }

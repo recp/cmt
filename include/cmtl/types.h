@@ -9,8 +9,8 @@
 #include "common.h"
 
 typedef void MtDevice;
-typedef void MtRenderPipDesc;
-typedef void MtRenderPipState;
+typedef void MtRenderDesc;
+typedef void MtRenderState;
 typedef void MtCommandQueue;
 typedef void MtLibrary;
 typedef void MtFunction;
