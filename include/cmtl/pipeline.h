@@ -14,17 +14,17 @@ extern "C" {
 #include "enums.h"
 #include "pixelformat.h"
 
-CMTL_EXPORT
+MT_EXPORT
 MtRenderPipDesc*
 mtPipDescCreat(MtPixelFormat pixelFormat);
 
-CMTL_EXPORT
+MT_EXPORT
 void
 mtSetFunc(MtRenderPipDesc *pipDesc,
           MtFunction      *func,
           MtFuncType       functype);
 
-CMTL_EXPORT
+MT_EXPORT
 MtRenderPipState*
 mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc);
 

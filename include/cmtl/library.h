@@ -13,11 +13,11 @@ extern "C" {
 #include "types.h"
 #include "enums.h"
 
-CMTL_EXPORT
+MT_EXPORT
 MtLibrary*
 mtDefaultLibrary(MtDevice *device);
 
-CMTL_EXPORT
+MT_EXPORT
 MtFunction*
 mtFuncByName(MtLibrary *lib, const char *name);
 

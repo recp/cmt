@@ -22,7 +22,7 @@ extern "C" {
 #include "library.h"
 #include "pipeline.h"
 
-CMTL_EXPORT
+MT_EXPORT
 void
 mtRelease(void *obj);
 

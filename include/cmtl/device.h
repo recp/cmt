@@ -13,7 +13,7 @@ extern "C" {
 #include "types.h"
 #include "enums.h"
 
-CMTL_EXPORT
+MT_EXPORT
 MtDevice*
 mtDeviceCreat(void);
 

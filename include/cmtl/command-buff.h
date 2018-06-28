@@ -13,15 +13,15 @@ extern "C" {
 #include "types.h"
 #include "enums.h"
 
-CMTL_EXPORT
+MT_EXPORT
 MtCommandBuffer*
 mtCommandBuff(MtCommandQueue *cmdq);
 
-CMTL_EXPORT
+MT_EXPORT
 void
 mtPresent(MtCommandBuffer *cmdb, MtDrawable *drawable);
 
-CMTL_EXPORT
+MT_EXPORT
 void
 mtCommit(MtCommandBuffer *cmdb);
 
