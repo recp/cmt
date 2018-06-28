@@ -21,12 +21,13 @@ mtRenderDescCreate(MtPixelFormat pixelFormat);
 MT_EXPORT
 void
 mtSetFunc(MtRenderDesc *pipDesc,
-          MtFunction      *func,
-          MtFuncType       functype);
+          MtFunction   *func,
+          MtFuncType    functype);
 
 MT_EXPORT
 MtRenderState*
-mtRenderStateCreate(MtDevice *device, MtRenderDesc *pipDesc);
+mtRenderStateCreate(MtDevice     *device,
+                    MtRenderDesc *pipDesc);
 
 #ifdef __cplusplus
 }

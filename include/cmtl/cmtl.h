@@ -24,6 +24,10 @@ extern "C" {
 
 MT_EXPORT
 void
+mtRetain(void *obj);
+
+MT_EXPORT
+void
 mtRelease(void *obj);
 
 #ifdef __cplusplus

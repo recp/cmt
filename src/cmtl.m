@@ -12,6 +12,13 @@ mtNSString(const char *str) {
                             encoding: NSUTF8StringEncoding];
 }
 
+CF_RETURNS_RETAINED
+MT_EXPORT
+void
+mtRetain(void *obj) {
+  [(id)obj retain];
+}
+
 MT_EXPORT
 void
 mtRelease(void * CF_RELEASES_ARGUMENT obj) {

@@ -19,7 +19,8 @@ mtCommandBufferCreate(MtCommandQueue *cmdq);
 
 MT_EXPORT
 void
-mtPresent(MtCommandBuffer *cmdb, MtDrawable *drawable);
+mtPresent(MtCommandBuffer *cmdb,
+          MtDrawable      *drawable);
 
 MT_EXPORT
 void

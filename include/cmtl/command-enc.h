@@ -16,15 +16,18 @@ extern "C" {
 
 MT_EXPORT
 MtRenderCommandEncoder*
-mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *passDesc);
+mtRenderCommandEncoder(MtCommandBuffer *cmdb,
+                      MtRenderPassDesc *passDesc);
 
 MT_EXPORT
 void
-mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport);
+mtViewport(MtRenderCommandEncoder *enc,
+           MtViewport             *viewport);
 
 MT_EXPORT
 void
-mtSetRenderState(MtRenderCommandEncoder *enc, MtRenderState *pipState);
+mtSetRenderState(MtRenderCommandEncoder *enc,
+                 MtRenderState          *pipState);
 
 MT_EXPORT
 void
@@ -36,9 +39,9 @@ mtVertexBytes(MtRenderCommandEncoder *enc,
 MT_EXPORT
 void
 mtDrawPrimitives(MtRenderCommandEncoder *enc,
-                    MtPrimitiveType         primType,
-                    size_t                  vertStart,
-                    size_t                  vertCount);
+                 MtPrimitiveType         primType,
+                 size_t                  vertStart,
+                 size_t                  vertCount);
 
 MT_EXPORT
 void
