@@ -14,6 +14,11 @@ mtNSString(const char *str) {
                             encoding: NSUTF8StringEncoding];
 }
 
+void
+mtRelease(void *obj) {
+  [(id)obj release];
+}
+
 MtDevice*
 mtDeviceCreat() {
   id<MTLDevice> mdevice;

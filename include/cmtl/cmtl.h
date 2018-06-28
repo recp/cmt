@@ -21,6 +21,9 @@ extern "C" {
 #include "library.h"
 #include "pipeline.h"
 
+void
+mtRelease(void *obj);
+
 #ifdef __cplusplus
 }
 #endif
