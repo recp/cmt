@@ -15,20 +15,23 @@ mtNSString(const char *str) {
 }
 
 void
-mtRelease(void *obj) {
+mtRelease(void * CF_RELEASES_ARGUMENT obj) {
   [(id)obj release];
 }
 
+CF_RETURNS_RETAINED
 MtDevice*
 mtDeviceCreat() {
   return MTLCreateSystemDefaultDevice();
 }
 
+CF_RETURNS_RETAINED
 MtCommandQueue*
-mtCommandQueue(MtDevice *device) {
+mtCommandQueueCreat(MtDevice *device) {
   return [(id<MTLDevice>)device newCommandQueue];
 }
 
+CF_RETURNS_RETAINED
 MtRenderPipDesc*
 mtPipDescCreat(MtPixelFormat pixelFormat) {
   MTLRenderPipelineDescriptor *mpipDesc;
@@ -37,11 +40,13 @@ mtPipDescCreat(MtPixelFormat pixelFormat) {
   return mpipDesc;
 }
 
+CF_RETURNS_RETAINED
 MtLibrary*
 mtDefaultLibrary(MtDevice *device) {
   return [(id<MTLDevice>)device newDefaultLibrary];
 }
 
+CF_RETURNS_RETAINED
 MtFunction*
 mtFuncByName(MtLibrary *lib, const char *name) {
   id<MTLFunction> mfunc;
@@ -73,6 +78,7 @@ mtSetFunc(MtRenderPipDesc *pipDesc,
   }
 }
 
+CF_RETURNS_RETAINED
 MtRenderPipState*
 mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc) {
   NSError *error;
@@ -81,6 +87,7 @@ mtPipStateCreat(MtDevice *device, MtRenderPipDesc *pipDesc) {
                                          error: &error];
 }
 
+CF_RETURNS_RETAINED
 MtRenderPassDesc*
 mtPassCreat() {
   return [MTLRenderPassDescriptor new];
@@ -141,9 +148,9 @@ mtRCEPipState(MtRenderCommandEncoder *enc, MtRenderPipState *pipState) {
 
 void
 mtVertexBytes(MtRenderCommandEncoder *enc,
-                 void                   *bytes,
-                 size_t                  legth,
-                 uint32_t                atIndex) {
+              void                   *bytes,
+              size_t                  legth,
+              uint32_t                atIndex) {
   [(id<MTLRenderCommandEncoder>)enc setVertexBytes: bytes
                                             length: legth
                                            atIndex: atIndex];
