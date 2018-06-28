@@ -20,7 +20,7 @@ mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport) {
 
 MT_EXPORT
 void
-mtRCEPipState(MtRenderCommandEncoder *enc, MtRenderState *pipState) {
+mtSetRenderState(MtRenderCommandEncoder *enc, MtRenderState *pipState) {
   [(id<MTLRenderCommandEncoder>)enc setRenderPipelineState: pipState];
 }
 
@@ -37,10 +37,10 @@ mtVertexBytes(MtRenderCommandEncoder *enc,
 
 MT_EXPORT
 void
-mtRCEDrawPrimitives(MtRenderCommandEncoder *enc,
-                    MtPrimitiveType         primType,
-                    size_t                  vertStart,
-                    size_t                  vertCount) {
+mtDrawPrimitives(MtRenderCommandEncoder *enc,
+                 MtPrimitiveType         primType,
+                 size_t                  vertStart,
+                 size_t                  vertCount) {
   [(id<MTLRenderCommandEncoder>)enc drawPrimitives: (MTLPrimitiveType)primType
                                        vertexStart: vertStart
                                        vertexCount: vertCount];

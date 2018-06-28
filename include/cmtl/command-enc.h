@@ -24,7 +24,7 @@ mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport);
 
 MT_EXPORT
 void
-mtRCEPipState(MtRenderCommandEncoder *enc, MtRenderState *pipState);
+mtSetRenderState(MtRenderCommandEncoder *enc, MtRenderState *pipState);
 
 MT_EXPORT
 void
@@ -35,7 +35,7 @@ mtVertexBytes(MtRenderCommandEncoder *enc,
 
 MT_EXPORT
 void
-mtRCEDrawPrimitives(MtRenderCommandEncoder *enc,
+mtDrawPrimitives(MtRenderCommandEncoder *enc,
                     MtPrimitiveType         primType,
                     size_t                  vertStart,
                     size_t                  vertCount);
