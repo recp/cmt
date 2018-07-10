@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_types_h
-#define cmtl_types_h
+#ifndef cmt_types_h
+#define cmt_types_h
 
 #include "common.h"
 
@@ -29,4 +29,4 @@ typedef enum MtFuncType {
   MT_FUNC_FRAG = 2
 } MtFuncType;
 
-#endif /* cmtl_types_h */
+#endif /* cmt_types_h */

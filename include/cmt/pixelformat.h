@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_pixelformat_h
-#define cmtl_pixelformat_h
+#ifndef cmt_pixelformat_h
+#define cmt_pixelformat_h
 
 #include "common.h"
 
@@ -176,4 +176,4 @@ typedef enum MtPixelFormat {
   MtPixelFormatX24_Stencil8           = 262
 } MtPixelFormat;
 
-#endif /* cmtl_pixelformat_h */
+#endif /* cmt_pixelformat_h */

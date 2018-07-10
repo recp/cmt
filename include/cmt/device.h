@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_library_h
-#define cmtl_library_h
+#ifndef cmt_device_h
+#define cmt_device_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -14,14 +14,10 @@ extern "C" {
 #include "enums.h"
 
 MT_EXPORT
-MtLibrary*
-mtDefaultLibrary(MtDevice *device);
-
-MT_EXPORT
-MtFunction*
-mtCreateFunc(MtLibrary *lib, const char *name);
+MtDevice*
+mtCreateDevice(void);
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmtl_library_h */
+#endif /* cmt_device_h */

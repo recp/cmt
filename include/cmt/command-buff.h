@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_commandbuff_h
-#define cmtl_commandbuff_h
+#ifndef cmt_commandbuff_h
+#define cmt_commandbuff_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -29,4 +29,4 @@ mtCommit(MtCommandBuffer *cmdb);
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmtl_commandbuff_h */
+#endif /* cmt_commandbuff_h */

@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_commandenc_h
-#define cmtl_commandenc_h
+#ifndef cmt_commandenc_h
+#define cmt_commandenc_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -16,8 +16,8 @@ extern "C" {
 
 MT_EXPORT
 MtRenderCommandEncoder*
-mtRenderCommandEncoder(MtCommandBuffer *cmdb,
-                      MtRenderPassDesc *passDesc);
+mtRenderCommandEncoder(MtCommandBuffer  *cmdb,
+                       MtRenderPassDesc *passDesc);
 
 MT_EXPORT
 void
@@ -50,4 +50,4 @@ mtEndEncoding(MtRenderCommandEncoder *enc);
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmtl_commandenc_h */
+#endif /* cmt_commandenc_h */

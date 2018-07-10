@@ -6,7 +6,7 @@
 #ifndef src_common_h
 #define src_common_h
 
-#import "../include/cmtl/cmtl.h"
+#import "../include/cmt/cmt.h"
 
 #import <Foundation/Foundation.h>
 #import <Metal/Metal.h>

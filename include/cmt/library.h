@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_commandqueue_h
-#define cmtl_commandqueue_h
+#ifndef cmt_library_h
+#define cmt_library_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -14,10 +14,14 @@ extern "C" {
 #include "enums.h"
 
 MT_EXPORT
-MtCommandQueue*
-mtCommandQueueCreate(MtDevice *device);
+MtLibrary*
+mtDefaultLibrary(MtDevice *device);
+
+MT_EXPORT
+MtFunction*
+mtCreateFunc(MtLibrary *lib, const char *name);
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmtl_commandqueue_h */
+#endif /* cmt_library_h */

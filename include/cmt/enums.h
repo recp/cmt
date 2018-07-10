@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_enums_h
-#define cmtl_enums_h
+#ifndef cmt_enums_h
+#define cmt_enums_h
 
 #include "common.h"
 
@@ -31,4 +31,4 @@ typedef enum MtPrimitiveType {
   MtPrimitiveTypeTriangleStrip = 4,
 } MtPrimitiveType;
 
-#endif /* cmtl_enums_h */
+#endif /* cmt_enums_h */

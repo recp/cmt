@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_pass_h
-#define cmtl_pass_h
+#ifndef cmt_pass_h
+#define cmt_pass_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -31,4 +31,4 @@ mtPassLoadAction(MtRenderPassDesc *pass,
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmtl_pass_h */
+#endif /* cmt_pass_h */

@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_pipeline_h
-#define cmtl_pipeline_h
+#ifndef cmt_pipeline_h
+#define cmt_pipeline_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -32,4 +32,4 @@ mtRenderStateCreate(MtDevice     *device,
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmtl_pipeline_h */
+#endif /* cmt_pipeline_h */

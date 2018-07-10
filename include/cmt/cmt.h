@@ -3,8 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmtl_h
-#define cmtl_h
+#ifndef cmt_h
+#define cmt_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -33,4 +33,4 @@ mtRelease(void *obj);
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmtl_h */
+#endif /* cmt_h */
