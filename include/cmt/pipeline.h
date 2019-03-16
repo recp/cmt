@@ -16,7 +16,7 @@ extern "C" {
 
 MT_EXPORT
 MtRenderDesc*
-mtRenderDescCreate(MtPixelFormat pixelFormat);
+mtRenderPipelineCreate(MtPixelFormat pixelFormat);
 
 MT_EXPORT
 void
@@ -25,7 +25,7 @@ mtSetFunc(MtRenderDesc *pipDesc,
           MtFuncType    functype);
 
 MT_EXPORT
-MtRenderState*
+MtRenderPipeline*
 mtRenderStateCreate(MtDevice     *device,
                     MtRenderDesc *pipDesc);
 

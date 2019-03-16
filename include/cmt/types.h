@@ -10,7 +10,7 @@
 
 typedef void MtDevice;
 typedef void MtRenderDesc;
-typedef void MtRenderState;
+typedef void MtRenderPipeline;
 typedef void MtCommandQueue;
 typedef void MtLibrary;
 typedef void MtFunction;

@@ -27,7 +27,7 @@ mtViewport(MtRenderCommandEncoder *enc,
 MT_EXPORT
 void
 mtSetRenderState(MtRenderCommandEncoder *enc,
-                 MtRenderState          *pipState);
+                 MtRenderPipeline       *pipState);
 
 MT_EXPORT
 void

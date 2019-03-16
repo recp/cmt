@@ -23,7 +23,7 @@ mtViewport(MtRenderCommandEncoder *enc,
 MT_EXPORT
 void
 mtSetRenderState(MtRenderCommandEncoder *enc,
-                 MtRenderState          *pipState) {
+                 MtRenderPipeline       *pipState) {
   [(id<MTLRenderCommandEncoder>)enc setRenderPipelineState: pipState];
 }
 
