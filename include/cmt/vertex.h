@@ -125,4 +125,9 @@ mtVertexLayout(MtVertexDescriptor * __restrict vertex,
                uint32_t                        stepRate,
                MtVertexStepFunction            stepFunction);
 
+MT_EXPORT
+void
+mtSetVertexDesc(MtRenderPipeline   * __restrict pipeline,
+                MtVertexDescriptor * __restrict vert);
+
 #endif /* cmt_vertex_h */

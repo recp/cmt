@@ -48,3 +48,14 @@ mtVertexLayout(MtVertexDescriptor * __restrict vertex,
   mlay.stepRate     = stepRate;
   mlay.stepFunction = (MTLVertexStepFunction)stepFunction;
 }
+
+MT_EXPORT
+void
+mtSetVertexDesc(MtRenderPipeline   * __restrict pipeline,
+                MtVertexDescriptor * __restrict vert) {
+  MTLRenderPipelineDescriptor *mpip;
+  
+  mpip = pipeline;
+
+  mpip.vertexDescriptor = vert;
+}
