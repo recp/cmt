@@ -19,6 +19,7 @@ typedef void MtRenderPassDesc;
 typedef void MtTexture;
 typedef void MtCommandBuffer;
 typedef void MtDrawable;
+typedef void MtVertexDescriptor;
 
 typedef struct {
   double originX, originY, width, height, znear, zfar;

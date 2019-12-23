@@ -21,6 +21,7 @@ extern "C" {
 #include "pass.h"
 #include "library.h"
 #include "pipeline.h"
+#include "vertex.h"
 
 MT_EXPORT
 void*

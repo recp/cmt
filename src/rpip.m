@@ -9,7 +9,6 @@ CF_RETURNS_RETAINED
 MT_EXPORT
 MtRenderDesc*
 mtRenderPipelineCreate(MtPixelFormat pixelFormat) {
-
   MTLRenderPipelineDescriptor *mpipDesc;
   mpipDesc = [MTLRenderPipelineDescriptor new];
   mpipDesc.colorAttachments[0].pixelFormat = (MTLPixelFormat)pixelFormat;
