@@ -29,6 +29,22 @@ MtRenderPipeline*
 mtRenderStateCreate(MtDevice     *device,
                     MtRenderDesc *pipDesc);
 
+MT_EXPORT
+void
+mtColorPixelFormat(MtRenderDesc * __restrict renderdesc,
+                   uint32_t                  index,
+                   MtPixelFormat             pixelFormat);
+
+MT_EXPORT
+void
+mtDepthPixelFormat(MtRenderDesc * __restrict renderdesc,
+                   MtPixelFormat             pixelFormat);
+
+MT_EXPORT
+void
+mtStencilPixelFormat(MtRenderDesc * __restrict renderdesc,
+                     MtPixelFormat             pixelFormat);
+
 #ifdef __cplusplus
 }
 #endif

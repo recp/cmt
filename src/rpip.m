@@ -44,3 +44,31 @@ mtSetFunc(MtRenderDesc *pipDesc,
     default: break;
   }
 }
+
+MT_EXPORT
+void
+mtColorPixelFormat(MtRenderDesc * __restrict renderdesc,
+                   uint32_t                  index,
+                   MtPixelFormat             pixelFormat) {
+  MTLRenderPipelineDescriptor *mpipDesc;
+  mpipDesc = renderdesc;
+  mpipDesc.colorAttachments[index].pixelFormat = (MTLPixelFormat)pixelFormat;
+}
+
+MT_EXPORT
+void
+mtDepthPixelFormat(MtRenderDesc * __restrict renderdesc,
+                   MtPixelFormat             pixelFormat) {
+  MTLRenderPipelineDescriptor *mpipDesc;
+  mpipDesc = renderdesc;
+  mpipDesc.depthAttachmentPixelFormat = (MTLPixelFormat)pixelFormat;
+}
+
+MT_EXPORT
+void
+mtStencilPixelFormat(MtRenderDesc * __restrict renderdesc,
+                     MtPixelFormat             pixelFormat) {
+  MTLRenderPipelineDescriptor *mpipDesc;
+  mpipDesc = renderdesc;
+  mpipDesc.stencilAttachmentPixelFormat = (MTLPixelFormat)pixelFormat;
+}
