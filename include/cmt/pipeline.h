@@ -45,6 +45,11 @@ void
 mtStencilPixelFormat(MtRenderDesc * __restrict renderdesc,
                      MtPixelFormat             pixelFormat);
 
+MT_EXPORT
+void
+mtSampleCount(MtRenderDesc * __restrict renderdesc,
+              uint32_t                  sampleCount);
+
 #ifdef __cplusplus
 }
 #endif

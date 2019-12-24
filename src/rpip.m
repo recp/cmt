@@ -72,3 +72,12 @@ mtStencilPixelFormat(MtRenderDesc * __restrict renderdesc,
   mpipDesc = renderdesc;
   mpipDesc.stencilAttachmentPixelFormat = (MTLPixelFormat)pixelFormat;
 }
+
+MT_EXPORT
+void
+mtSampleCount(MtRenderDesc * __restrict renderdesc,
+              uint32_t                  sampleCount) {
+  MTLRenderPipelineDescriptor *mpipDesc;
+  mpipDesc = renderdesc;
+  mpipDesc.sampleCount = sampleCount;
+}
