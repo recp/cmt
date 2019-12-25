@@ -7,6 +7,12 @@
 
 MT_EXPORT
 MtDepthStencil*
-mtDepthStencil() {
-  return [MTLDepthStencilDescriptor new];
+mtDepthStencil(MtCompareFunction depthCompareFunc, bool depthWriteEnabled) {
+  MTLDepthStencilDescriptor *depthStateDesc;
+  
+  depthStateDesc                      = [MTLDepthStencilDescriptor new];
+  depthStateDesc.depthCompareFunction = MTLCompareFunctionLess;
+  depthStateDesc.depthWriteEnabled    = YES;
+  
+  return depthStateDesc;
 }
