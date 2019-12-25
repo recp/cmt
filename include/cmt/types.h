@@ -20,6 +20,7 @@ typedef void MtTexture;
 typedef void MtCommandBuffer;
 typedef void MtDrawable;
 typedef void MtVertexDescriptor;
+typedef void MtDepthStencil;
 
 typedef struct {
   double originX, originY, width, height, znear, zfar;
