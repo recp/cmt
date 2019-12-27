@@ -23,6 +23,8 @@ extern "C" {
 #include "pipeline.h"
 #include "vertex.h"
 #include "depthstencil.h"
+#include "resource.h"
+#include "buffer.h"
 
 MT_EXPORT
 void*

@@ -19,6 +19,26 @@ mtCommandBufferCreate(MtCommandQueue *cmdq) {
 }
 
 MT_EXPORT
+MtCommandBuffer*
+mtBufferCreate(MtDevice *device, size_t len, MtResourceOptions options) {
+  return [(id<MTLDevice>)device
+          newBufferWithLength: len
+          options: (MTLResourceOptions)options];
+}
+
+MT_EXPORT
+MtCommandBuffer*
+mtBufferCreateWithBytes(MtDevice   * __restrict device,
+                        const void * __restrict bytes,
+                        size_t                  len,
+                        MtResourceOptions       options) {
+  return [(id<MTLDevice>)device
+          newBufferWithBytes: bytes
+          length:             len
+          options:            (MTLResourceOptions)options];
+}
+
+MT_EXPORT
 void
 mtPresent(MtCommandBuffer *cmdb, MtDrawable *drawable) {
   [(id<MTLCommandBuffer>)cmdb presentDrawable: drawable];

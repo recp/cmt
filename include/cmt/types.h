@@ -21,6 +21,7 @@ typedef void MtCommandBuffer;
 typedef void MtDrawable;
 typedef void MtVertexDescriptor;
 typedef void MtDepthStencil;
+typedef void MtBuffer;
 
 typedef struct {
   double originX, originY, width, height, znear, zfar;
