@@ -22,6 +22,13 @@ typedef enum MtHazardTrackingMode {
   MtHazardTrackingModeTracked   = 2
 } MtHazardTrackingMode;
 
+typedef enum MtStorageMode {
+  MtStorageModeShared     = 0,
+  MtStorageModeManaged    = 1,
+  MtStorageModePrivate    = 2,
+  MtStorageModeMemoryless = 3
+} MtStorageMode;
+
 typedef enum MtResourceOptions {
   MtResourceCPUCacheModeDefaultCache    = MtCPUCacheModeDefaultCache,
   MtResourceCPUCacheModeWriteCombined   = MtCPUCacheModeWriteCombined,
