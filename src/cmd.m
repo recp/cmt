@@ -19,6 +19,15 @@ mtCommandBufferCreate(MtCommandQueue *cmdq) {
 }
 
 MT_EXPORT
+void
+mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
+                          MtCommandBufferOnCompleteFn oncomplete) {
+  [(id<MTLCommandBuffer>)cmdb addCompletedHandler:^(id<MTLCommandBuffer> buffer) {
+    oncomplete(cmdb);
+  }];
+}
+
+MT_EXPORT
 MtCommandBuffer*
 mtBufferCreate(MtDevice *device, size_t len, MtResourceOptions options) {
   return [(id<MTLDevice>)device
