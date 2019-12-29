@@ -21,9 +21,10 @@ mtCommandBufferCreate(MtCommandQueue *cmdq) {
 MT_EXPORT
 void
 mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
+                          void           * __restrict sender,
                           MtCommandBufferOnCompleteFn oncomplete) {
   [(id<MTLCommandBuffer>)cmdb addCompletedHandler:^(id<MTLCommandBuffer> buffer) {
-    oncomplete(cmdb);
+    oncomplete(sender, cmdb);
   }];
 }
 

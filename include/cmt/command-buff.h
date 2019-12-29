@@ -13,7 +13,8 @@ extern "C" {
 #include "types.h"
 #include "enums.h"
 
-typedef void (*MtCommandBufferOnCompleteFn)(MtCommandBuffer *cmdb);
+typedef void (*MtCommandBufferOnCompleteFn)(void            * __restrict sender,
+                                            MtCommandBuffer * __restrict cmdb);
 
 MT_EXPORT
 MtCommandBuffer*
@@ -22,6 +23,7 @@ mtCommandBufferCreate(MtCommandQueue *cmdq);
 MT_EXPORT
 void
 mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
+                          void           * __restrict sender,
                           MtCommandBufferOnCompleteFn oncomplete);
 
 MT_EXPORT
