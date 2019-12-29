@@ -45,6 +45,13 @@ mtVertexBuffer(MtRenderCommandEncoder *enc,
 
 MT_EXPORT
 void
+mtFragmentBuffer(MtRenderCommandEncoder *enc,
+                 MtBuffer                *buf,
+                 size_t                  off,
+                 uint32_t                index);
+
+MT_EXPORT
+void
 mtDrawPrimitives(MtRenderCommandEncoder *enc,
                  MtPrimitiveType         primType,
                  size_t                  vertStart,
