@@ -40,6 +40,17 @@ mtVertexBytes(MtRenderCommandEncoder *enc,
 
 MT_EXPORT
 void
+mtVertexBuffer(MtRenderCommandEncoder *enc,
+               MtBuffer                *buf,
+               size_t                  off,
+               uint32_t                index) {
+  [(id<MTLRenderCommandEncoder>)enc setVertexBuffer: buf
+                                             offset: off
+                                            atIndex: index];
+}
+
+MT_EXPORT
+void
 mtDrawPrimitives(MtRenderCommandEncoder *enc,
                  MtPrimitiveType         primType,
                  size_t                  vertStart,
