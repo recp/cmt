@@ -7,24 +7,38 @@
 
 MT_EXPORT
 MtRenderCommandEncoder*
-mtRenderCommandEncoder(MtCommandBuffer  *cmdb,
-                       MtRenderPassDesc *passDesc) {
-  return [(id<MTLCommandBuffer>)cmdb
-          renderCommandEncoderWithDescriptor: passDesc];
+mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *pass) {
+  return [(id<MTLCommandBuffer>)cmdb renderCommandEncoderWithDescriptor: pass];
 }
 
 MT_EXPORT
 void
-mtViewport(MtRenderCommandEncoder *enc,
-           MtViewport             *viewport) {
+mtFrontFace(MtRenderCommandEncoder *rce, MtWinding winding) {
+  [(id<MTLRenderCommandEncoder>)rce setFrontFacingWinding:(MTLWinding)winding];
+}
+
+MT_EXPORT
+void
+mtCullMode(MtRenderCommandEncoder *rce, MtCullMode mode) {
+  [(id<MTLRenderCommandEncoder>)rce setCullMode:(MTLCullMode)mode];
+}
+
+MT_EXPORT
+void
+mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport) {
   [(id<MTLRenderCommandEncoder>)enc setViewport: *(MTLViewport *)viewport];
 }
 
 MT_EXPORT
 void
-mtSetRenderState(MtRenderCommandEncoder *enc,
-                 MtRenderPipeline       *pipState) {
-  [(id<MTLRenderCommandEncoder>)enc setRenderPipelineState: pipState];
+mtSetRenderState(MtRenderCommandEncoder *enc, MtRenderPipeline *pipline) {
+  [(id<MTLRenderCommandEncoder>)enc setRenderPipelineState: pipline];
+}
+
+MT_EXPORT
+void
+mtSetDepthStencil(MtRenderCommandEncoder *rce, MtDepthStencil *ds) {
+  [(id<MTLRenderCommandEncoder>)rce setDepthStencilState: ds];
 }
 
 MT_EXPORT

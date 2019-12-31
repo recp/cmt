@@ -96,18 +96,27 @@ typedef enum MtRenderStages {
 
 MT_EXPORT
 MtRenderCommandEncoder*
-mtRenderCommandEncoder(MtCommandBuffer  *cmdb,
-                       MtRenderPassDesc *passDesc);
+mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *pass);
 
 MT_EXPORT
 void
-mtViewport(MtRenderCommandEncoder *enc,
-           MtViewport             *viewport);
+mtFrontFace(MtRenderCommandEncoder *rce, MtWinding winding);
 
 MT_EXPORT
 void
-mtSetRenderState(MtRenderCommandEncoder *enc,
-                 MtRenderPipeline       *pipState);
+mtCullMode(MtRenderCommandEncoder *rce, MtCullMode mode);
+
+MT_EXPORT
+void
+mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport);
+
+MT_EXPORT
+void
+mtSetRenderState(MtRenderCommandEncoder *enc, MtRenderPipeline *pipline);
+
+MT_EXPORT
+void
+mtSetDepthStencil(MtRenderCommandEncoder *rce, MtDepthStencil *ds);
 
 MT_EXPORT
 void
