@@ -14,6 +14,11 @@ extern "C" {
 #include "enums.h"
 #include "pixelformat.h"
 
+typedef enum MtFuncType {
+  MT_FUNC_VERT = 1,
+  MT_FUNC_FRAG = 2
+} MtFuncType;
+
 MT_EXPORT
 MtRenderDesc*
 mtRenderPipelineCreate(MtPixelFormat pixelFormat);
