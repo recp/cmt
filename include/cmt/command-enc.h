@@ -108,11 +108,11 @@ mtCullMode(MtRenderCommandEncoder *rce, MtCullMode mode);
 
 MT_EXPORT
 void
-mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport);
+mtViewport(MtRenderCommandEncoder *rce, MtViewport *viewport);
 
 MT_EXPORT
 void
-mtSetRenderState(MtRenderCommandEncoder *enc, MtRenderPipeline *pipline);
+mtSetRenderState(MtRenderCommandEncoder *rce, MtRenderPipeline *pipline);
 
 MT_EXPORT
 void
@@ -120,35 +120,35 @@ mtSetDepthStencil(MtRenderCommandEncoder *rce, MtDepthStencil *ds);
 
 MT_EXPORT
 void
-mtVertexBytes(MtRenderCommandEncoder *enc,
+mtVertexBytes(MtRenderCommandEncoder *rce,
               void                   *bytes,
               size_t                  legth,
               uint32_t                atIndex);
 
 MT_EXPORT
 void
-mtVertexBuffer(MtRenderCommandEncoder *enc,
+mtVertexBuffer(MtRenderCommandEncoder *rce,
                MtBuffer                *buf,
                size_t                  off,
                uint32_t                index);
 
 MT_EXPORT
 void
-mtFragmentBuffer(MtRenderCommandEncoder *enc,
-                 MtBuffer                *buf,
+mtFragmentBuffer(MtRenderCommandEncoder *rce,
+                 MtBuffer               *buf,
                  size_t                  off,
                  uint32_t                index);
 
 MT_EXPORT
 void
-mtDrawPrimitives(MtRenderCommandEncoder *enc,
-                 MtPrimitiveType         primType,
-                 size_t                  vertStart,
-                 size_t                  vertCount);
+mtDrawPrimitives(MtRenderCommandEncoder *rce,
+                 MtPrimitiveType         type,
+                 size_t                  start,
+                 size_t                  count);
 
 MT_EXPORT
 void
-mtEndEncoding(MtRenderCommandEncoder *enc);
+mtEndEncoding(MtRenderCommandEncoder *rce);
 
 #ifdef __cplusplus
 }

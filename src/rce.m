@@ -25,14 +25,14 @@ mtCullMode(MtRenderCommandEncoder *rce, MtCullMode mode) {
 
 MT_EXPORT
 void
-mtViewport(MtRenderCommandEncoder *enc, MtViewport *viewport) {
-  [(id<MTLRenderCommandEncoder>)enc setViewport: *(MTLViewport *)viewport];
+mtViewport(MtRenderCommandEncoder *rce, MtViewport *viewport) {
+  [(id<MTLRenderCommandEncoder>)rce setViewport: *(MTLViewport *)viewport];
 }
 
 MT_EXPORT
 void
-mtSetRenderState(MtRenderCommandEncoder *enc, MtRenderPipeline *pipline) {
-  [(id<MTLRenderCommandEncoder>)enc setRenderPipelineState: pipline];
+mtSetRenderState(MtRenderCommandEncoder *rce, MtRenderPipeline *pipline) {
+  [(id<MTLRenderCommandEncoder>)rce setRenderPipelineState: pipline];
 }
 
 MT_EXPORT
@@ -54,39 +54,39 @@ mtVertexBytes(MtRenderCommandEncoder *enc,
 
 MT_EXPORT
 void
-mtVertexBuffer(MtRenderCommandEncoder *enc,
-               MtBuffer                *buf,
+mtVertexBuffer(MtRenderCommandEncoder *rce,
+               MtBuffer               *buf,
                size_t                  off,
                uint32_t                index) {
-  [(id<MTLRenderCommandEncoder>)enc setVertexBuffer: buf
+  [(id<MTLRenderCommandEncoder>)rce setVertexBuffer: buf
                                              offset: off
                                             atIndex: index];
 }
 
 MT_EXPORT
 void
-mtFragmentBuffer(MtRenderCommandEncoder *enc,
-                 MtBuffer                *buf,
+mtFragmentBuffer(MtRenderCommandEncoder *rce,
+                 MtBuffer               *buf,
                  size_t                  off,
                  uint32_t                index) {
-  [(id<MTLRenderCommandEncoder>)enc setFragmentBuffer: buf
+  [(id<MTLRenderCommandEncoder>)rce setFragmentBuffer: buf
                                                offset: off
                                               atIndex: index];
 }
 
 MT_EXPORT
 void
-mtDrawPrimitives(MtRenderCommandEncoder *enc,
-                 MtPrimitiveType         primType,
-                 size_t                  vertStart,
-                 size_t                  vertCount) {
-  [(id<MTLRenderCommandEncoder>)enc drawPrimitives: (MTLPrimitiveType)primType
-                                       vertexStart: vertStart
-                                       vertexCount: vertCount];
+mtDrawPrimitives(MtRenderCommandEncoder *rce,
+                 MtPrimitiveType         type,
+                 size_t                  start,
+                 size_t                  count) {
+  [(id<MTLRenderCommandEncoder>)rce drawPrimitives: (MTLPrimitiveType)type
+                                       vertexStart: start
+                                       vertexCount: count];
 }
 
 MT_EXPORT
 void
-mtEndEncoding(MtRenderCommandEncoder *enc) {
-  [(id<MTLRenderCommandEncoder>)enc endEncoding];
+mtEndEncoding(MtRenderCommandEncoder *rce) {
+  [(id<MTLRenderCommandEncoder>)rce endEncoding];
 }
