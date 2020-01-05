@@ -12,7 +12,7 @@ extern "C" {
 #include "common.h"
 #include "types.h"
 #include "enums.h"
-#include <stdint.h>
+#include "stageio-desc.h"
 
 typedef enum MtPrimitiveType {
   MtPrimitiveTypePoint         = 0,
@@ -145,6 +145,15 @@ mtDrawPrims(MtRenderCommandEncoder *rce,
             MtPrimitiveType         type,
             size_t                  start,
             size_t                  count);
+
+MT_EXPORT
+void
+mtDrawIndexedPrims(MtRenderCommandEncoder *rce,
+                   MtPrimitiveType         type,
+                   uint32_t                indexCount,
+                   MtIndexType             indexType,
+                   MtBuffer               *indexBuffer,
+                   uint32_t                indexBufferOffset);
 
 MT_EXPORT
 void

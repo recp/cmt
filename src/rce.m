@@ -87,6 +87,22 @@ mtDrawPrims(MtRenderCommandEncoder *rce,
 
 MT_EXPORT
 void
+mtDrawIndexedPrims(MtRenderCommandEncoder *rce,
+                   MtPrimitiveType         type,
+                   uint32_t                indexCount,
+                   MtIndexType             indexType,
+                   MtBuffer               *indexBuffer,
+                   uint32_t                indexBufferOffset) {
+  [(id<MTLRenderCommandEncoder>)rce
+          drawIndexedPrimitives: (MTLPrimitiveType)type
+                     indexCount: indexCount
+                      indexType: (MTLIndexType)indexType
+                    indexBuffer: indexBuffer
+              indexBufferOffset: indexBufferOffset];
+}
+
+MT_EXPORT
+void
 mtEndEncoding(MtRenderCommandEncoder *rce) {
   [(id<MTLRenderCommandEncoder>)rce endEncoding];
 }
