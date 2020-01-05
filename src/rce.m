@@ -76,10 +76,10 @@ mtFragmentBuffer(MtRenderCommandEncoder *rce,
 
 MT_EXPORT
 void
-mtDrawPrimitives(MtRenderCommandEncoder *rce,
-                 MtPrimitiveType         type,
-                 size_t                  start,
-                 size_t                  count) {
+mtDrawPrims(MtRenderCommandEncoder *rce,
+            MtPrimitiveType         type,
+            size_t                  start,
+            size_t                  count) {
   [(id<MTLRenderCommandEncoder>)rce drawPrimitives: (MTLPrimitiveType)type
                                        vertexStart: start
                                        vertexCount: count];
