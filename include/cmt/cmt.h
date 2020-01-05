@@ -25,6 +25,7 @@ extern "C" {
 #include "depthstencil.h"
 #include "resource.h"
 #include "buffer.h"
+#include "stageio-desc.h"
 
 MT_EXPORT
 void*
