@@ -1,38 +1,13 @@
-/*
- * Copyright (c), Recep Aslantas.
- * MIT License (MIT), http://opensource.org/licenses/MIT
- */
-
-#import "impl/common.h"
-#import "cmt/common.h"
-#import "cmt/command-enc.h"
-#import "cmt/command-buff.h"
-
-CF_RETURNS_RETAINED
-MT_EXPORT
-MtCommandQueue*
-mtNewCommandQueue(MtDevice *device) {
-  return [(id<MTLDevice>)device newCommandQueue];
-}
-
-CF_RETURNS_RETAINED
-MT_EXPORT
-MtCommandQueue*
-mtNewCommandQueueWithMaxCommandBufferCount(MtDevice *device, NsUInteger count) {
-  return [(id<MTLDevice>)device newCommandQueueWithMaxCommandBufferCount: count];
-}
-
-MT_EXPORT
-void
-mtCommandQueueRelease(MtCommandQueue *queue) {
-  [(id<MTLCommandQueue>)queue release];
-}
+#include "cmt/common.h"
+#include "impl/common.h"
+#include "cmt/command_buf.h"
 
 MT_EXPORT
 MtCommandBuffer*
 mtNewCommandBuffer(MtCommandQueue *cmdq) {
   return [(id<MTLCommandQueue>)cmdq commandBuffer];
 }
+
 
 MT_EXPORT
 MtCommandBuffer*
@@ -58,7 +33,7 @@ mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
 
 MT_EXPORT
 void
-mtPresentDrawable(MtCommandBuffer *cmdb, MtDrawable *drawable) {
+mtCommandBufferPresentDrawable(MtCommandBuffer *cmdb, MtDrawable *drawable) {
   [(id<MTLCommandBuffer>)cmdb presentDrawable: drawable];
 }
 
@@ -185,5 +160,4 @@ void
 mtCommandBufferPopDebugGroup(MtCommandBuffer *cmdb) {
   [(id<MTLCommandBuffer>)cmdb popDebugGroup];
 }
-
 

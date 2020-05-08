@@ -3,19 +3,33 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#ifndef cmt_compute_comm_enc_h
-#define cmt_compute_comm_enc_h
+#ifndef cmt_command_enc_compute_h
+#define cmt_command_enc_compute_h
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "common.h"
-#include "types.h"
-#include "enums.h"
+#include "cmt/common.h"
+#include "cmt/types.h"
+#include "cmt/enums.h"
+
+// Creating Command Encoders
+MT_EXPORT
+MtComputeCommandEncoder*
+mtNewComputeCommandEncoder(MtCommandBuffer *cmdb);
+
+MT_EXPORT
+MtComputeCommandEncoder*
+mtNewComputeCommandEncoderWithDispatchType(MtCommandBuffer *cmdb, MtDispatchType dtype);
 
 MT_EXPORT
 void
 mtComputeCommandEncoderRelease(MtComputeCommandEncoder *cce);
+
+// Could be removed because in base class
+MT_EXPORT
+void
+mtComputeCommandEncoderEndEncoding(MtComputeCommandEncoder *cce);
 
 // Specifying the Compute Pipeline State
 
@@ -105,4 +119,4 @@ mtComputeCommandEncoderUseHeaps(MtComputeCommandEncoder *cce, MtHeap **heaps, Ns
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmt_compute_comm_enc_h */
+#endif /* cmt_command_enc_compute_h */

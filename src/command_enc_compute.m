@@ -1,12 +1,6 @@
 #include "cmt/common.h"
 #include "impl/common.h"
-#include "cmt/command-enc.h"
-
-MT_EXPORT
-void
-mtComputeCommandEncoderRelease(MtComputeCommandEncoder *cce) {
-    [(id<MTLComputeCommandEncoder>)cce release];
-}
+#include "cmt/command_enc_compute.h"
 
 MT_EXPORT
 MtComputeCommandEncoder*
@@ -22,9 +16,9 @@ mtNewComputeCommandEncoderWithDispatchType(MtCommandBuffer *cmdb, MtDispatchType
 }
 
 MT_EXPORT
-MtBlitCommandEncoder*
-mtNewBlitCommandEncoder(MtCommandBuffer *cmdb) {
-    return [(id<MTLCommandBuffer>)cmdb blitCommandEncoder];
+void
+mtComputeCommandEncoderRelease(MtComputeCommandEncoder *cce) {
+    [(id<MTLComputeCommandEncoder>)cce release];
 }
 
 MT_EXPORT
@@ -32,12 +26,6 @@ void
 mtComputeCommandEncoderEndEncoding(MtComputeCommandEncoder *cce) {
     [(id<MTLComputeCommandEncoder>)cce endEncoding];
 }
-
-/*MT_EXPORT
-MtResourceStateCommandEncoder*
-mtNewResourceStateCommandEncoder(MtCommandBuffer *cmdb) {
-    return [(id<MTLCommandBuffer>)cmdb resourceStateCommandEncoder];
-}*/ //IOS 13
 
 MT_EXPORT
 void
@@ -164,11 +152,6 @@ void
 mtComputeCommandEncoderUseHeaps(MtComputeCommandEncoder *cce, MtHeap **heaps, NsUInteger count) {
     [(id<MTLComputeCommandEncoder>)cce useHeaps:(id<MTLHeap>*)heaps count: count];
 }
-
-
-
-
-
 
 
 

@@ -17,6 +17,7 @@ typedef void MtDevice;
 typedef void MtRenderDesc;
 typedef void MtRenderPipeline;
 typedef void MtCommandQueue;
+typedef void MtCommandEncoder;
 typedef void MtBlitCommandEncoder;
 typedef void MtLibrary;
 typedef void MtFunction;

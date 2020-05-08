@@ -1,5 +1,5 @@
 #import "impl/common.h"
-#import "cmt/indirect_comm_buf.h"
+#import "cmt/command_buf_indirect.h"
 
 MT_EXPORT
 MtIndirectCommandBuffer*

@@ -1,15 +1,16 @@
-/*
- * Copyright (c), Recep Aslantas.
- * MIT License (MIT), http://opensource.org/licenses/MIT
- */
+#include "cmt/common.h"
+#include "impl/common.h"
+#include "cmt/command_enc_render.h"
 
-#import "impl/common.h"
-#import "cmt/common.h"
-#import "cmt/command-enc.h"
+/*MT_EXPORT
+MtResourceStateCommandEncoder*
+mtNewResourceStateCommandEncoder(MtCommandBuffer *cmdb) {
+    return [(id<MTLCommandBuffer>)cmdb resourceStateCommandEncoder];
+}*/ //IOS 13
 
 MT_EXPORT
 MtRenderCommandEncoder*
-mtRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *pass) {
+mtNewRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *pass) {
   return [(id<MTLCommandBuffer>)cmdb renderCommandEncoderWithDescriptor: pass];
 }
 
@@ -108,3 +109,8 @@ void
 mtEndEncoding(MtRenderCommandEncoder *rce) {
   [(id<MTLRenderCommandEncoder>)rce endEncoding];
 }
+
+
+
+
+

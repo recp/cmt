@@ -20,18 +20,20 @@ set(SOURCES
 	src/memory/heap.m
 	src/memory/vertex.m
 	src/rendering/depthstencil.m
-	src/rendering/rce.m
 	src/rendering/rpass.m
 	src/rendering/rpip.m
 	src/utils/conversion.m
-	src/blit_command_enc.m
-	src/cmd.m
 	src/cmt.m
-	src/command-enc.m
+	src/command_buf.m
+	src/command_buf_indirect.m
+	src/command_queue.m
+	src/command_enc.m
+	src/command_enc_render.m
+	src/command_enc_compute.m
+	src/command_enc_blit.m
 	src/device.m
 	src/error.m
 	src/event.m
-	src/indirect_comm_buf.m
 	src/resource.m)
 
 add_library(cmt_lib SHARED ${SOURCES})

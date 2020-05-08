@@ -36,13 +36,16 @@ extern "C" {
 #include "rendering/pass.h"
 #include "rendering/pipeline.h"
 
-#include "command-buff.h"
-#include "command-enc.h"
-#include "command-queue.h"
-#include "compute-comm-enc.h"
+#include "command_buf.h"
+#include "command_buf_indirect.h"
 
-#include "blit_comm_enc.h"
-#include "indirect_comm_buf.h"
+#include "command_enc.h"
+#include "command_enc_blit.h"
+#include "command_enc_compute.h"
+#include "command_enc_render.h"
+
+#include "command_queue.h"
+
 
 
 MT_EXPORT

@@ -1,6 +1,6 @@
 
-#ifndef cmt_blit_comm_enc_h
-#define cmt_blit_comm_enc_h
+#ifndef cmt_command_enc_blit_h
+#define cmt_command_enc_blit_h
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -8,6 +8,10 @@ extern "C" {
 #include "cmt/common.h"
 #include "cmt/types.h"
 #include "cmt/enums.h"
+
+MT_EXPORT
+MtBlitCommandEncoder*
+mtNewBlitCommandEncoder(MtCommandBuffer *cmdb);
 
 MT_EXPORT
 void
@@ -18,79 +22,79 @@ mtBlitCommandEncoderCopyFromBufferToBuffer(MtBlitCommandEncoder *bce,
 
 MT_EXPORT
 void
-MtBlitCommandEncoderFillBuffer(MtBlitCommandEncoder *bce, 
+mtBlitCommandEncoderFillBuffer(MtBlitCommandEncoder *bce, 
 	MtBuffer *src, NsRange range, uint8_t val);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderGenerateMipmaps(MtBlitCommandEncoder *bce, 
+mtBlitCommandEncoderGenerateMipmaps(MtBlitCommandEncoder *bce, 
 	MtTexture *texture);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderCopyIndirectCommandBuffer(MtBlitCommandEncoder *bce, 
+mtBlitCommandEncoderCopyIndirectCommandBuffer(MtBlitCommandEncoder *bce, 
 	MtIndirectCommandBuffer *src, NsRange range,
 	MtIndirectCommandBuffer *dst, NsUInteger dst_index);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderOptimizeIndirectCommandBuffer(MtBlitCommandEncoder *bce, 
+mtBlitCommandEncoderOptimizeIndirectCommandBuffer(MtBlitCommandEncoder *bce, 
 	MtIndirectCommandBuffer *buffer, NsRange range);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderResetCommandsInBuffer(MtBlitCommandEncoder *bce, 
+mtBlitCommandEncoderResetCommandsInBuffer(MtBlitCommandEncoder *bce, 
 	MtIndirectCommandBuffer *buffer, NsRange range);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderSynchronizeResource(MtBlitCommandEncoder *bce, 
+mtBlitCommandEncoderSynchronizeResource(MtBlitCommandEncoder *bce, 
 	MtResource *resource);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderSynchronizeTexture(MtBlitCommandEncoder *bce, 
+mtBlitCommandEncoderSynchronizeTexture(MtBlitCommandEncoder *bce, 
 	MtTexture *texture, NsUInteger slice, NsUInteger level);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderUpdateFence(MtIndirectCommandBuffer *icb, MtFence *fence);
+mtBlitCommandEncoderUpdateFence(MtIndirectCommandBuffer *icb, MtFence *fence);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderWaitForFence(MtIndirectCommandBuffer *icb, MtFence *fence);
+mtBlitCommandEncoderWaitForFence(MtIndirectCommandBuffer *icb, MtFence *fence);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderOptimizeContentsForGPUAccess(MtIndirectCommandBuffer *icb,
+mtBlitCommandEncoderOptimizeContentsForGPUAccess(MtIndirectCommandBuffer *icb,
 													MtTexture *tex);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderOptimizeContentsForGPUAccessSliceLevel(MtIndirectCommandBuffer *icb,
+mtBlitCommandEncoderOptimizeContentsForGPUAccessSliceLevel(MtIndirectCommandBuffer *icb,
 													MtTexture *tex, NsUInteger slice, NsUInteger level);
 
 
 MT_EXPORT
 void
-MtBlitCommandEncoderOptimizeContentsForCPUAccess(MtIndirectCommandBuffer *icb,
+mtBlitCommandEncoderOptimizeContentsForCPUAccess(MtIndirectCommandBuffer *icb,
 													MtTexture *tex);
 
 MT_EXPORT
 void
-MtBlitCommandEncoderOptimizeContentsForCPUAccessSliceLevel(MtIndirectCommandBuffer *icb,
+mtBlitCommandEncoderOptimizeContentsForCPUAccessSliceLevel(MtIndirectCommandBuffer *icb,
 													MtTexture *tex, NsUInteger slice, NsUInteger level);
 
 // GPU Execution data
 MT_EXPORT
 void
-MtBlitCommandEncoderSampleCountersInBuffer(MtIndirectCommandBuffer *icb,
+mtBlitCommandEncoderSampleCountersInBuffer(MtIndirectCommandBuffer *icb,
 											MtCounterSampleBuffer *sbuf,
 											NsUInteger sampleindex,
 											bool barrier);
 
 MT_EXPORT void
-MtBlitCommandEncoderResolveCounters(MtIndirectCommandBuffer *icb,
+mtBlitCommandEncoderResolveCounters(MtIndirectCommandBuffer *icb,
 									MtCounterSampleBuffer *sbuf,
 									NsRange range,
 									MtBuffer *dst,
@@ -100,4 +104,4 @@ MtBlitCommandEncoderResolveCounters(MtIndirectCommandBuffer *icb,
 #ifdef __cplusplus
 }
 #endif
-#endif /* cmt_blit_comm_enc_h */
+#endif /* cmt_command_enc_blit_h */

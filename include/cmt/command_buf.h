@@ -36,21 +36,8 @@ mtCommandBufferRelease(MtCommandBuffer *cmdbuf);
 
 MT_EXPORT
 void
-mtPresentDrawable(MtCommandBuffer *cmdb,
+mtCommandBufferPresentDrawable(MtCommandBuffer *cmdb,
           MtDrawable      *drawable);
-
-// Creating Command Encoders
-MT_EXPORT
-MtComputeCommandEncoder*
-mtNewComputeCommandEncoder(MtCommandBuffer *cmdb);
-
-MT_EXPORT
-MtComputeCommandEncoder*
-mtNewComputeCommandEncoderWithDispatchType(MtCommandBuffer *cmdb, MtDispatchType dtype);
-
-MT_EXPORT
-MtBlitCommandEncoder*
-mtNewBlitCommandEncoder(MtCommandBuffer *cmdb);
 
 /*MT_EXPORT
 MtResourceStateCommandEncoder*
