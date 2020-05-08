@@ -3,12 +3,17 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#import "common.h"
+#import "impl/common.h"
+#import "cmt/common.h"
+#import "cmt/pixelformat.h"
+
+#import "cmt/rendering/pass.h"
+#import "cmt/rendering/pipeline.h"
 
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtRenderDesc*
-mtRenderPipelineCreate(MtPixelFormat pixelFormat) {
+mtNewRenderPipeline(MtPixelFormat pixelFormat) {
   MTLRenderPipelineDescriptor *mpipDesc;
   mpipDesc = [MTLRenderPipelineDescriptor new];
   mpipDesc.colorAttachments[0].pixelFormat = (MTLPixelFormat)pixelFormat;
@@ -18,11 +23,11 @@ mtRenderPipelineCreate(MtPixelFormat pixelFormat) {
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtRenderPipeline*
-mtRenderStateCreate(MtDevice *device, MtRenderDesc *pipDesc) {
-  NSError *error;
+mtNewRenderState(MtDevice *device, MtRenderDesc *pipDesc) {
+  mtClearError();
   return [(id<MTLDevice>)device
           newRenderPipelineStateWithDescriptor: (MTLRenderPipelineDescriptor *)pipDesc
-          error: &error];
+          error: &mt_current_error];
 }
 
 MT_EXPORT

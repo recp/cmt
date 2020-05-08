@@ -9,10 +9,11 @@
 extern "C" {
 #endif
 
-#include "common.h"
-#include "types.h"
-#include "enums.h"
-#include "pixelformat.h"
+#include "cmt/common.h"
+#include "cmt/types.h"
+#include "cmt/enums.h"
+#include "cmt/error.h"
+#include "cmt/pixelformat.h"
 
 typedef enum MtFuncType {
   MT_FUNC_VERT = 1,
@@ -21,7 +22,7 @@ typedef enum MtFuncType {
 
 MT_EXPORT
 MtRenderDesc*
-mtRenderPipelineCreate(MtPixelFormat pixelFormat);
+mtNewRenderPipeline(MtPixelFormat pixelFormat);
 
 MT_EXPORT
 void
@@ -31,7 +32,7 @@ mtSetFunc(MtRenderDesc *pipDesc,
 
 MT_EXPORT
 MtRenderPipeline*
-mtRenderStateCreate(MtDevice     *device,
+mtNewRenderState(MtDevice     *device,
                     MtRenderDesc *pipDesc);
 
 MT_EXPORT

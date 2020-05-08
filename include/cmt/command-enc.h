@@ -12,7 +12,6 @@ extern "C" {
 #include "common.h"
 #include "types.h"
 #include "enums.h"
-#include "stageio-desc.h"
 
 typedef enum MtPrimitiveType {
   MtPrimitiveTypePoint         = 0,

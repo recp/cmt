@@ -1,0 +1,50 @@
+/*
+ * Copyright (c), Recep Aslantas.
+ * MIT License (MIT), http://opensource.org/licenses/MIT
+ */
+
+#ifndef cmt_compute_pipeline_h
+#define cmt_compute_pipeline_h
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "cmt/common.h"
+#include "cmt/types.h"
+#include "cmt/enums.h"
+
+// properties
+MT_EXPORT
+MtDevice*
+mtComputePipelineDevice(MtComputePipelineState *pip);
+
+MT_EXPORT
+void
+mtComputePipelineRelease(MtComputePipelineState *pip);
+
+MT_EXPORT
+const char*
+mtComputePipelineLabel(MtComputePipelineState *pip);
+
+// attributes
+MT_EXPORT
+NsUInteger
+mtComputePipelineMaxTotalThreadsPerThreadgroup(MtComputePipelineState *pip);
+
+MT_EXPORT
+NsUInteger
+mtComputePipelineThreadExecutionWidth(MtComputePipelineState *pip);
+
+MT_EXPORT
+NsUInteger
+mtComputePipelineStaticThreadgroupMemoryLength(MtComputePipelineState *pip);
+
+// imageblock attri
+/*MT_EXPORT
+NsUInteger
+mtComputePipelineImageblockMemoryLengthForDimensions(MtComputePipelineState *pip, MtSize imageblockDimensions); IOS 11*/
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* cmt_compute_pipeline_h */

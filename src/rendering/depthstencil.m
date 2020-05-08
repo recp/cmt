@@ -3,7 +3,8 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#import "common.h"
+#import "impl/common.h"
+#import "cmt/rendering/depthstencil.h"
 
 MT_EXPORT
 MtDepthStencil*

@@ -3,12 +3,13 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#import "common.h"
+#import "impl/common.h"
+#import "cmt/rendering/pass.h"
 
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtRenderPassDesc*
-mtPassCreate() {
+mtNewPass() {
   return [MTLRenderPassDescriptor new];
 }
 

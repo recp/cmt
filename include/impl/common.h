@@ -6,13 +6,8 @@
 #ifndef src_common_h
 #define src_common_h
 
-#import "../include/cmt/cmt.h"
-
 #import <Foundation/Foundation.h>
 #import <Metal/Metal.h>
 
-MT_HIDE
-NSString*
-mtNSString(const char *str);
-
+#import "conversion.h"
 #endif /* src_common_h */

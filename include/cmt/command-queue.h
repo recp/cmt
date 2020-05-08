@@ -15,7 +15,15 @@ extern "C" {
 
 MT_EXPORT
 MtCommandQueue*
-mtCommandQueueCreate(MtDevice *device);
+mtNewCommandQueue(MtDevice *device);
+
+MT_EXPORT
+MtCommandQueue*
+MtNewCommandQueueWithMaxCommandBufferCount(MtDevice *device, NsUInteger count);
+
+MT_EXPORT
+void
+mtCommandQueueRelease(MtCommandQueue *queue);
 
 #ifdef __cplusplus
 }

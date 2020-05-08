@@ -9,13 +9,13 @@
 extern "C" {
 #endif
 
-#include "common.h"
-#include "types.h"
-#include "enums.h"
+#include "cmt/common.h"
+#include "cmt/types.h"
+#include "cmt/enums.h"
 
 MT_EXPORT
 MtRenderPassDesc*
-mtPassCreate(void);
+mtNewPass(void);
 
 MT_EXPORT
 void

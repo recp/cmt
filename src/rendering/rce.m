@@ -3,7 +3,9 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#import "common.h"
+#import "impl/common.h"
+#import "cmt/common.h"
+#import "cmt/command-enc.h"
 
 MT_EXPORT
 MtRenderCommandEncoder*

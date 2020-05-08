@@ -9,7 +9,10 @@
 extern "C" {
 #endif
 
-#include "common.h"
+#include "cmt/common.h"
+#include "cmt/types.h"
+#include "cmt/enums.h"
+#include "cmt/resource.h"
 
 typedef enum MtVertexFormat {
   MtVertexFormatInvalid = 0,
