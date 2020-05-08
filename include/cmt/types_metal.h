@@ -17,6 +17,7 @@ typedef void MtDevice;
 typedef void MtRenderDesc;
 typedef void MtRenderPipeline;
 typedef void MtCommandQueue;
+typedef void MtBlitCommandEncoder;
 typedef void MtLibrary;
 typedef void MtFunction;
 typedef void MtRenderPassDesc;
@@ -25,6 +26,10 @@ typedef void MtCommandBuffer;
 typedef void MtDrawable;
 typedef void MtVertexDescriptor;
 typedef void MtTextureDescriptor;
+typedef void MtIndirectCommandBufferDescriptor;
+typedef void MtIndirectCommandBuffer;
+typedef void MtIndirectComputeCommand;
+typedef void MtIndirectRenderCommand;
 typedef void MtDepthStencil;
 typedef void MtBuffer;
 typedef void MtCompileOptions;
@@ -49,4 +54,5 @@ typedef void MtComputeCommandEncoder;
 typedef void MtBlitCommandEncoder;
 typedef void MtResourceStateCommandEncoder;
 
+typedef void MtCounterSampleBuffer;
 #endif /* cmt_types_metal_h */

@@ -24,12 +24,14 @@ set(SOURCES
 	src/rendering/rpass.m
 	src/rendering/rpip.m
 	src/utils/conversion.m
+	src/blit_command_enc.m
 	src/cmd.m
 	src/cmt.m
 	src/command-enc.m
 	src/device.m
 	src/error.m
 	src/event.m
+	src/indirect_comm_buf.m
 	src/resource.m)
 
 add_library(cmt_lib SHARED ${SOURCES})

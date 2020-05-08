@@ -41,6 +41,9 @@ extern "C" {
 #include "command-queue.h"
 #include "compute-comm-enc.h"
 
+#include "blit_comm_enc.h"
+#include "indirect_comm_buf.h"
+
 
 MT_EXPORT
 void*

@@ -142,4 +142,10 @@ typedef enum MtHeapType {
 } MtHeapType;
 
 
+typedef enum MtBlitOption {
+  MtBlitOptionNone                       = 0,
+  MtBlitOptionDepthFromDepthStencil      = 1 << 0,
+  MtBlitOptionStencilFromDepthStencil    = 1 << 1,
+  } MtBlitOption;
+
 #endif /* cmt_enums_h */
