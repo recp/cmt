@@ -37,11 +37,6 @@ MT_EXPORT
 void
 mtComputeCommandEncoderSetComputePipelineState(MtComputeCommandEncoder *cce, MtComputePipelineState *state);
 
-// end
-MT_EXPORT
-void
-mtComputeCommandEncoderEndEncoding(MtComputeCommandEncoder *cce);
-
 // Specifying Arguments for a Compute Function
 
 MT_EXPORT
