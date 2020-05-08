@@ -35,6 +35,12 @@ mtNewCommandBuffer(MtCommandQueue *cmdq) {
 }
 
 MT_EXPORT
+MtCommandBuffer*
+mtNewCommandBufferWithUnretainedReferences(MtCommandQueue *cmdq) {
+  return [(id<MTLCommandQueue>)cmdq commandBufferWithUnretainedReferences];
+}
+
+MT_EXPORT
 void
 mtCommandBufferRelease(MtCommandBuffer *cmdbuf) {
   [(id<MTLCommandBuffer>)cmdbuf release];

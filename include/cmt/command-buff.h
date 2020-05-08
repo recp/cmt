@@ -21,6 +21,10 @@ MtCommandBuffer*
 mtNewCommandBuffer(MtCommandQueue *cmdq); 
 
 MT_EXPORT
+MtCommandBuffer*
+mtNewCommandBufferWithUnretainedReferences(MtCommandQueue *cmdq); 
+
+MT_EXPORT
 void
 mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
                           void           * __restrict sender,
