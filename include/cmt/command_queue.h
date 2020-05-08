@@ -19,7 +19,7 @@ mtNewCommandQueue(MtDevice *device);
 
 MT_EXPORT
 MtCommandQueue*
-MtNewCommandQueueWithMaxCommandBufferCount(MtDevice *device, NsUInteger count);
+mtNewCommandQueueWithMaxCommandBufferCount(MtDevice *device, NsUInteger count);
 
 MT_EXPORT
 void
