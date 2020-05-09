@@ -43,8 +43,8 @@ mtComputeCommandEncoderSetBufferOffsetAtIndex(MtComputeCommandEncoder *cce, MtBu
 
 MT_EXPORT
 void
-mtComputeCommandEncoderSetBuffersOffsetsWithRange(MtComputeCommandEncoder **cce, MtBuffer **buf, const NsUInteger *offsets, NsRange range) {
-    [(id<MTLComputeCommandEncoder>)cce setBuffers:(id<MTLBuffer>*)buf
+mtComputeCommandEncoderSetBuffersOffsetsWithRange(MtComputeCommandEncoder *cce, MtBuffer **bufs, const NsUInteger *offsets, NsRange range) {
+    [(id<MTLComputeCommandEncoder>)cce setBuffers:(id<MTLBuffer>*)bufs
                                        offsets: offsets
                                        withRange:mtNSRange(range)];
 }

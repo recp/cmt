@@ -40,7 +40,7 @@ typedef void MtSharedEvent;
 typedef void MtSharedEventHandle;
 typedef void MtFence;
 typedef void (^MtSharedEventNotificationBlock)(MtSharedEvent *ev, uint64_t value);
-typedef void (^MtCommandBufferHandler)(MtCommandBuffer *buf);
+typedef void (*MtCommandBufferHandlerFun)(MtCommandBuffer * buf);
 typedef void MtSharedEventListener;
 
 typedef void MtResource;

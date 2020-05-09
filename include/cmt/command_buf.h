@@ -55,11 +55,11 @@ mtCommandBufferCommit(MtCommandBuffer *cmdb);
 
 MT_EXPORT
 void
-mtCommandBufferAddScheduledHandler(MtCommandBuffer *cmdb, MtCommandBufferHandler handler);
+mtCommandBufferAddScheduledHandler(MtCommandBuffer *cmdb, MtCommandBufferHandlerFun handler);
 
 MT_EXPORT
 void
-mtCommandBufferAddCompletedHandler(MtCommandBuffer *cmdb, MtCommandBufferHandler handler);
+mtCommandBufferAddCompletedHandler(MtCommandBuffer *cmdb, MtCommandBufferHandlerFun handler);
 
 MT_EXPORT
 void

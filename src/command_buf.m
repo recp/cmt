@@ -51,14 +51,21 @@ mtCommandBufferCommit(MtCommandBuffer *cmdb) {
 
 MT_EXPORT
 void
-mtCommandBufferAddScheduledHandler(MtCommandBuffer *cmdb, MtCommandBufferHandler handler) {
+mtCommandBufferAddScheduledHandler(MtCommandBuffer *cmdb, MtCommandBufferHandlerFun handler) {
   [(id<MTLCommandBuffer>)cmdb addScheduledHandler:(MTLCommandBufferHandler)handler];
 }
 
+typedef void (^MtCommandBufferHandlerBlock)(id<MTLCommandBuffer>);
+
 MT_EXPORT
 void
-mtCommandBufferAddCompletedHandler(MtCommandBuffer *cmdb, MtCommandBufferHandler handler) {
-  [(id<MTLCommandBuffer>)cmdb addCompletedHandler:(MTLCommandBufferHandler)handler];
+mtCommandBufferAddCompletedHandler(MtCommandBuffer *cmdb, MtCommandBufferHandlerFun handler) {
+  MTLCommandBufferHandler block = ^(id<MTLCommandBuffer> buf){
+    MtCommandBuffer *_cmdb = buf;
+    (*handler)(_cmdb);
+  };
+
+  [(id<MTLCommandBuffer>)cmdb addCompletedHandler:block];
 }
 
 MT_EXPORT
