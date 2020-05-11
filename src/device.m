@@ -173,11 +173,34 @@ CF_RETURNS_RETAINED
 MT_EXPORT
 MtCommandBuffer*
 mtDeviceNewBufferWithBytes(MtDevice      * __restrict device,
-                     const void * __restrict ptr,
-                     NsUInteger                  len,
-                     MtResourceOptions       options) {
+	                     const void * __restrict ptr,
+	                     NsUInteger                  len,
+	                     MtResourceOptions       options) {
   return [(id<MTLDevice>)device
           newBufferWithBytes: ptr
           length:             len
           options:            (MTLResourceOptions)options];
 }
+
+
+MT_EXPORT
+MtBuffer*
+mtDeviceNewBufferWithBytesNoCopy(MtDevice * __restrict device, 
+							   void * ptr, 
+							   NsUInteger length, 
+							   MtResourceOptions opts) {
+	return [(id<MTLDevice>)device newBufferWithBytesNoCopy: ptr 
+                                   					length: length 
+                                  				   options: (MTLResourceOptions)opts 
+                              				   deallocator: nil];
+}
+
+/*
+MT_EXPORT
+MtBuffer*
+mtDeviceNewBufferWithBytesNoCopyDeallocator(MtDevice *device, const void* ptr, NsUInteger length, MtResourceOptions opts) {
+	return [(id<MTLDevice>)device newBufferWithBytesNoCopy: ptr 
+                                   					length: length 
+                                  				   options: (MTLResourceOptions)opts 
+                              				   deallocator: nil];
+}*/

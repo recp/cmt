@@ -116,8 +116,13 @@ MT_EXPORT
 MtBuffer*
 mtDeviceNewBufferWithBytes(MtDevice *device, const void* ptr, NsUInteger length, MtResourceOptions opts);
 
-// newBufferWithBytesNoCopy:length:options:deallocator
+MT_EXPORT
+MtBuffer*
+mtDeviceNewBufferWithBytesNoCopy(MtDevice *device, void* ptr, NsUInteger length, MtResourceOptions opts);
 
+//MT_EXPORT
+//MtBuffer*
+//mtDeviceNewBufferWithBytesNoCopyDeallocator(MtDevice *device, void* ptr, NsUInteger length, MtResourceOptions opts);
 
 #ifdef __cplusplus
 }
