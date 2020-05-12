@@ -75,17 +75,3 @@ mtLibraryFunctionNames(MtLibrary *lib) {
 
 }
 
-CF_RETURNS_RETAINED
-MT_EXPORT
-MtFunction*
-mtNewFunctionWithName(MtLibrary *lib, const char *name) {
-  return [(id<MTLLibrary>)lib newFunctionWithName: mtNSString(name)];
-}
-
-/*CF_RETURNS_RETAINED
-MT_EXPORT
-MtFunction*
-mtNewFunctionWithNameConstantValues(MtLibrary *lib, const char *name) {
-  return [(id<MTLLibrary>)lib newFunctionWithName: mtNSString(name)];
-}*/
-

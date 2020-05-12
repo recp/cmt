@@ -1,6 +1,7 @@
 #import "impl/common.h"
 #import "cmt/command_buf_indirect.h"
 
+CF_RETURNS_RETAINED
 MT_EXPORT
 MtIndirectCommandBuffer*
 mtNewIndirectCommandBuffer(MtDevice *device, MtIndirectCommandBufferDescriptor *desc,

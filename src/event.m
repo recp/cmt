@@ -1,6 +1,7 @@
 #include "impl/common.h"
 #include "cmt/common.h"
 
+CF_RETURNS_RETAINED
 MT_EXPORT
 MtEvent*
 mtDeviceNewEvent(MtDevice *dev) {

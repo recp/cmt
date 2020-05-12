@@ -23,7 +23,10 @@ extern "C" {
 
 #include "compute/compute-pipeline.h"
 
+#include "kernels/attribute.h"
+#include "kernels/attribute_vertex.h"
 #include "kernels/compile-opts.h"
+#include "kernels/constant_values.h"
 #include "kernels/function.h"
 #include "kernels/library.h"
 
@@ -36,6 +39,9 @@ extern "C" {
 #include "rendering/pass.h"
 #include "rendering/pipeline.h"
 
+#include "reflection/argument.h"
+#include "reflection/pointer_type.h"
+
 #include "command_buf.h"
 #include "command_buf_indirect.h"
 
@@ -45,6 +51,9 @@ extern "C" {
 #include "command_enc_render.h"
 
 #include "command_queue.h"
+
+#include "argument_descriptor.h"
+#include "argument_encoder.h"
 
 
 

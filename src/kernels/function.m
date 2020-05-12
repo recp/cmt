@@ -4,8 +4,26 @@
  */
 
 #import "impl/common.h"
-#import "cmt/common.h"
 #include "cmt/kernels/function.h"
+#import "cmt/error.h"
+
+
+CF_RETURNS_RETAINED
+MT_EXPORT
+MtFunction*
+mtNewFunctionWithName(MtLibrary *lib, const char *name) {
+  return [(id<MTLLibrary>)lib newFunctionWithName: mtNSString(name)];
+}
+
+CF_RETURNS_RETAINED
+MT_EXPORT
+MtFunction*
+mtNewFunctionWithNameConstantValues(MtLibrary *lib, const char *name, MtFunctionConstantValues *constantValues) {
+  mtClearError();
+  return [(id<MTLLibrary>)lib newFunctionWithName: mtNSString(name)
+  								   constantValues: (MtFunctionConstantValues *)constantValues
+  								   			error: &mt_current_error];
+}
 
 MT_EXPORT
 void
@@ -36,4 +54,18 @@ MT_EXPORT
 const char*
 mtFunctionName(MtFunction* fun) {
 	return Cstring([(id<MTLFunction>)fun name]);
+}
+
+MT_EXPORT
+MtAttribute**
+mtFunctionStageInputAttributes(MtFunction* fun) {
+	NSArray<MTLAttribute *> *_attributes = [(id<MTLFunction>)fun stageInputAttributes];
+	int n = [_attributes count];
+	MtAttribute* *attributes = malloc(sizeof(MtAttribute*) * (n+1));
+	for (int i=0; i < n; i++) {
+      attributes[i] = [_attributes objectAtIndex:i];
+    }
+	attributes[n] = NULL;
+
+	return attributes;
 }

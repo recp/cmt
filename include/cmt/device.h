@@ -98,11 +98,6 @@ MT_EXPORT
 MtSize
 mtMaxThreadsPerThreadgroup(MtDevice* device);
 
-// Create Pipeline
-MT_EXPORT
-MtComputePipelineState*
-mtNewComputePipelineStateWithFunction(MtDevice *device, MtFunction* fun);
-
 // Buffers
 MT_EXPORT
 NsUInteger

@@ -1,7 +1,7 @@
 #import "impl/common.h"
 #import "cmt/command_enc_blit.h"
 
-
+CF_RETURNS_RETAINED
 MT_EXPORT
 MtBlitCommandEncoder*
 mtNewBlitCommandEncoder(MtCommandBuffer *cmdb) {

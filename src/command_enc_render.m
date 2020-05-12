@@ -8,6 +8,7 @@ mtNewResourceStateCommandEncoder(MtCommandBuffer *cmdb) {
     return [(id<MTLCommandBuffer>)cmdb resourceStateCommandEncoder];
 }*/ //IOS 13
 
+CF_RETURNS_RETAINED
 MT_EXPORT
 MtRenderCommandEncoder*
 mtNewRenderCommandEncoder(MtCommandBuffer *cmdb, MtRenderPassDesc *pass) {

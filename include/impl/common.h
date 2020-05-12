@@ -10,4 +10,7 @@
 #import <Metal/Metal.h>
 
 #import "conversion.h"
+
+extern NSError *mt_current_error;
+
 #endif /* src_common_h */

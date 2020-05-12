@@ -1,13 +1,16 @@
 #include "cmt/common.h"
 #include "impl/common.h"
+#include "impl/conversion.h"
 #include "cmt/command_enc_compute.h"
 
+CF_RETURNS_RETAINED
 MT_EXPORT
 MtComputeCommandEncoder*
 mtNewComputeCommandEncoder(MtCommandBuffer *cmdb) {
     return [(id<MTLCommandBuffer>)cmdb computeCommandEncoder];
 }
 
+CF_RETURNS_RETAINED
 MT_EXPORT
 MtComputeCommandEncoder*
 mtNewComputeCommandEncoderWithDispatchType(MtCommandBuffer *cmdb, MtDispatchType dtype) {
@@ -70,18 +73,18 @@ mtComputeCommandEncoderSetSamplerStateAtIndex(MtComputeCommandEncoder *cce,  MtS
 
 MT_EXPORT
 void
+mtComputeCommandEncoderSetSamplerStatesWithRange(MtComputeCommandEncoder *cce,  MtSamplerState **samplers, NsRange range) {
+    [(id<MTLComputeCommandEncoder>)cce setSamplerStates:(id<MTLSamplerState>*)samplers 
+                                       withRange:mtNSRange(range)];
+}
+
+MT_EXPORT
+void
 mtComputeCommandEncoderSetSamplerStateLodMinClampLodMaxClampAtIndex(MtComputeCommandEncoder *cce,  MtSamplerState *sampler, float lodMinClamp, float lodMaxClamp, NsUInteger indx) {
     [(id<MTLComputeCommandEncoder>)cce setSamplerState:(id<MTLSamplerState>)sampler 
                                         lodMinClamp:lodMinClamp
                                         lodMaxClamp:lodMaxClamp
                                         atIndex:indx];
-}
-
-MT_EXPORT
-void
-mtComputeCommandEncoderSetSamplerStatesWithRange(MtComputeCommandEncoder *cce,  MtSamplerState **samplers, NsRange range) {
-    [(id<MTLComputeCommandEncoder>)cce setSamplerStates:(id<MTLSamplerState>*)samplers 
-                                       withRange:mtNSRange(range)];
 }
 
 MT_EXPORT
@@ -153,9 +156,38 @@ mtComputeCommandEncoderUseHeaps(MtComputeCommandEncoder *cce, MtHeap **heaps, Ns
     [(id<MTLComputeCommandEncoder>)cce useHeaps:(id<MTLHeap>*)heaps count: count];
 }
 
+MT_EXPORT
+void
+mtComputeCommandEncoderSetStageInRegion(MtComputeCommandEncoder *cce, MtRegion region) {
+    [(id<MTLComputeCommandEncoder>)cce setStageInRegion:mtMTLRegion(region)]; 
+}
 
+MT_EXPORT
+void
+mtComputeCommandEncoderSetStageInRegionWithIndirectBuffer(MtComputeCommandEncoder *cce, MtBuffer *buf, NsUInteger offset) {
+    [(id<MTLComputeCommandEncoder>)cce setStageInRegionWithIndirectBuffer: (id<MTLBuffer>)buf
+                                                     indirectBufferOffset: offset]; 
+}
 
+MT_EXPORT
+MtDispatchType
+mtComputeCommandEncoderDispatchType(MtComputeCommandEncoder *cce) {
+    return [(id<MTLComputeCommandEncoder>)cce dispatchType];
+}
 
+// Executing Commands Concurrently or Serially
+MT_EXPORT
+void
+mtComputeCommandEncoderMemoryBarrierWithScope(MtComputeCommandEncoder *cce, MtBarrierScope scope) {
+    return [(id<MTLComputeCommandEncoder>)cce memoryBarrierWithScope: (MTLBarrierScope)scope];
+}
 
+MT_EXPORT
+void
+mtComputeCommandEncoderMemoryBarrierWithResource(MtComputeCommandEncoder *cce, MtResource **resources, NsUInteger count) {
+    return [(id<MTLComputeCommandEncoder>)cce memoryBarrierWithResources: (id<MTLResource>*)resources
+                                                                   count: count];
+
+}
 
 

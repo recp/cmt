@@ -14,6 +14,14 @@ extern "C" {
 #include "cmt/enums.h"
 
 MT_EXPORT
+MtFunction*
+mtNewFunctionWithName(MtLibrary *lib, const char *name);
+
+MT_EXPORT
+MtFunction*
+mtNewFunctionWithNameConstantValues(MtLibrary *lib, const char *name, MtFunctionConstantValues *constantValues);
+
+MT_EXPORT
 void
 mtFunctionRelease(MtFunction* fun);
 
@@ -33,7 +41,9 @@ MT_EXPORT
 const char*
 mtFunctionName(MtFunction* fun);
 
-
+MT_EXPORT
+MtAttribute**
+mtFunctionStageInputAttributes(MtFunction* fun);
 
 #ifdef __cplusplus
 }

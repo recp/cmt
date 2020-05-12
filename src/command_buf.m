@@ -2,13 +2,14 @@
 #include "impl/common.h"
 #include "cmt/command_buf.h"
 
+CF_RETURNS_RETAINED
 MT_EXPORT
 MtCommandBuffer*
 mtNewCommandBuffer(MtCommandQueue *cmdq) {
   return [(id<MTLCommandQueue>)cmdq commandBuffer];
 }
 
-
+CF_RETURNS_RETAINED
 MT_EXPORT
 MtCommandBuffer*
 mtNewCommandBufferWithUnretainedReferences(MtCommandQueue *cmdq) {

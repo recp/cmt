@@ -141,18 +141,6 @@ mtDeviceSupportsFeatureSet(MtDevice *device, MtFeatureSet set) {
 	return [(id<MTLDevice>)device supportsFeatureSet: (MTLFeatureSet)set];
 }
 
-//
-
-CF_RETURNS_RETAINED
-MT_EXPORT
-MtComputePipelineState*
-mtNewComputePipelineStateWithFunction(MtDevice *device, MtFunction* fun) {
-	mtClearError();
-	return [(id<MTLDevice>)device newComputePipelineStateWithFunction: fun error:&mt_current_error];
-}
-
-//newComputePipelineStateWithFunction:options:reflection:error:
-
 // Buffers
 MT_EXPORT
 NsUInteger

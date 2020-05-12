@@ -10,8 +10,13 @@ find_library(METAL_LIBRARY Metal)
 MARK_AS_ADVANCED(FOUNDATION_LIBRARY
                      METAL_LIBRARY)
 
-set(SOURCES 
+set(SOURCES
+	src/reflection/argument.m
+	src/reflection/pointer_type.m
 	src/compute/compute-pipeline.m
+	src/kernels/attribute.m
+	src/kernels/attribute_vertex.m
+	src/kernels/constant_values.m
 	src/kernels/compile-opts.m
 	src/kernels/function.m
 	src/kernels/library.m
@@ -23,6 +28,8 @@ set(SOURCES
 	src/rendering/rpass.m
 	src/rendering/rpip.m
 	src/utils/conversion.m
+	src/argument_descriptor.m
+	src/argument_encoder.m
 	src/cmt.m
 	src/command_buf.m
 	src/command_buf_indirect.m

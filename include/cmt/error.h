@@ -12,8 +12,6 @@ extern "C" {
 #include "common_internal.h"
 #include "types_foundation.h"
 
-extern NsError *mt_current_error;
-
 // Sets and clear a global error variable, useful for storing it sometimes...
 MT_EXPORT
 void

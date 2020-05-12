@@ -111,6 +111,36 @@ MT_EXPORT
 void
 mtComputeCommandEncoderUseHeaps(MtComputeCommandEncoder *cce, MtHeap **heaps, NsUInteger count);
 
+//Specifying the Stage-In Region
+MT_EXPORT
+void
+mtComputeCommandEncoderSetStageInRegion(MtComputeCommandEncoder *cce, MtRegion region);
+
+MT_EXPORT
+void
+mtComputeCommandEncoderSetStageInRegionWithIndirectBuffer(MtComputeCommandEncoder *cce, MtBuffer *buf, NsUInteger offset);
+
+// Executing Commands Concurrently or Serially
+MT_EXPORT
+MtDispatchType
+mtComputeCommandEncoderDispatchType(MtComputeCommandEncoder *cce);
+
+// Executing Commands Concurrently or Serially
+MT_EXPORT
+void
+mtComputeCommandEncoderMemoryBarrierWithScope(MtComputeCommandEncoder *cce, MtBarrierScope scope);
+
+MT_EXPORT
+void
+mtComputeCommandEncoderMemoryBarrierWithResource(MtComputeCommandEncoder *cce, MtResource **resources, NsUInteger count);
+
+MT_EXPORT
+void
+mtComputeCommandEncoderExecuteCommandInBuffer(MtComputeCommandEncoder *cce, MtResource **resources, NsUInteger count);
+
+
+
+
 #ifdef __cplusplus
 }
 #endif

@@ -13,6 +13,22 @@ extern "C" {
 #include "cmt/types.h"
 #include "cmt/enums.h"
 
+// Create Pipeline
+MT_EXPORT
+MtComputePipelineState*
+mtNewComputePipelineStateWithFunction(MtDevice *device, MtFunction* fun);
+
+MT_EXPORT
+MtComputePipelineState*
+mtNewComputePipelineStateWithFunctionReflection(MtDevice *device, MtFunction* fun,MtPipelineOption opt, 
+                                        MtComputePipelineReflection *reflection);
+
+MT_EXPORT
+MtComputePipelineState*
+mtNewComputePipelineStateWithDescriptor(MtDevice *device, MtComputePipelineDescriptor* desc, 
+										MtPipelineOption opt, 
+										MtComputePipelineReflection *reflection);
+
 // properties
 MT_EXPORT
 MtDevice*

@@ -42,10 +42,6 @@ MT_EXPORT
 const char **
 mtLibraryFunctionNames(MtLibrary *device);
 
-MT_EXPORT
-MtFunction*
-mtNewFunctionWithName(MtLibrary *lib, const char *name);
-
 
 #ifdef __cplusplus
 }
