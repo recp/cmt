@@ -5,22 +5,20 @@
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtComputePipelineState*
-mtNewComputePipelineStateWithFunction(MtDevice *device, MtFunction* fun) {
-    mtClearError();
-    return [(id<MTLDevice>)device newComputePipelineStateWithFunction: fun error:&mt_current_error];
+mtNewComputePipelineStateWithFunction(MtDevice *device, MtFunction* fun, NsError *error) {
+    return [(id<MTLDevice>)device newComputePipelineStateWithFunction: fun error:(NSError**)&error];
 }
 
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtComputePipelineState*
 mtNewComputePipelineStateWithFunctionReflection(MtDevice *device, MtFunction* fun,MtPipelineOption opt, 
-                                        MtComputePipelineReflection *reflection) {
-    mtClearError();
+                                        MtComputePipelineReflection *reflection, NsError *error) {
     return [(id<MTLDevice>)device 
                 newComputePipelineStateWithFunction: fun 
                                             options: (MTLPipelineOption)opt
-                                         reflection: (MTLAutoreleasedComputePipelineReflection*)reflection
-                                              error: &mt_current_error];
+                                         reflection: (MTLAutoreleasedComputePipelineReflection*)&reflection
+                                              error: (NSError**)&error];
 }
 
 CF_RETURNS_RETAINED
@@ -28,13 +26,13 @@ MT_EXPORT
 MtComputePipelineState*
 mtNewComputePipelineStateWithDescriptor(MtDevice *device, MtComputePipelineDescriptor* desc, 
                                         MtPipelineOption opt, 
-                                        MtComputePipelineReflection *reflection) {
-    mtClearError();
+                                        MtComputePipelineReflection *reflection,
+                                        NsError *error) {
     return [(id<MTLDevice>)device 
         newComputePipelineStateWithDescriptor: (MTLComputePipelineDescriptor*)desc 
                                       options: (MTLPipelineOption)opt
-                                   reflection: (MTLAutoreleasedComputePipelineReflection*)reflection
-                                        error: &mt_current_error];
+                                   reflection: (MTLAutoreleasedComputePipelineReflection*)&reflection
+                                        error: (NSError**)&error];
 }
 
 CF_RETURNS_RETAINED

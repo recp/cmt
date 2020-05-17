@@ -16,18 +16,19 @@ extern "C" {
 // Create Pipeline
 MT_EXPORT
 MtComputePipelineState*
-mtNewComputePipelineStateWithFunction(MtDevice *device, MtFunction* fun);
+mtNewComputePipelineStateWithFunction(MtDevice *device, MtFunction* fun, NsError *error);
 
 MT_EXPORT
 MtComputePipelineState*
 mtNewComputePipelineStateWithFunctionReflection(MtDevice *device, MtFunction* fun,MtPipelineOption opt, 
-                                        MtComputePipelineReflection *reflection);
+                                        MtComputePipelineReflection *reflection, NsError *error);
 
 MT_EXPORT
 MtComputePipelineState*
 mtNewComputePipelineStateWithDescriptor(MtDevice *device, MtComputePipelineDescriptor* desc, 
 										MtPipelineOption opt, 
-										MtComputePipelineReflection *reflection);
+										MtComputePipelineReflection *reflection,
+										NsError *error);
 
 // properties
 MT_EXPORT

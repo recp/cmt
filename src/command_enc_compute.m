@@ -133,15 +133,16 @@ mtComputeCommandEncoderDispatchThreadgroupsWithIndirectBuffer_IndirectBufferOffs
 MT_EXPORT
 void
 mtComputeCommandEncoderUseResourceUsage(MtComputeCommandEncoder *cce, MtResource *res, MtResourceUsage usage) {
-    [(id<MTLComputeCommandEncoder>)cce useResource:(id<MTLResource>)res usage:(MTLResourceUsage)usage];
+    [(id<MTLComputeCommandEncoder>)cce useResource: (id<MTLResource>)res 
+                                             usage: (MTLResourceUsage)usage];
 }
 
 MT_EXPORT
 void
 mtComputeCommandEncoderUseResourceCountUsage(MtComputeCommandEncoder *cce, MtResource **res, NsUInteger count, MtResourceUsage usage) {
-    [(id<MTLComputeCommandEncoder>)cce useResources:(id<MTLResource>*)res 
-                                            count: count
-                                            usage:(MTLResourceUsage)usage];
+    [(id<MTLComputeCommandEncoder>)cce useResources: (id<MTLResource>*)res 
+                                              count: count
+                                              usage: (MTLResourceUsage)usage];
 }
 
 MT_EXPORT

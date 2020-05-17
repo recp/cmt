@@ -23,11 +23,10 @@ mtNewRenderPipeline(MtPixelFormat pixelFormat) {
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtRenderPipeline*
-mtNewRenderState(MtDevice *device, MtRenderDesc *pipDesc) {
-  mtClearError();
+mtNewRenderState(MtDevice *device, MtRenderDesc *pipDesc, NsError *error) {
   return [(id<MTLDevice>)device
           newRenderPipelineStateWithDescriptor: (MTLRenderPipelineDescriptor *)pipDesc
-          error: &mt_current_error];
+          error: (NSError**)&error];
 }
 
 MT_EXPORT

@@ -13,6 +13,7 @@ MARK_AS_ADVANCED(FOUNDATION_LIBRARY
 set(SOURCES
 	src/reflection/argument.m
 	src/reflection/pointer_type.m
+	src/reflection/descriptor.m
 	src/compute/compute-pipeline.m
 	src/kernels/attribute.m
 	src/kernels/attribute_vertex.m

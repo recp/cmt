@@ -342,6 +342,12 @@ typedef enum MtArgumentAccess {
     MtArgumentAccessWriteOnly  = 2,
 } MtArgumentAccess;
 
+typedef enum MtArgumentBuffersTier
+{
+    MtArgumentBuffersTier1 = 0,
+    MtArgumentBuffersTier2 = 1,
+} MtArgumentBuffersTier;
+
 typedef enum MtTextureType {
     MtTextureType1D = 0,
     MtTextureType1DArray = 1,

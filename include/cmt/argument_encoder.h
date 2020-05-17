@@ -36,6 +36,14 @@ mtArgumentEncoderLength(MtArgumentEncoder *encoder);
 
 MT_EXPORT
 void
+mtArgumentEncoderSetArgumentBufferWithOffset(MtArgumentEncoder *cce, MtBuffer *buf, NsUInteger offset);
+
+MT_EXPORT
+void
+mtArgumentEncoderSetArgumentBufferWithOffsetForElement(MtArgumentEncoder *cce, MtBuffer *buf, NsUInteger startOffset, NsUInteger arrayElement);
+
+MT_EXPORT
+void
 mtArgumentEncoderSetBufferOffsetAtIndex(MtArgumentEncoder *cce, MtBuffer *buf, NsUInteger offset, NsUInteger indx);
 
 MT_EXPORT

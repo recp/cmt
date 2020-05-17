@@ -43,6 +43,21 @@ mtArgumentEncoderLength(MtArgumentEncoder *encoder) {
 
 MT_EXPORT
 void
+mtArgumentEncoderSetArgumentBufferWithOffset(MtArgumentEncoder *cce, MtBuffer *buf, NsUInteger offset) {
+    [(id<MTLArgumentEncoder>)cce setArgumentBuffer: (id<MTLBuffer>)buf
+                                            offset: offset];
+}
+
+MT_EXPORT
+void
+mtArgumentEncoderSetArgumentBufferWithOffsetForElement(MtArgumentEncoder *cce, MtBuffer *buf, NsUInteger startOffset, NsUInteger arrayElement) {
+    [(id<MTLArgumentEncoder>)cce setArgumentBuffer: (id<MTLBuffer>)buf
+                                       startOffset: startOffset
+                                      arrayElement: arrayElement];
+}
+
+MT_EXPORT
+void
 mtArgumentEncoderSetBufferOffsetAtIndex(MtArgumentEncoder *cce, MtBuffer *buf, NsUInteger offset, NsUInteger indx) {
     [(id<MTLArgumentEncoder>)cce setBuffer: (id<MTLBuffer>)buf
                                     offset: offset

@@ -19,7 +19,7 @@ mtNewFunctionWithName(MtLibrary *lib, const char *name);
 
 MT_EXPORT
 MtFunction*
-mtNewFunctionWithNameConstantValues(MtLibrary *lib, const char *name, MtFunctionConstantValues *constantValues);
+mtNewFunctionWithNameConstantValues(MtLibrary *lib, const char *name, MtFunctionConstantValues *constantValues, NsError *error);
 
 MT_EXPORT
 void

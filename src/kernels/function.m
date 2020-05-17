@@ -18,11 +18,10 @@ mtNewFunctionWithName(MtLibrary *lib, const char *name) {
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtFunction*
-mtNewFunctionWithNameConstantValues(MtLibrary *lib, const char *name, MtFunctionConstantValues *constantValues) {
-  mtClearError();
+mtNewFunctionWithNameConstantValues(MtLibrary *lib, const char *name, MtFunctionConstantValues *constantValues, NsError *error) {
   return [(id<MTLLibrary>)lib newFunctionWithName: mtNSString(name)
   								   constantValues: (MtFunctionConstantValues *)constantValues
-  								   			error: &mt_current_error];
+  								   			error: (NSError**)&error];
 }
 
 MT_EXPORT

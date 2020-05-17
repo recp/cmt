@@ -79,11 +79,15 @@ typedef void MtArgument;
 typedef void MtArgumentDescriptor;
 
 typedef void MtComputePipelineDescriptor;
-typedef void MtComputePipelineReflection;
-typedef void MtRenderPipelineReflection;
 typedef void MtPointerType;
 typedef void MtArrayType;
 typedef void MtStructType;
+
+typedef void MtComputePipelineReflection_s;
+typedef void MtRenderPipelineReflection_s;
+typedef MtComputePipelineReflection_s* MtComputePipelineReflection;
+typedef MtRenderPipelineReflection_s* MtRenderPipelineReflection;
+
 
 typedef struct {
     uint32_t threadgroupsPerGrid[3];

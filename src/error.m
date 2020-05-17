@@ -1,29 +1,10 @@
 #include "impl/common.h"
 #include "cmt/common.h"
 
-NSError* mt_current_error = nil;
-
 MT_EXPORT
 void
 mtErrorRelease(NsError *err) {
     [(NSError *)err release];
-}
-
-MT_EXPORT
-void
-mtClearError() { 
-    if (mt_current_error != nil) {
-        [mt_current_error release];
-        mt_current_error = nil; 
-    }
-}
-
-MT_EXPORT
-NsError*
-mtGetError() { 
-    NsError* err = mt_current_error; 
-    mt_current_error = nil;
-    return err;
 }
 
 MT_EXPORT

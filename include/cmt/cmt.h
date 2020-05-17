@@ -40,6 +40,7 @@ extern "C" {
 #include "rendering/pipeline.h"
 
 #include "reflection/argument.h"
+#include "reflection/descriptor.h"
 #include "reflection/pointer_type.h"
 
 #include "command_buf.h"

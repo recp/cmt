@@ -12,15 +12,6 @@ extern "C" {
 #include "common_internal.h"
 #include "types_foundation.h"
 
-// Sets and clear a global error variable, useful for storing it sometimes...
-MT_EXPORT
-void
-mtClearError();
-
-MT_EXPORT
-NsError*
-mtGetError();
-
 MT_EXPORT
 void
 mtErrorRelease(NsError *err);

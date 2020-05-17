@@ -17,27 +17,28 @@ mtNewDefaultLibrary(MtDevice *device) {
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtLibrary*
-mtNewLibraryWithFile(MtDevice *device, char *filepath ) {
-  mtClearError();
-  return [(id<MTLDevice>)device newLibraryWithFile: mtNSString(filepath) error:&mt_current_error];
+mtNewLibraryWithFile(MtDevice *device, char *filepath, NsError *error) {
+  return [(id<MTLDevice>)device newLibraryWithFile: mtNSString(filepath) error:(NSError**)&error];
 }
 
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtLibrary*
-mtNewLibraryWithSource(MtDevice *device, char *source, MtCompileOptions *Opts) {
-  mtClearError();
-  return [(id<MTLDevice>)device newLibraryWithSource: mtNSString(source) 
-  								options:(MTLCompileOptions*)Opts 
-  								error:&mt_current_error];
+mtNewLibraryWithSource(MtDevice *device, char *source, MtCompileOptions *Opts, NsError *
+  error) {
+  NSError *_err;
+  MtLibrary* lib = [(id<MTLDevice>)device newLibraryWithSource: mtNSString(source) 
+  								                           options: (MTLCompileOptions*)Opts 
+  								                             error: &_err];
+  *error = _err; 
+  return lib;
 }
 
 /*CF_RETURNS_RETAINED
 MT_EXPORT
 MtLibrary*
-mtLibraryWithData(MtDevice *device, char *filepath) {
-  mtClearError();
-  return [(id<MTLDevice>)device newLibraryWithFile: mtNSString(filepath) error:&mt_current_error];
+mtLibraryWithData(MtDevice *device, char *filepath, NsError *error) {
+  return [(id<MTLDevice>)device newLibraryWithFile: mtNSString(filepath) error:(NSError**)&error];
 }*/
 
 MT_EXPORT

@@ -33,7 +33,8 @@ mtSetFunc(MtRenderDesc *pipDesc,
 MT_EXPORT
 MtRenderPipeline*
 mtNewRenderState(MtDevice     *device,
-                    MtRenderDesc *pipDesc);
+                    MtRenderDesc *pipDesc, 
+                      NsError *error);
 
 MT_EXPORT
 void
