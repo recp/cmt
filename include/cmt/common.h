@@ -15,4 +15,16 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+/*
+   MT_API_AVAILABLE usage:
+   MT_API_AVAILABLE(minimum_macos_version, minimum_ios_version)
+ */
+
+#ifdef __APPLE__
+#  include <os/availability.h>
+#  define MT_API_AVAILABLE(M, I) API_AVAILABLE(macos(M), ios(I))
+#else
+#  define MT_API_AVAILABLE(M, I)
+#endif
+
 #endif /* cmt_common_h */
