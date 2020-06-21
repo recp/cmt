@@ -7,9 +7,13 @@
 #import "cmt/common.h"
 #import "cmt/memory/heap-descriptor.h"
 
+CF_RETURNS_RETAINED
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 10.0)
 MtHeapDescriptor*
-mtNewHeapDescriptor(void);
+mtNewHeapDescriptor(void) {
+  return [MTLHeapDescriptor new];
+}
 
 MT_EXPORT
 MT_API_AVAILABLE(10.15, 13.0)
