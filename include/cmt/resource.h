@@ -43,4 +43,28 @@ typedef enum MtResourceOptions {
   MtResourceHazardTrackingModeTracked   = MtHazardTrackingModeTracked   << 8
 } MtResourceOptions;
 
+MT_EXPORT
+MtDevice*
+mtResourceDevice(MtResource *res);
+
+MT_EXPORT
+const char*
+mtResourceLabel(MtResource *res);
+
+MT_EXPORT
+MtCPUCacheMode
+mtResourceCPUCacheMode(MtResource *res);
+
+MT_EXPORT
+MtStorageMode
+mtResourceStorageMode(MtResource *res);
+
+MT_EXPORT
+MtHazardTrackingMode
+mtResourceHazardTrackingMode(MtResource *res);
+
+MT_EXPORT
+MtResourceOptions
+mtResourceOptions(MtResource *res);
+
 #endif /* cmt_resource_h */

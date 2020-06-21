@@ -1,0 +1,142 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "(.+[^:]):(\\d+):(\\d+): (?:fatal )?((?:error|warning): .+)$",
+			"name": "cmt (OSX)",
+			"shell_cmd": "make -j12",
+			"syntax": "Packages/CMakeBuilder/Syntax/Make.sublime-syntax",
+			"variants":
+			[
+				{
+					"name": "clean",
+					"shell_cmd": "make -j12 clean"
+				},
+				{
+					"name": "rebuild_cache",
+					"shell_cmd": "make -j12 rebuild_cache"
+				},
+				{
+					"name": "cmt_lib",
+					"shell_cmd": "make -j12 cmt_lib"
+				},
+				{
+					"name": "src/cmt.o",
+					"shell_cmd": "make -j12 src/cmt.o"
+				},
+				{
+					"name": "src/command_buf.o",
+					"shell_cmd": "make -j12 src/command_buf.o"
+				},
+				{
+					"name": "src/command_buf_indirect.o",
+					"shell_cmd": "make -j12 src/command_buf_indirect.o"
+				},
+				{
+					"name": "src/command_enc.o",
+					"shell_cmd": "make -j12 src/command_enc.o"
+				},
+				{
+					"name": "src/command_enc_blit.o",
+					"shell_cmd": "make -j12 src/command_enc_blit.o"
+				},
+				{
+					"name": "src/command_enc_compute.o",
+					"shell_cmd": "make -j12 src/command_enc_compute.o"
+				},
+				{
+					"name": "src/command_enc_render.o",
+					"shell_cmd": "make -j12 src/command_enc_render.o"
+				},
+				{
+					"name": "src/command_queue.o",
+					"shell_cmd": "make -j12 src/command_queue.o"
+				},
+				{
+					"name": "src/compute/compute-pipeline.o",
+					"shell_cmd": "make -j12 src/compute/compute-pipeline.o"
+				},
+				{
+					"name": "src/device.o",
+					"shell_cmd": "make -j12 src/device.o"
+				},
+				{
+					"name": "src/error.o",
+					"shell_cmd": "make -j12 src/error.o"
+				},
+				{
+					"name": "src/event.o",
+					"shell_cmd": "make -j12 src/event.o"
+				},
+				{
+					"name": "src/kernels/compile-opts.o",
+					"shell_cmd": "make -j12 src/kernels/compile-opts.o"
+				},
+				{
+					"name": "src/kernels/function.o",
+					"shell_cmd": "make -j12 src/kernels/function.o"
+				},
+				{
+					"name": "src/kernels/library.o",
+					"shell_cmd": "make -j12 src/kernels/library.o"
+				},
+				{
+					"name": "src/memory/buffer.o",
+					"shell_cmd": "make -j12 src/memory/buffer.o"
+				},
+				{
+					"name": "src/memory/heap-descriptor.o",
+					"shell_cmd": "make -j12 src/memory/heap-descriptor.o"
+				},
+				{
+					"name": "src/memory/heap.o",
+					"shell_cmd": "make -j12 src/memory/heap.o"
+				},
+				{
+					"name": "src/memory/vertex.o",
+					"shell_cmd": "make -j12 src/memory/vertex.o"
+				},
+				{
+					"name": "src/rendering/depthstencil.o",
+					"shell_cmd": "make -j12 src/rendering/depthstencil.o"
+				},
+				{
+					"name": "src/rendering/rpass.o",
+					"shell_cmd": "make -j12 src/rendering/rpass.o"
+				},
+				{
+					"name": "src/rendering/rpip.o",
+					"shell_cmd": "make -j12 src/rendering/rpip.o"
+				},
+				{
+					"name": "src/resource.o",
+					"shell_cmd": "make -j12 src/resource.o"
+				},
+				{
+					"name": "src/utils/conversion.o",
+					"shell_cmd": "make -j12 src/utils/conversion.o"
+				}
+			],
+			"working_dir": "${project_path}/build"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"cmake":
+		{
+			"build_folder": "${project_path}/build",
+			"command_line_overrides":
+			{
+				"BUILD_SHARED_LIBS": true,
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_EXPORT_COMPILE_COMMANDS": true
+			}
+		}
+	}
+}

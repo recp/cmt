@@ -3,14 +3,7 @@
  * MIT License (MIT), http://opensource.org/licenses/MIT
  */
 
-#import "common.h"
-
-MT_HIDE
-NSString*
-mtNSString(const char *str) {
-  return [NSString stringWithCString: str
-                            encoding: NSUTF8StringEncoding];
-}
+#import "impl/common.h"
 
 CF_RETURNS_RETAINED
 MT_EXPORT
