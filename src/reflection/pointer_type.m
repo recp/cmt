@@ -7,44 +7,50 @@
 #include "cmt/reflection/pointer_type.h"
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 MtDataType
 mtPointerTypeElementType(MtPointerType *ptr)  {
-	return [(MTLPointerType*)ptr elementType];
+	return (MtDataType)[(MTLPointerType *)ptr elementType];
 }        
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 MtArgumentAccess
 mtPointerTypeAccess(MtPointerType *ptr) {
-	return [(MTLPointerType*)ptr access];
+	return (MtArgumentAccess)[(MTLPointerType*)ptr access];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 NsUInteger 
 mtPointerTypeAlignment(MtPointerType *ptr) {
-	return [(MTLPointerType*)ptr alignment];
+	return [(MTLPointerType *)ptr alignment];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 NsUInteger 
 mtPointerTypeDataSize(MtPointerType *ptr) {
-	return [(MTLPointerType*)ptr dataSize];
+	return [(MTLPointerType *)ptr dataSize];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 bool
 mtPointerTypeElementIsArgumentBuffer(MtPointerType *ptr) {
-	return [(MTLPointerType*)ptr elementIsArgumentBuffer];
+	return [(MTLPointerType *)ptr elementIsArgumentBuffer];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 MtStructType*
 mtPointerTypeElementStructType(MtPointerType *ptr) {
-	return [(MTLPointerType*)ptr elementStructType];
+	return [(MTLPointerType *)ptr elementStructType];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 MtArrayType*
 mtPointerTypeElementArrayType(MtPointerType *ptr) {
-	return [(MTLPointerType*)ptr elementArrayType];
+	return [(MTLPointerType *)ptr elementArrayType];
 }
-

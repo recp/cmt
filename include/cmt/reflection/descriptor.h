@@ -14,10 +14,12 @@ extern "C" {
 #include "cmt/enums.h"
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtComputePipelineReflection*
-mtNewComputePipelineReflection();
+mtNewComputePipelineReflection(void);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 const MtArgument *
 mtComputePipelinereflectionArguments(MtComputePipelineReflection *refl);
 
