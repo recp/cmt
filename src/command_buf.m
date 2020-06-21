@@ -104,26 +104,29 @@ mtCommandBufferError(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb error];
 }
 
-
 MT_EXPORT
+MT_API_AVAILABLE(10.15, 13.0)
 CfTimeInterval
 mtCommandBufferKernelStartTime(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb kernelStartTime];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.15, 13.0)
 CfTimeInterval
 mtCommandBufferKernelEndTime(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb kernelEndTime];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.15, 13.0)
 CfTimeInterval
 mtCommandBufferGPUStartTime(MtCommandBuffer *cmdb){
   return [(id<MTLCommandBuffer>)cmdb GPUStartTime];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.15, 13.0)
 CfTimeInterval
 mtCommandBufferGPUEndTime(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb GPUEndTime];
@@ -131,12 +134,14 @@ mtCommandBufferGPUEndTime(MtCommandBuffer *cmdb) {
 
 // Events
 MT_EXPORT
+MT_API_AVAILABLE(10.15, 13.0)
 void
 mtCommandBufferEncodeSignalEvent(MtCommandBuffer *cmdb, MtEvent *event, uint64_t val) {
   [(id<MTLCommandBuffer>)cmdb encodeSignalEvent:(id<MTLEvent>)event value: val];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.15, 13.0)
 void
 mtCommandBufferEncodeWaitForEvent(MtCommandBuffer *cmdb,  MtEvent *event, uint64_t val) {
   [(id<MTLCommandBuffer>)cmdb encodeWaitForEvent:(id<MTLEvent>)event value: val];
@@ -144,6 +149,7 @@ mtCommandBufferEncodeWaitForEvent(MtCommandBuffer *cmdb,  MtEvent *event, uint64
 
 // retained references ?
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 bool
 mtCommandBufferRetainedReferences(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb retainedReferences];
@@ -151,32 +157,36 @@ mtCommandBufferRetainedReferences(MtCommandBuffer *cmdb) {
 
 // identifying
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtDevice*
 mtCommandBufferDevice(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb device];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtCommandQueue*
 mtCommandBufferCommandQueue(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb commandQueue];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 const char*
 mtCommandBufferLabel(MtCommandBuffer *cmdb) {
   return Cstring([(id<MTLCommandBuffer>)cmdb label]);
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 void
 mtCommandBufferPushDebugGroup(MtCommandBuffer *cmdb, char* str) {
   return [(id<MTLCommandBuffer>)cmdb pushDebugGroup: mtNSString(str)];  
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 11.0)
 void
 mtCommandBufferPopDebugGroup(MtCommandBuffer *cmdb) {
   [(id<MTLCommandBuffer>)cmdb popDebugGroup];
 }
-
