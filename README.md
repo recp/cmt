@@ -1,17 +1,19 @@
 # Apple's Metal for `C`
 
-C Wrapper for Apple's METAL framework. This library is C bindings of Metal API (MetalGL). 
+C Wrapper for Apple's METAL framework. This library is C bindings of Metal API (MetalGL). Since **OpenGL** is deprecated, this library may build OpenGL api on this library. This could save old games and apps on macOS platform.
 
-This started as a fork of [rcp/cmt](https://github.com/recp/cmt), with the aim of wrapping Metal in Julia, but at the time of writing is more complete.
-
-The graphics-related part of the API are not very developed. At the moment mostly functionality related to computing is wrapped.
+Also since this is C bindings for Metal API, it also can help other languages to use Metal with this library. 
 
 Currently this library does not alloc memory for its types. It retains ObjC objects and work on them. This also makes the library very very thin layer on ObjC. 
 
-## Building and linking
+This is NOT generic rendering library. If you need to that, check this one: [Graphics Kernel](https://github.com/recp/gk), it is also written in C and provides common rendering techniques. It will be cross platform. Since [Graphics Kernel](https://github.com/recp/gk) needs to run on macOS, this library will be macOS backend for that purpose.
+
+### Building and linking
 
 A CMake project is included that builds a shared library. The headers for that library are contained in `include/cmt`, and are bare-C.
 
+
+### Sample usage:
 
 ```C
 
