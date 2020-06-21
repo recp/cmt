@@ -8,6 +8,18 @@ Currently this library does not alloc memory for its types. It retains ObjC obje
 
 This is NOT generic rendering library. If you need to that, check this one: [Graphics Kernel](https://github.com/recp/gk), it is also written in C and provides common rendering techniques. It will be cross platform. Since [Graphics Kernel](https://github.com/recp/gk) needs to run on macOS, this library will be macOS backend for that purpose.
 
+### Design
+
+```C
+MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)  /* API AVAILABILITY */
+[returnType]
+mt[FunctionName]([Params]);
+
+```
+
+functions are marked with `MT_API_AVAILABLE` which helps to identify which api available on which platform. The first parameter is minimum **macOS** version and the second one is the minimum **iOS** version.
+
 ### Building and linking
 
 A CMake project is included that builds a shared library. The headers for that library are contained in `include/cmt`, and are bare-C.
