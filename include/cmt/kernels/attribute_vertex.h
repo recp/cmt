@@ -14,26 +14,32 @@ extern "C" {
 #include "cmt/enums.h"
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 const char*
 mtVertexAttributeName(MtVertexAttribute *attr);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 NsUInteger
 mtVertexAttributeIndex(MtVertexAttribute *attr);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtDataType
 mtVertexAttributeDataType(MtVertexAttribute *attr);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 bool
 mtVertexAttributeActive(MtVertexAttribute *attr);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 bool
 mtVertexAttributeIsPatchControlPointData(MtVertexAttribute *attr);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 bool
 mtVertexAttributeIsPatchData(MtVertexAttribute *attr);
 

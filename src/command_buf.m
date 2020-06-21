@@ -7,8 +7,11 @@
 #include "impl/common.h"
 #include "cmt/command_buf.h"
 
+typedef void (^MtCommandBufferHandlerBlock)(id<MTLCommandBuffer>) MT_API_AVAILABLE(10.11, 8.0);
+
 CF_RETURNS_RETAINED
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtCommandBuffer*
 mtNewCommandBuffer(MtCommandQueue *cmdq) {
   return [(id<MTLCommandQueue>)cmdq commandBuffer];
@@ -16,12 +19,14 @@ mtNewCommandBuffer(MtCommandQueue *cmdq) {
 
 CF_RETURNS_RETAINED
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtCommandBuffer*
 mtNewCommandBufferWithUnretainedReferences(MtCommandQueue *cmdq) {
   return [(id<MTLCommandQueue>)cmdq commandBufferWithUnretainedReferences];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
                           void           * __restrict sender,
@@ -32,32 +37,35 @@ mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtCommandBufferPresentDrawable(MtCommandBuffer *cmdb, MtDrawable *drawable) {
   [(id<MTLCommandBuffer>)cmdb presentDrawable: drawable];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtCommandBufferEqueue(MtCommandBuffer *cmdb) {
   [(id<MTLCommandBuffer>)cmdb enqueue];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtCommandBufferCommit(MtCommandBuffer *cmdb) {
   [(id<MTLCommandBuffer>)cmdb commit];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtCommandBufferAddScheduledHandler(MtCommandBuffer *cmdb, MtCommandBufferHandlerFun handler) {
   [(id<MTLCommandBuffer>)cmdb addScheduledHandler:(MTLCommandBufferHandler)handler];
 }
 
-typedef void (^MtCommandBufferHandlerBlock)(id<MTLCommandBuffer>);
-
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtCommandBufferAddCompletedHandler(MtCommandBuffer *cmdb, MtCommandBufferHandlerFun handler) {
   MTLCommandBufferHandler block = ^(id<MTLCommandBuffer> buf){
@@ -69,24 +77,28 @@ mtCommandBufferAddCompletedHandler(MtCommandBuffer *cmdb, MtCommandBufferHandler
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtCommandBufferWaitUntilScheduled(MtCommandBuffer *cmdb) {
   [(id<MTLCommandBuffer>)cmdb waitUntilScheduled];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtCommandBufferWaitUntilCompleted(MtCommandBuffer *cmdb) {
   [(id<MTLCommandBuffer>)cmdb waitUntilCompleted];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtCommandBufferStatus
 mtCommandBufferStatus(MtCommandBuffer *cmdb) {
-  return [(id<MTLCommandBuffer>)cmdb status];
+  return (MtCommandBufferStatus)[(id<MTLCommandBuffer>)cmdb status];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 NsError*
 mtCommandBufferError(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb error];

@@ -7,37 +7,43 @@
 #include "cmt/kernels/attribute.h"
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 const char*
 mtAttributeName(MtAttribute *attr) {
-    return Cstring([(MTLAttribute*)attr name]);
+  return Cstring([(MTLAttribute*)attr name]);
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 NsUInteger
 mtAttributeIndex(MtAttribute *attr) {
-    return [(MTLAttribute*)attr attributeIndex];
+  return [(MTLAttribute*)attr attributeIndex];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 MtDataType
 mtAttributeDataType(MtAttribute *attr) {
-    return [(MTLAttribute*)attr attributeType];
+  return (MtDataType)[(MTLAttribute*)attr attributeType];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 bool
 mtAttributeActive(MtAttribute *attr) {
-    return [(MTLAttribute*)attr isActive];
+  return [(MTLAttribute*)attr isActive];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 bool
 mtAttributeIsPatchControlPointData(MtAttribute *attr) {
-    return [(MTLAttribute*)attr isPatchControlPointData];
+  return [(MTLAttribute*)attr isPatchControlPointData];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 bool
 mtAttributeIsPatchData(MtAttribute *attr) {
-    return [(MTLAttribute*)attr isPatchData];
+  return [(MTLAttribute*)attr isPatchData];
 }

@@ -60,13 +60,13 @@ MtStructType*
 mtArgumentBufferStructType(MtArgument *arg);
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(10.13, 11.0)
 MtPointerType*
 mtArgumentBufferPointerType(MtArgument *arg);
 
 // Array
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(10.13, 10.0)
 NsUInteger
 mtArgumentArrayLength(MtArgument *arg);
 

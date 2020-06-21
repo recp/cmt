@@ -15,22 +15,27 @@ extern "C" {
 #include "cmt/resource.h"
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void*
 mtBufferContents(MtBuffer* buf);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 NsUInteger
 mtBufferLength(MtBuffer* buf);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtBufferDidModifyRange(MtBuffer* buf, NsRange ran);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 void
 mtBufferAddDebugMarkerRange(MtBuffer* buf, char* string, NsRange range);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.12, 10.0)
 void
 mtBufferRemoveAllDebugMarkers(MtBuffer* buf);
 

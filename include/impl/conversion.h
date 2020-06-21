@@ -110,17 +110,15 @@ mtRegion(MtRegion region) {
 MT_HIDE
 MT_INLINE
 MtIndirectCommandBufferExecutionRange
-mtIndirectCommandBufferExecutionRange(MTLIndirectCommandBufferExecutionRange range) {
-	MtIndirectCommandBufferExecutionRange icbRange = {range.location, range.length};
-    return icbRange;
+mtIndirectCommandBufferExecutionRange(MtIndirectCommandBufferExecutionRange range) {
+  MtIndirectCommandBufferExecutionRange icbRange = {range.location, range.length};
+  return icbRange;
 }
 
 MT_HIDE
 MT_INLINE
-MTLIndirectCommandBufferExecutionRange
+MtIndirectCommandBufferExecutionRange
 mtMTLIndirectCommandBufferExecutionRange(MtIndirectCommandBufferExecutionRange range) {
-	MTLIndirectCommandBufferExecutionRange icbRange = {range.location, range.length};
-    return icbRange;
+  MtIndirectCommandBufferExecutionRange icbRange = {range.location, range.length};
+  return icbRange;
 }
-
-
