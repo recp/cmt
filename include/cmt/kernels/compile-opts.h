@@ -18,10 +18,6 @@ MtCompileOptions*
 mtNewCompileOpts(void);
 
 MT_EXPORT
-void
-mtCompileOptsRelease(MtCompileOptions *opts);
-
-MT_EXPORT
 bool
 mtCompileOptsFastMath(MtCompileOptions *opts);
 

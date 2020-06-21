@@ -14,14 +14,9 @@ extern "C" {
 #include "cmt/enums.h"
 #include "cmt/resource.h"
 
-
 MT_EXPORT
 MtHeapDescriptor*
 mtNewHeapDescriptor(void);
-
-MT_EXPORT
-void
-mtHeapDescriptorRelease(MtHeapDescriptor *desc);
 
 MT_EXPORT
 MtHeapType 

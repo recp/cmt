@@ -22,10 +22,6 @@ MT_EXPORT
 MtComputeCommandEncoder*
 mtNewComputeCommandEncoderWithDispatchType(MtCommandBuffer *cmdb, MtDispatchType dtype);
 
-MT_EXPORT
-void
-mtComputeCommandEncoderRelease(MtComputeCommandEncoder *cce);
-
 // Could be removed because in base class
 MT_EXPORT
 void

@@ -14,12 +14,6 @@ mtDeviceNewHeapWithDescriptor(MtDevice *dev, MtHeapDescriptor *descriptor) {
 }
 
 MT_EXPORT
-void
-mtHeapRelease(MtHeap *heap) {
-	return [(id<MTLHeap>)heap release];
-}
-
-MT_EXPORT
 MtDevice*
 mtHeapDevice(MtHeap *heap) {
 	return [(id<MTLHeap>)heap device];

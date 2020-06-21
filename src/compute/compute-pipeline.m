@@ -48,12 +48,6 @@ mtComputePipelineDevice(MtComputePipelineState *pip) {
 }
 
 MT_EXPORT
-void
-mtComputePipelineRelease(MtComputePipelineState *pip) {
-    [(id<MTLComputePipelineState>)pip release];
-}
-
-MT_EXPORT
 const char*
 mtComputePipelineLabel(MtComputePipelineState *pip) {
     return Cstring([(id<MTLComputePipelineState>)pip label]);

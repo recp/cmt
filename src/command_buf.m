@@ -23,12 +23,6 @@ mtNewCommandBufferWithUnretainedReferences(MtCommandQueue *cmdq) {
 
 MT_EXPORT
 void
-mtCommandBufferRelease(MtCommandBuffer *cmdbuf) {
-  [(id<MTLCommandBuffer>)cmdbuf release];
-}
-
-MT_EXPORT
-void
 mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
                           void           * __restrict sender,
                           MtCommandBufferOnCompleteFn oncomplete) {

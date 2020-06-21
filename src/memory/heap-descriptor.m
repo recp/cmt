@@ -12,12 +12,6 @@ MtHeapDescriptor*
 mtNewHeapDescriptor(void);
 
 MT_EXPORT
-void
-mtHeapDescriptorRelease(MtHeapDescriptor *desc) {
-	return [(MTLHeapDescriptor*)desc release];
-}
-
-MT_EXPORT
 MtHeapType 
 mtHeapDescriptorType(MtHeapDescriptor *heap) {
 	return [(MTLHeapDescriptor*)heap type];

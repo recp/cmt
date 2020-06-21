@@ -32,12 +32,6 @@ mtDeviceNewFence(MtDevice *dev) {
 }
 
 MT_EXPORT
-void
-mtEventRelease(MtEvent *event) {
-	return [(id<MTLEvent>)event release];
-}
-
-MT_EXPORT
 MtDevice*
 mtEventDevice(MtEvent *event) {
 	return [(id<MTLEvent>)event device];
@@ -61,12 +55,6 @@ MT_EXPORT
 MtSharedEventHandle*
 mtSharedEventNewHandle(MtSharedEvent *event) {
 	return [(id<MTLSharedEvent>)event newSharedEventHandle];
-}
-
-MT_EXPORT
-void
-mtSharedEventHandleRelease(MtSharedEventHandle *handle) {
-	return [(MTLSharedEventHandle*)handle release];
 }
 
 MT_EXPORT

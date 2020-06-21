@@ -15,12 +15,6 @@ mtNewCompileOpts() {
 }
 
 MT_EXPORT
-void
-mtCompileOptsRelease(MtCompileOptions *opts) {
-	return [(MTLCompileOptions *)opts release];
-}
-
-MT_EXPORT
 bool
 mtCompileOptsFastMath(MtCompileOptions *opts) {
 	return [(MTLCompileOptions *)(opts) fastMathEnabled];

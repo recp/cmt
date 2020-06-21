@@ -22,10 +22,6 @@ MtFunction*
 mtNewFunctionWithNameConstantValues(MtLibrary *lib, const char *name, MtFunctionConstantValues *constantValues, NsError *error);
 
 MT_EXPORT
-void
-mtFunctionRelease(MtFunction* fun);
-
-MT_EXPORT
 MtDevice*
 mtFunctionDevice(MtFunction* fun);
 

@@ -29,10 +29,6 @@ MT_EXPORT
 MtFence*
 mtDeviceNewFence(MtDevice *dev);
 
-MT_EXPORT
-void
-mtEventRelease(MtEvent *event);
-
 //
 MT_EXPORT
 MtDevice*
@@ -50,10 +46,6 @@ mtSharedEventSignaledValue(MtSharedEvent *event);
 MT_EXPORT
 MtSharedEventHandle*
 mtSharedEventNewHandle(MtSharedEvent *event);
-
-MT_EXPORT
-void
-mtSharedEventHandleRelease(MtSharedEventHandle *handle);
 
 MT_EXPORT
 void

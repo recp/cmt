@@ -32,10 +32,6 @@ mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
 
 MT_EXPORT
 void
-mtCommandBufferRelease(MtCommandBuffer *cmdbuf);
-
-MT_EXPORT
-void
 mtCommandBufferPresentDrawable(MtCommandBuffer *cmdb,
           MtDrawable      *drawable);
 

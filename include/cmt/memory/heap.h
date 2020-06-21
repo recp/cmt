@@ -19,10 +19,6 @@ MtHeap*
 mtDeviceNewHeapWithDescriptor(MtDevice *dev, MtHeapDescriptor *descriptor);
 
 MT_EXPORT
-void
-mtHeapRelease(MtHeap *heap);
-
-MT_EXPORT
 MtDevice*
 mtHeapDevice(MtHeap *heap);
 

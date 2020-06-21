@@ -42,12 +42,6 @@ mtLibraryWithData(MtDevice *device, char *filepath, NsError *error) {
 }*/
 
 MT_EXPORT
-void
-mtLibraryRelease(MtLibrary *lib) {
-  [(id<MTLLibrary>)lib release];
-}
-
-MT_EXPORT
 MtDevice*
 mtLibraryDevice(MtLibrary *lib) {
 	return [(id<MTLLibrary>)lib device];

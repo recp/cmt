@@ -15,10 +15,6 @@ extern "C" {
 #include "cmt/resource.h"
 
 MT_EXPORT
-void
-mtBufferRelease(MtBuffer* buf);
-
-MT_EXPORT
 void*
 mtBufferContents(MtBuffer* buf);
 

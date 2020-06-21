@@ -36,10 +36,6 @@ MtDevice*
 mtComputePipelineDevice(MtComputePipelineState *pip);
 
 MT_EXPORT
-void
-mtComputePipelineRelease(MtComputePipelineState *pip);
-
-MT_EXPORT
 const char*
 mtComputePipelineLabel(MtComputePipelineState *pip);
 

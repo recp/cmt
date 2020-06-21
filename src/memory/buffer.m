@@ -6,12 +6,6 @@
 #import "impl/common.h"
 
 MT_EXPORT
-void
-mtBufferRelease(MtBuffer* buf) {
-	return [(id<MTLBuffer>)buf release];
-}
-
-MT_EXPORT
 void*
 mtBufferContents(MtBuffer* buf) {
 	return [(id<MTLBuffer>)buf contents];
