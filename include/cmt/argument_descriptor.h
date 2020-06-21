@@ -16,7 +16,7 @@ extern "C" {
 
 MT_EXPORT 
 MtArgumentDescriptor*
-mtNewArgumentDescriptor();
+mtNewArgumentDescriptor(void);
 
 MT_EXPORT 
 MtDataType

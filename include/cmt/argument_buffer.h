@@ -17,7 +17,7 @@ extern "C" {
 
 MT_EXPORT 
 MtArgumentDescriptor*
-mtNewArgumentDescriptor();
+mtNewArgumentDescriptor(void);
 
 
 #ifdef __cplusplus
