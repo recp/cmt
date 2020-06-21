@@ -1,3 +1,8 @@
+/*
+ * Copyright (c), Recep Aslantas.
+ * MIT License (MIT), http://opensource.org/licenses/MIT
+ */
+
 #ifndef cmt_descriptor_h
 #define cmt_descriptor_h
 #ifdef __cplusplus

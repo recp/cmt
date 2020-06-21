@@ -1,3 +1,8 @@
+/*
+ * Copyright (c), Recep Aslantas.
+ * MIT License (MIT), http://opensource.org/licenses/MIT
+ */
+
 #ifndef cmt_argument_
 #define cmt_argument_
 #ifdef __cplusplus

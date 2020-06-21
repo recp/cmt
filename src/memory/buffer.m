@@ -1,5 +1,9 @@
-#import "impl/common.h"
+/*
+ * Copyright (c), Recep Aslantas.
+ * MIT License (MIT), http://opensource.org/licenses/MIT
+ */
 
+#import "impl/common.h"
 
 MT_EXPORT
 void

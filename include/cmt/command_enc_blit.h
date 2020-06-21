@@ -1,3 +1,7 @@
+/*
+ * Copyright (c), Recep Aslantas.
+ * MIT License (MIT), http://opensource.org/licenses/MIT
+ */
 
 #ifndef cmt_command_enc_blit_h
 #define cmt_command_enc_blit_h

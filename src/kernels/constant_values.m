@@ -1,4 +1,9 @@
-//https://developer.apple.com/documentation/metal/mtlfunctionconstantvalues?language=objc
+/*
+ * Copyright (c), Recep Aslantas.
+ * MIT License (MIT), http://opensource.org/licenses/MIT
+ */
+
+/* https://developer.apple.com/documentation/metal/mtlfunctionconstantvalues?language=objc */
 
 #include "cmt/kernels/constant_values.h"
 #include "impl/common.h"

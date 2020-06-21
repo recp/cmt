@@ -7,7 +7,6 @@
 #include "cmt/kernels/function.h"
 #import "cmt/error.h"
 
-
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtFunction*

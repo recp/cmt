@@ -1,3 +1,8 @@
+/*
+ * Copyright (c), Recep Aslantas.
+ * MIT License (MIT), http://opensource.org/licenses/MIT
+ */
+
 #import "impl/common.h"
 #import "cmt/compute/compute-pipeline.h"
 #import "cmt/error.h"

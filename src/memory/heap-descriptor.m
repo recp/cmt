@@ -1,7 +1,11 @@
+/*
+ * Copyright (c), Recep Aslantas.
+ * MIT License (MIT), http://opensource.org/licenses/MIT
+ */
+
 #import "impl/common.h"
 #import "cmt/common.h"
 #import "cmt/memory/heap-descriptor.h"
-
 
 MT_EXPORT
 MtHeapDescriptor*
