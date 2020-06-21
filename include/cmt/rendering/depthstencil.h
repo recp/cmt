@@ -14,28 +14,29 @@ extern "C" {
 #include "cmt/enums.h"
 
 typedef enum MtCompareFunction {
-    MtCompareFunctionNever = 0,
-    MtCompareFunctionLess = 1,
-    MtCompareFunctionEqual = 2,
-    MtCompareFunctionLessEqual = 3,
-    MtCompareFunctionGreater = 4,
-    MtCompareFunctionNotEqual = 5,
-    MtCompareFunctionGreaterEqual = 6,
-    MtCompareFunctionAlways = 7,
+  MtCompareFunctionNever = 0,
+  MtCompareFunctionLess = 1,
+  MtCompareFunctionEqual = 2,
+  MtCompareFunctionLessEqual = 3,
+  MtCompareFunctionGreater = 4,
+  MtCompareFunctionNotEqual = 5,
+  MtCompareFunctionGreaterEqual = 6,
+  MtCompareFunctionAlways = 7,
 } MtCompareFunction;
 
 typedef enum MtStencilOperation {
-    MtStencilOperationKeep = 0,
-    MtStencilOperationZero = 1,
-    MtStencilOperationReplace = 2,
-    MtStencilOperationIncrementClamp = 3,
-    MtStencilOperationDecrementClamp = 4,
-    MtStencilOperationInvert = 5,
-    MtStencilOperationIncrementWrap = 6,
-    MtStencilOperationDecrementWrap = 7,
+  MtStencilOperationKeep = 0,
+  MtStencilOperationZero = 1,
+  MtStencilOperationReplace = 2,
+  MtStencilOperationIncrementClamp = 3,
+  MtStencilOperationDecrementClamp = 4,
+  MtStencilOperationInvert = 5,
+  MtStencilOperationIncrementWrap = 6,
+  MtStencilOperationDecrementWrap = 7,
 } MtStencilOperation;
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtDepthStencil*
 mtDepthStencil(MtCompareFunction depthCompareFunc, bool depthWriteEnabled);
 

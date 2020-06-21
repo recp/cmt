@@ -7,6 +7,7 @@
 #import "cmt/rendering/depthstencil.h"
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtDepthStencil*
 mtDepthStencil(MtCompareFunction depthCompareFunc, bool depthWriteEnabled) {
   MTLDepthStencilDescriptor *depthStateDesc;
