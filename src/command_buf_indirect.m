@@ -8,38 +8,41 @@
 
 CF_RETURNS_RETAINED
 MT_EXPORT
+MT_API_AVAILABLE(10.14, 12.0)
 MtIndirectCommandBuffer*
 mtNewIndirectCommandBuffer(MtDevice *device, MtIndirectCommandBufferDescriptor *desc,
-    NsUInteger maxCount, MtResourceOptions options) {
-    return [(id<MTLDevice>)device 
-        newIndirectCommandBufferWithDescriptor: (MTLIndirectCommandBufferDescriptor *)desc 
-                               maxCommandCount: maxCount 
-                                       options: (MTLResourceOptions)options];
+                           NsUInteger maxCount, MtResourceOptions options) {
+  return [(id<MTLDevice>)device  newIndirectCommandBufferWithDescriptor: (MTLIndirectCommandBufferDescriptor *)desc
+                                                        maxCommandCount: maxCount
+                                                                options: (MTLResourceOptions)options];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 NsUInteger
 mtIndirectCommandBufferSize(MtIndirectCommandBuffer *icb) {
-    return [(id<MTLIndirectCommandBuffer>)icb size];
+  return [(id<MTLIndirectCommandBuffer>)icb size];
 }
 
 /* IOS Only atm
-MT_EXPORT
-MtIndirectComputeCommand*
-mtIndirectCommandBufferComputeCommandAtIndex(MtIndirectCommandBuffer *icb, 
-                                                NsUInteger index) {
-    return [(id<MTLIndirectCommandBuffer>)icb indirectComputeCommandAtIndex:index];
-}*/
+ MT_EXPORT
+ MtIndirectComputeCommand*
+ mtIndirectCommandBufferComputeCommandAtIndex(MtIndirectCommandBuffer *icb,
+ NsUInteger index) {
+ return [(id<MTLIndirectCommandBuffer>)icb indirectComputeCommandAtIndex:index];
+ }*/
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtIndirectRenderCommand*
 mtIndirectCommandBufferRenderCommandAtIndex(MtIndirectCommandBuffer *icb, 
-                                                NsUInteger index) {
-    return [(id<MTLIndirectCommandBuffer>)icb indirectRenderCommandAtIndex:index];
+                                            NsUInteger index) {
+  return [(id<MTLIndirectCommandBuffer>)icb indirectRenderCommandAtIndex:index];
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtIndirectCommandBufferResetWithRange(MtIndirectCommandBuffer *icb, NsRange range) {
-    return [(id<MTLIndirectCommandBuffer>)icb resetWithRange:mtNSRange(range)];
+  return [(id<MTLIndirectCommandBuffer>)icb resetWithRange:mtNSRange(range)];
 }

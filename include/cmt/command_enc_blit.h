@@ -14,77 +14,91 @@ extern "C" {
 #include "cmt/enums.h"
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 MtBlitCommandEncoder*
 mtNewBlitCommandEncoder(MtCommandBuffer *cmdb);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtBlitCommandEncoderCopyFromBufferToBuffer(MtBlitCommandEncoder *bce, 
-	MtBuffer *src, NsUInteger src_offset, 
-	MtBuffer *dst, NsUInteger dst_offset, 
-	NsUInteger size);
+                                           MtBuffer *src, NsUInteger src_offset,
+                                           MtBuffer *dst, NsUInteger dst_offset,
+                                           NsUInteger size);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtBlitCommandEncoderFillBuffer(MtBlitCommandEncoder *bce, 
-	MtBuffer *src, NsRange range, uint8_t val);
+                               MtBuffer *src, NsRange range, uint8_t val);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtBlitCommandEncoderGenerateMipmaps(MtBlitCommandEncoder *bce, 
-	MtTexture *texture);
+                                    MtTexture *texture);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.14, 12.0)
 void
 mtBlitCommandEncoderCopyIndirectCommandBuffer(MtBlitCommandEncoder *bce, 
-	MtIndirectCommandBuffer *src, NsRange range,
-	MtIndirectCommandBuffer *dst, NsUInteger dst_index);
+                                              MtIndirectCommandBuffer *src, NsRange range,
+                                              MtIndirectCommandBuffer *dst, NsUInteger dst_index);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.14, 12.0)
 void
 mtBlitCommandEncoderOptimizeIndirectCommandBuffer(MtBlitCommandEncoder *bce, 
-	MtIndirectCommandBuffer *buffer, NsRange range);
+                                                  MtIndirectCommandBuffer *buffer, NsRange range);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.14, 12.0)
 void
 mtBlitCommandEncoderResetCommandsInBuffer(MtBlitCommandEncoder *bce, 
-	MtIndirectCommandBuffer *buffer, NsRange range);
+                                          MtIndirectCommandBuffer *buffer, NsRange range);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtBlitCommandEncoderSynchronizeResource(MtBlitCommandEncoder *bce, 
-	MtResource *resource);
+                                        MtResource *resource);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.11, 8.0)
 void
 mtBlitCommandEncoderSynchronizeTexture(MtBlitCommandEncoder *bce, 
-	MtTexture *texture, NsUInteger slice, NsUInteger level);
+                                       MtTexture *texture, NsUInteger slice, NsUInteger level);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 10.0)
 void
 mtBlitCommandEncoderUpdateFence(MtIndirectCommandBuffer *icb, MtFence *fence);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.13, 10.0)
 void
 mtBlitCommandEncoderWaitForFence(MtIndirectCommandBuffer *icb, MtFence *fence);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.14, 12.0)
 void
 mtBlitCommandEncoderOptimizeContentsForGPUAccess(MtIndirectCommandBuffer *icb,
-													MtTexture *tex);
+                                                 MtTexture *tex);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.14, 12.0)
 void
 mtBlitCommandEncoderOptimizeContentsForGPUAccessSliceLevel(MtIndirectCommandBuffer *icb,
 													MtTexture *tex, NsUInteger slice, NsUInteger level);
 
-
 MT_EXPORT
+MT_API_AVAILABLE(10.14, 12.0)
 void
 mtBlitCommandEncoderOptimizeContentsForCPUAccess(MtIndirectCommandBuffer *icb,
-													MtTexture *tex);
+                                                 MtTexture *tex);
 
 MT_EXPORT
+MT_API_AVAILABLE(10.14, 12.0)
 void
 mtBlitCommandEncoderOptimizeContentsForCPUAccessSliceLevel(MtIndirectCommandBuffer *icb,
 													MtTexture *tex, NsUInteger slice, NsUInteger level);
@@ -97,13 +111,13 @@ mtBlitCommandEncoderSampleCountersInBuffer(MtIndirectCommandBuffer *icb,
 											NsUInteger sampleindex,
 											bool barrier);
 
-MT_EXPORT void
+MT_EXPORT
+void
 mtBlitCommandEncoderResolveCounters(MtIndirectCommandBuffer *icb,
 									MtCounterSampleBuffer *sbuf,
 									NsRange range,
 									MtBuffer *dst,
 									NsUInteger dst_offset);
-
 
 #ifdef __cplusplus
 }
