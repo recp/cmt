@@ -33,7 +33,7 @@ const char**
 mtErrorLocalizedRecoveryOptions(NsError *err) {
   NSArray<NSString *> *_strings = [(NSError*)err localizedRecoveryOptions];
 
-  int n = [_strings count];
+  NSInteger n = [_strings count];
   const char **strs = malloc(sizeof(char*) * (n + 1));
   for (int i=0; i < n; i++) {
     strs[i] = Cstring([_strings objectAtIndex:i]);
