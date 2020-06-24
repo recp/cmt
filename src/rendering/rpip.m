@@ -12,7 +12,7 @@
 
 CF_RETURNS_RETAINED
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtRenderDesc*
 mtNewRenderPipeline(MtPixelFormat pixelFormat) {
   MTLRenderPipelineDescriptor *mpipDesc;
@@ -23,7 +23,7 @@ mtNewRenderPipeline(MtPixelFormat pixelFormat) {
 
 CF_RETURNS_RETAINED
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtRenderPipeline*
 mtNewRenderState(MtDevice *device, MtRenderDesc *pipDesc, NsError *error) {
   return [(id<MTLDevice>)device
@@ -32,7 +32,7 @@ mtNewRenderState(MtDevice *device, MtRenderDesc *pipDesc, NsError *error) {
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtSetFunc(MtRenderDesc *pipDesc,
           MtFunction   *func,
@@ -53,7 +53,7 @@ mtSetFunc(MtRenderDesc *pipDesc,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtColorPixelFormat(MtRenderDesc * __restrict renderdesc,
                    uint32_t                  index,
@@ -64,7 +64,7 @@ mtColorPixelFormat(MtRenderDesc * __restrict renderdesc,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtDepthPixelFormat(MtRenderDesc * __restrict renderdesc,
                    MtPixelFormat             pixelFormat) {
@@ -74,7 +74,7 @@ mtDepthPixelFormat(MtRenderDesc * __restrict renderdesc,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtStencilPixelFormat(MtRenderDesc * __restrict renderdesc,
                      MtPixelFormat             pixelFormat) {
@@ -84,7 +84,7 @@ mtStencilPixelFormat(MtRenderDesc * __restrict renderdesc,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtSampleCount(MtRenderDesc * __restrict renderdesc,
               uint32_t                  sampleCount) {

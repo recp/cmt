@@ -12,7 +12,7 @@ This is NOT generic rendering library. If you need to that, check this one: [Gra
 
 ```C
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)  /* API AVAILABILITY */
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))  /* API AVAILABILITY */
 [returnType]
 mt[FunctionName]([Params]);
 

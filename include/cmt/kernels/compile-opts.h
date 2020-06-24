@@ -14,22 +14,27 @@ extern "C" {
 #include "cmt/enums.h"
 
 MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtCompileOptions*
 mtNewCompileOpts(void);
 
 MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 bool
 mtCompileOptsFastMath(MtCompileOptions *opts);
 
 MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtCompileOptsFastMathSet(MtCompileOptions *opts, bool val);
 
 MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtLanguageVersion
 mtCompileOptsLanguageVersion(MtCompileOptions *opts);
 
 MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtCompileOptsLanguageVersionSet(MtCompileOptions *opts, MtLanguageVersion val);
 

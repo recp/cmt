@@ -8,14 +8,14 @@
 
 CF_RETURNS_RETAINED
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtBlitCommandEncoder*
 mtNewBlitCommandEncoder(MtCommandBuffer *cmdb) {
   return [(id<MTLCommandBuffer>)cmdb blitCommandEncoder];
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtBlitCommandEncoderCopyFromBufferToBuffer(MtBlitCommandEncoder *bce, 
                                            MtBuffer *src, NsUInteger src_offset,
@@ -29,7 +29,7 @@ mtBlitCommandEncoderCopyFromBufferToBuffer(MtBlitCommandEncoder *bce,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtBlitCommandEncoderFillBuffer(MtBlitCommandEncoder *bce, 
                                MtBuffer *buf, NsRange range, uint8_t val) {
@@ -39,7 +39,7 @@ mtBlitCommandEncoderFillBuffer(MtBlitCommandEncoder *bce,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtBlitCommandEncoderGenerateMipmaps(MtBlitCommandEncoder *bce, 
                                     MtTexture *texture) {
@@ -48,7 +48,7 @@ mtBlitCommandEncoderGenerateMipmaps(MtBlitCommandEncoder *bce,
 
 
 MT_EXPORT
-MT_API_AVAILABLE(10.14, 12.0)
+MT_API_AVAILABLE(mt_macos(10.14), mt_ios(12.0))
 void
 mtBlitCommandEncoderCopyIndirectCommandBuffer(MtBlitCommandEncoder *bce, 
                                               MtIndirectCommandBuffer *src, NsRange range,
@@ -61,7 +61,7 @@ mtBlitCommandEncoderCopyIndirectCommandBuffer(MtBlitCommandEncoder *bce,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.14, 12.0)
+MT_API_AVAILABLE(mt_macos(10.14), mt_ios(12.0))
 void
 mtBlitCommandEncoderOptimizeIndirectCommandBuffer(MtBlitCommandEncoder *bce, 
                                                   MtIndirectCommandBuffer *buffer, NsRange range) {
@@ -70,7 +70,7 @@ mtBlitCommandEncoderOptimizeIndirectCommandBuffer(MtBlitCommandEncoder *bce,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.14, 12.0)
+MT_API_AVAILABLE(mt_macos(10.14), mt_ios(12.0))
 void
 mtBlitCommandEncoderResetCommandsInBuffer(MtBlitCommandEncoder *bce, 
                                           MtIndirectCommandBuffer *buffer, NsRange range) {
@@ -81,7 +81,7 @@ mtBlitCommandEncoderResetCommandsInBuffer(MtBlitCommandEncoder *bce,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtBlitCommandEncoderSynchronizeResource(MtBlitCommandEncoder *bce, 
                                         MtResource *resource) {
@@ -89,7 +89,7 @@ mtBlitCommandEncoderSynchronizeResource(MtBlitCommandEncoder *bce,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
 mtBlitCommandEncoderSynchronizeTexture(MtBlitCommandEncoder *bce, 
                                        MtTexture *texture, NsUInteger slice, NsUInteger level){
@@ -98,21 +98,21 @@ mtBlitCommandEncoderSynchronizeTexture(MtBlitCommandEncoder *bce,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.13, 10.0)
+MT_API_AVAILABLE(mt_macos(10.13), mt_ios(10.0))
 void
 mtBlitCommandEncoderUpdateFence(MtBlitCommandEncoder *icb, MtFence *fence) {
   [(id<MTLBlitCommandEncoder>)icb updateFence: (id<MTLFence>)fence];
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.13, 10.0)
+MT_API_AVAILABLE(mt_macos(10.13), mt_ios(10.0))
 void
 mtBlitCommandEncoderWaitForFence(MtBlitCommandEncoder *icb, MtFence *fence) {
   [(id<MTLBlitCommandEncoder>)icb waitForFence: (id<MTLFence>)fence];
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.14, 12.0)
+MT_API_AVAILABLE(mt_macos(10.14), mt_ios(12.0))
 void
 mtBlitCommandEncoderOptimizeContentsForGPUAccess(MtIndirectCommandBuffer *icb,
                                                  MtTexture *tex) {
@@ -120,7 +120,7 @@ mtBlitCommandEncoderOptimizeContentsForGPUAccess(MtIndirectCommandBuffer *icb,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.14, 12.0)
+MT_API_AVAILABLE(mt_macos(10.14), mt_ios(12.0))
 void
 mtBlitCommandEncoderOptimizeContentsForGPUAccessSliceLevel(MtIndirectCommandBuffer *icb,
                                                            MtTexture *tex, NsUInteger slice, NsUInteger level) {
@@ -129,7 +129,7 @@ mtBlitCommandEncoderOptimizeContentsForGPUAccessSliceLevel(MtIndirectCommandBuff
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.14, 12.0)
+MT_API_AVAILABLE(mt_macos(10.14), mt_ios(12.0))
 void
 mtBlitCommandEncoderOptimizeContentsForCPUAccess(MtIndirectCommandBuffer *icb,
                                                  MtTexture *tex) {
@@ -137,7 +137,7 @@ mtBlitCommandEncoderOptimizeContentsForCPUAccess(MtIndirectCommandBuffer *icb,
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.14, 12.0)
+MT_API_AVAILABLE(mt_macos(10.14), mt_ios(12.0))
 void
 mtBlitCommandEncoderOptimizeContentsForCPUAccessSliceLevel(MtIndirectCommandBuffer *icb,
                                                            MtTexture *tex, NsUInteger slice, NsUInteger level) {
@@ -146,6 +146,8 @@ mtBlitCommandEncoderOptimizeContentsForCPUAccessSliceLevel(MtIndirectCommandBuff
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.15))
+MT_API_UNAVAILABLE(mt_ios)
 void
 mtBlitCommandEncoderSampleCountersInBuffer(MtIndirectCommandBuffer *icb,
                                            MtCounterSampleBuffer *sbuf,
@@ -157,6 +159,8 @@ mtBlitCommandEncoderSampleCountersInBuffer(MtIndirectCommandBuffer *icb,
 }
 
 MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.15))
+MT_API_UNAVAILABLE(mt_ios)
 void
 mtBlitCommandEncoderResolveCounters(MtIndirectCommandBuffer *icb,
                                     MtCounterSampleBuffer *sbuf,

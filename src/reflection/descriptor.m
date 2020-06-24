@@ -8,14 +8,14 @@
 
 CF_RETURNS_RETAINED
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtComputePipelineReflection*
 mtNewComputePipelineReflection() {
   return [MTLComputePipelineReflection new];
 }
 
 MT_EXPORT
-MT_API_AVAILABLE(10.11, 8.0)
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 const MtArgument *
 mtComputePipelinereflectionArguments(MtComputePipelineReflection *refl) {
   NSArray<MTLArgument*> *_args = [(MTLComputePipelineReflection*) refl arguments];
