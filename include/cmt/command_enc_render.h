@@ -41,7 +41,7 @@ mtSetRenderState(MtRenderCommandEncoder *rce, MtRenderPipeline *pipline);
 MT_EXPORT
 MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 void
-mtSetDepthStencil(MtRenderCommandEncoder *rce, MtDepthStencil *ds);
+mtSetDepthStencil(MtRenderCommandEncoder *rce, MtDepthStencilDescriptor *ds);
 
 MT_EXPORT
 MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))

@@ -51,7 +51,7 @@ mtSetRenderState(MtRenderCommandEncoder *rce, MtRenderPipeline *pipline) {
 
 MT_EXPORT
 void
-mtSetDepthStencil(MtRenderCommandEncoder *rce, MtDepthStencil *ds) {
+mtSetDepthStencil(MtRenderCommandEncoder *rce, MtDepthStencilDescriptor *ds) {
   [(id<MTLRenderCommandEncoder>)rce setDepthStencilState: ds];
 }
 

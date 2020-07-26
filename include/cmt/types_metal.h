@@ -40,7 +40,7 @@ typedef void MtIndirectCommandBufferDescriptor;
 typedef void MtIndirectCommandBuffer;
 typedef void MtIndirectComputeCommand;
 typedef void MtIndirectRenderCommand;
-typedef void MtDepthStencil;
+typedef void MtDepthStencilDescriptor;
 typedef void MtBuffer;
 typedef void MtCompileOptions;
 
