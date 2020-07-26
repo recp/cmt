@@ -85,6 +85,11 @@ mtDrawIndexedPrims(MtRenderCommandEncoder *rce,
                    MtBuffer               *indexBuffer,
                    uint32_t                indexBufferOffset);
 
+MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
+void
+mtRenderCommandEncoderSetTextureAtIndex(MtRenderCommandEncoder *rce,  MtTexture *tex, NsUInteger indx);
+
 #ifdef __cplusplus
 }
 #endif
