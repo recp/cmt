@@ -8,8 +8,8 @@
 
 MT_EXPORT
 MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
-mtDepthStencil(MtCompareFunction depthCompareFunc, bool depthWriteEnabled) {
 MtDepthStencilDescriptor*
+mtDepthStencilDesc(MtCompareFunction depthCompareFunc, bool depthWriteEnabled) {
   MTLDepthStencilDescriptor *depthStateDesc;
   
   depthStateDesc                      = [MTLDepthStencilDescriptor new];
@@ -17,4 +17,12 @@ MtDepthStencilDescriptor*
   depthStateDesc.depthWriteEnabled    = depthWriteEnabled;
   
   return depthStateDesc;
+}
+
+MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
+MtDepthStencilState*
+mtNewDepthStencilState(MtDevice                 * __restrict device,
+                       MtDepthStencilDescriptor * __restrict depthStencilDesc) {
+  return [(id<MTLDevice>)device newDepthStencilStateWithDescriptor: depthStencilDesc];
 }

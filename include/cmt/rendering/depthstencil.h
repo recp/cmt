@@ -37,7 +37,13 @@ typedef enum MtStencilOperation {
 
 MT_EXPORT
 MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
-MtDepthStencil*
-mtDepthStencil(MtCompareFunction depthCompareFunc, bool depthWriteEnabled);
+MtDepthStencilDescriptor*
+mtDepthStencilDesc(MtCompareFunction depthCompareFunc, bool depthWriteEnabled);
+
+MT_EXPORT
+MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
+MtDepthStencilState*
+mtNewDepthStencilState(MtDevice                 * __restrict device,
+                       MtDepthStencilDescriptor * __restrict depthStencilDesc);
 
 #endif /* cmt_depthstencil_h */
