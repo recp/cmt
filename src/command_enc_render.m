@@ -119,15 +119,3 @@ mtDrawIndexedPrims(MtRenderCommandEncoder *rce,
                     indexBuffer: indexBuffer
               indexBufferOffset: indexBufferOffset];
 }
-
-MT_EXPORT
-MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
-void
-mtEndEncoding(MtRenderCommandEncoder *rce) {
-  [(id<MTLRenderCommandEncoder>)rce endEncoding];
-}
-
-
-
-
-
