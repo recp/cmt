@@ -44,7 +44,7 @@ set(SOURCES
 	src/event.m
 	src/resource.m)
 
-add_library(cmt_lib SHARED ${SOURCES})
+add_library(cmt_lib ${SOURCES})
 
 target_include_directories(cmt_lib PRIVATE .)
 target_include_directories(cmt_lib PRIVATE include/)

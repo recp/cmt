@@ -46,4 +46,7 @@ MtDepthStencilState*
 mtNewDepthStencilState(MtDevice                 * __restrict device,
                        MtDepthStencilDescriptor * __restrict depthStencilDesc);
 
+#ifdef __cplusplus
+}
+#endif
 #endif /* cmt_depthstencil_h */

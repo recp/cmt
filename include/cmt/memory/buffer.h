@@ -52,5 +52,9 @@ MT_API_UNAVAILABLE(mt_ios)
 MtBuffer*
 mtBufferRemoteStorageBuffer(MtBuffer *buf);
 
+#ifdef __cplusplus
+}
+#endif
+
 // end 10.15
 #endif /* cmt_buffer_h */
