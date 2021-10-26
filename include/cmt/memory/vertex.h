@@ -137,4 +137,9 @@ void
 mtSetVertexDesc(MtRenderPipeline   * __restrict pipeline,
                 MtVertexDescriptor * __restrict vert);
 
+#ifdef __cplusplus
+}
+#endif
+
 #endif /* cmt_vertex_h */
+

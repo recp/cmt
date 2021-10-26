@@ -73,4 +73,8 @@ MT_API_AVAILABLE(mt_macos(10.15), mt_ios(13.0))
 MtResourceOptions
 mtResourceOptions(MtResource *res);
 
+#ifdef __cplusplus
+}
+#endif
+
 #endif /* cmt_resource_h */
