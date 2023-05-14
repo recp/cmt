@@ -32,7 +32,9 @@
 #  define mt_macCatalyst
 #  define mt_ios
 #  define mt_macos
-#  define mt_API_AVAILABLE(M, I)
+#  define MT_API_AVAILABLE(...)
+#  define MT_API_UNAVAILABLE(x)
+#  define API_UNAVAILABLE(...)
 #endif
 
 #endif /* cmt_common_h */
