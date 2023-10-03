@@ -10,7 +10,7 @@ CF_RETURNS_RETAINED
 MT_EXPORT
 MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtDevice*
-mtCreateSystemDefaultDevice() {
+mtCreateSystemDefaultDevice(void) {
   return MTLCreateSystemDefaultDevice();
 }
 
@@ -18,7 +18,7 @@ CF_RETURNS_RETAINED
 MT_EXPORT
 MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtDevice**
-mtCopyAllDevices() {
+mtCopyAllDevices(void) {
   NSArray<id<MTLDevice>> * _devices = MTLCopyAllDevices();
 
   NSRange copyRange = NSMakeRange(0, [_devices count]);

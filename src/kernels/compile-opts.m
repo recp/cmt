@@ -11,7 +11,7 @@ CF_RETURNS_RETAINED
 MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MT_EXPORT
 MtCompileOptions*
-mtNewCompileOpts() {
+mtNewCompileOpts(void) {
 	return [MTLCompileOptions new];
 }
 

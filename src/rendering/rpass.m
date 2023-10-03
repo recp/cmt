@@ -10,7 +10,7 @@ CF_RETURNS_RETAINED
 MT_EXPORT
 MT_API_AVAILABLE(mt_macos(10.11), mt_ios(8.0))
 MtRenderPassDesc*
-mtNewPass() {
+mtNewPass(void) {
   return [MTLRenderPassDescriptor new];
 }
 
